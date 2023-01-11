@@ -1,51 +1,92 @@
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
     <body>
-        <ibk id="IBK-LOGIN-DETAIL_1">
-            <div id="DIV_2">
-                <div id="DIV_3">
-                    <h1 id="H1_4">
-                        <span id="SPAN_5">Protege a tu empresa</span><br id="BR_6" /> de los fraudes
-                    </h1><img alt="" src="https://staeu2c008nexbiuat01.z20.web.core.windows.net/assets/img/man_security.svg" id="IMG_7" />
-                    <div id="DIV_8">
-                        <div id="DIV_9">
-                            En estas fechas la ciberdelincuencia aumenta, por eso ten en cuenta lo siguiente:
-                        </div>
-                        <div id="DIV_10">
-                            <img alt="" src="https://staeu2c008nexbiuat01.z20.web.core.windows.net/assets/img/alert_fraud.svg" id="IMG_11" />
-                            <div id="DIV_12">
-                                <ul id="UL_13">
-                                    <li id="LI_14">
-                                        Revisa que el link de arriba sea <span id="SPAN_15">empresas.interbank.pe/login</span>
-                                    </li>
-                                    <li id="LI_16">
-                                        Asegúrate que tenga el <span id="SPAN_17">candadito al lado de la URL</span>
-                                    </li>
-                                    <li id="LI_18">
-                                        ¡Nunca compartas tu clave token con nadie!
-                                    </li>
-                                </ul>
+        <section class="home">
+            <ibk id="IBK-LOGIN-DETAIL_1">
+                <div id="test" class="in-flex">
+                    <div id="DIV_2">
+                        <div id="DIV_3">
+                            <h1 id="H1_4">
+                                <span id="SPAN_5">Protege a tu empresa</span><br id="BR_6" /> de los fraudes
+                            </h1><img alt="" src="https://empresas.interbank.pe/assets/img/man_security.svg" id="IMG_7" />
+                            <div id="DIV_8">
+                                <div id="DIV_9">
+                                    En estas fechas la ciberdelincuencia aumenta, por eso ten en cuenta lo siguiente:
+                                </div>
+                                <div id="DIV_10">
+                                    <img alt="" src="https://empresas.interbank.pe/assets/img/alert_fraud.svg" id="IMG_11" />
+                                    <div id="DIV_12">
+                                        <ul id="UL_13">
+                                            <li id="LI_14">
+                                                Revisa que el link de arriba sea <span id="SPAN_15">empresas.interbank.pe/login</span>
+                                            </li>
+                                            <li id="LI_16">
+                                                Asegúrate que tenga el <span id="SPAN_17">candadito al lado de la URL</span>
+                                            </li>
+                                            <li id="LI_18">
+                                                ¡Nunca compartas tu clave token con nadie!
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <footer id="FOOTER_19">
+                            <div id="DIV_20">
+                                © Copyright 2022 - Todos los derechos reservados
+                            </div>
+                            <div id="DIV_21">
+                                <span id="SPAN_22">Contáctanos:</span>
+                                <ibk id="IBK-ICON_23">
+                                </ibk> <span id="SPAN_24">WhatsApp <a href="https://api.whatsapp.com/send?phone=51993119001&amp;text=%C2%A1Hola%20Interbank!" id="A_25">993119001</a></span>
+                            </div>
+                        </footer>
                     </div>
+    
                 </div>
-                <footer id="FOOTER_19">
-                    <div id="DIV_20">
-                        © Copyright 2022 - Todos los derechos reservados
-                    </div>
-                    <div id="DIV_21">
-                        <span id="SPAN_22">Contáctanos:</span>
-                        <ibk id="IBK-ICON_23">
-                        </ibk> <span id="SPAN_24">WhatsApp <a href="https://api.whatsapp.com/send?phone=51993119001&amp;text=%C2%A1Hola%20Interbank!" id="A_25">993119001</a></span>
-                    </div>
-                </footer>
-            </div>
-        </ibk>
+                <div class="in-flex">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolore ab sunt voluptatem quam voluptatibus autem tenetur debitis earum. Assumenda possimus sunt, asperiores aperiam eos sequi. Est impedit nobis quas.</p>
+                </div>
+            </ibk>
+
+        </section>
     </body>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .home{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .in-flex {
+            flex: 1;
+            min-width: 620px;
+        }
+        .in-flex:first-child {
+            flex: 2;
+            background: rgba(0, 0, 0, 0) linear-gradient(49deg, rgb(60, 98, 175) 0px, rgb(0, 169, 79) 60%) repeat scroll 0% 0% / auto padding-box border-box;
+        }
+        .in-flex div{
+            padding: 20px;
+        }
+        #TEST{
+            /*background: rgba(0, 0, 0, 0) linear-gradient(49deg, rgb(60, 98, 175) 0px, rgb(0, 169, 79) 60%) repeat scroll 0% 0% / auto padding-box border-box;*/
+            width: 550px;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 100%;
+        }
+
         #IBK-LOGIN-DETAIL_1 {
         align-items: center;
-        block-size: 657px;
+        block-size: 959px;
         border-block-end-color: rgb(51, 51, 51);
         border-block-start-color: rgb(51, 51, 51);
         border-inline-end-color: rgb(51, 51, 51);
@@ -56,8 +97,8 @@
         color: rgb(51, 51, 51);
         column-rule-color: rgb(51, 51, 51);
         display: flex;
-        height: 657px;
-        inline-size: 587.406px;
+        height: 100%;
+        inline-size: 613.078px;
         inset-block-end: 0px;
         inset-block-start: 0px;
         inset-inline-end: 0px;
@@ -71,7 +112,7 @@
         min-width: auto;
         padding-inline-end: 48px;
         padding-inline-start: 48px;
-        perspective-origin: 293.703px 328.5px;
+        perspective-origin: 306.531px 479.5px;
         position: relative;
         right: 0px;
         text-align: left;
@@ -79,14 +120,15 @@
         text-emphasis-color: rgb(51, 51, 51);
         text-size-adjust: 100%;
         top: 0px;
-        transform-origin: 293.703px 328.5px;
-        width: 587.406px;
-        background: rgba(0, 0, 0, 0) linear-gradient(49deg, rgb(60, 98, 175) 0px, rgb(0, 169, 79) 60%) repeat scroll 0% 0% / auto padding-box border-box;
+        transform-origin: 306.539px 479.5px;
+        width: 613.078px;
+        /*background: rgba(0, 0, 0, 0) linear-gradient(49deg, rgb(60, 98, 175) 0px, rgb(0, 169, 79) 60%) repeat scroll 0% 0% / auto padding-box border-box;*/
         border: 0px none rgb(51, 51, 51);
         flex: 0 0 58.3333%;
         font: 14px / 20px Omnes;
         outline: rgb(51, 51, 51) none 0px;
         padding: 0px 48px;
+        display: flex;
     }/*#IBK-LOGIN-DETAIL_1*/
 
     #IBK-LOGIN-DETAIL_1:after {
@@ -128,7 +170,7 @@
     }/*#IBK-LOGIN-DETAIL_1:before*/
 
     #DIV_2 {
-        block-size: 657px;
+        block-size: 959px;
         border-block-end-color: rgb(51, 51, 51);
         border-block-start-color: rgb(51, 51, 51);
         border-inline-end-color: rgb(51, 51, 51);
@@ -138,8 +180,8 @@
         color: rgb(51, 51, 51);
         column-rule-color: rgb(51, 51, 51);
         display: flex;
-        height: 657px;
-        inline-size: 491.406px;
+        height: 959px;
+        inline-size: 517.078px;
         justify-content: space-between;
         max-inline-size: 900px;
         max-width: 900px;
@@ -147,13 +189,13 @@
         min-height: auto;
         min-inline-size: auto;
         min-width: auto;
-        perspective-origin: 245.703px 328.5px;
+        perspective-origin: 258.531px 479.5px;
         text-align: left;
         text-decoration: none solid rgb(51, 51, 51);
         text-emphasis-color: rgb(51, 51, 51);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 328.5px;
-        width: 491.406px;
+        transform-origin: 258.539px 479.5px;
+        width: 517.078px;
         border: 0px none rgb(51, 51, 51);
         flex-flow: column nowrap;
         font: 14px / 20px Omnes;
@@ -199,7 +241,7 @@
     }/*#DIV_2:before*/
 
     #DIV_3 {
-        block-size: 625px;
+        block-size: 927px;
         border-block-end-color: rgb(255, 255, 255);
         border-block-start-color: rgb(255, 255, 255);
         border-inline-end-color: rgb(255, 255, 255);
@@ -209,20 +251,20 @@
         color: rgb(255, 255, 255);
         column-rule-color: rgb(255, 255, 255);
         display: flex;
-        height: 625px;
-        inline-size: 491.406px;
+        height: 927px;
+        inline-size: 517.078px;
         justify-content: center;
         min-block-size: auto;
         min-height: auto;
         min-inline-size: auto;
         min-width: auto;
-        perspective-origin: 245.703px 312.5px;
+        perspective-origin: 258.531px 463.5px;
         text-align: left;
         text-decoration: none solid rgb(255, 255, 255);
         text-emphasis-color: rgb(255, 255, 255);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 312.5px;
-        width: 491.406px;
+        transform-origin: 258.539px 463.5px;
+        width: 517.078px;
         border: 0px none rgb(255, 255, 255);
         flex-flow: column nowrap;
         font: 40px / 42px Omnes;
@@ -278,20 +320,20 @@
         color: rgb(255, 255, 255);
         column-rule-color: rgb(255, 255, 255);
         height: 63px;
-        inline-size: 491.406px;
+        inline-size: 517.078px;
         margin-block-end: 8px;
         margin-block-start: 0px;
         min-block-size: auto;
         min-height: auto;
         min-inline-size: auto;
         min-width: auto;
-        perspective-origin: 245.703px 31.5px;
+        perspective-origin: 258.531px 31.5px;
         text-align: left;
         text-decoration: none solid rgb(255, 255, 255);
         text-emphasis-color: rgb(255, 255, 255);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 31.5px;
-        width: 491.406px;
+        transform-origin: 258.539px 31.5px;
+        width: 517.078px;
         border: 0px none rgb(255, 255, 255);
         font: 30px / 31.5px Omnes;
         margin: 0px 0px 8px;
@@ -458,7 +500,7 @@
         column-rule-color: rgb(255, 255, 255);
         display: block;
         height: 260px;
-        inline-size: 491.406px;
+        inline-size: 517.078px;
         margin-block-end: 48px;
         margin-block-start: 48px;
         max-block-size: 100%;
@@ -469,14 +511,14 @@
         min-height: auto;
         min-inline-size: auto;
         min-width: auto;
-        perspective-origin: 245.703px 130px;
+        perspective-origin: 258.531px 130px;
         text-align: left;
         text-decoration: none solid rgb(255, 255, 255);
         text-emphasis-color: rgb(255, 255, 255);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 130px;
+        transform-origin: 258.539px 130px;
         vertical-align: middle;
-        width: 491.406px;
+        width: 517.078px;
         border: 0px none rgb(255, 255, 255);
         font: 40px / 42px Omnes;
         margin: 48px 0px;
@@ -530,18 +572,18 @@
         color: rgb(255, 255, 255);
         column-rule-color: rgb(255, 255, 255);
         height: 148.766px;
-        inline-size: 491.406px;
+        inline-size: 517.078px;
         min-block-size: auto;
         min-height: auto;
         min-inline-size: auto;
         min-width: auto;
-        perspective-origin: 245.703px 74.375px;
+        perspective-origin: 258.531px 74.375px;
         text-align: left;
         text-decoration: none solid rgb(255, 255, 255);
         text-emphasis-color: rgb(255, 255, 255);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 74.3828px;
-        width: 491.406px;
+        transform-origin: 258.539px 74.3828px;
+        width: 517.078px;
         border: 0px none rgb(255, 255, 255);
         font: 40px / 42px Omnes;
         outline: rgb(255, 255, 255) none 0px;
@@ -594,15 +636,15 @@
         color: rgb(255, 255, 255);
         column-rule-color: rgb(255, 255, 255);
         height: 49.5938px;
-        inline-size: 491.406px;
+        inline-size: 517.078px;
         padding-block-end: 16px;
-        perspective-origin: 245.703px 24.7969px;
+        perspective-origin: 258.531px 24.7969px;
         text-align: left;
         text-decoration: none solid rgb(255, 255, 255);
         text-emphasis-color: rgb(255, 255, 255);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 24.7969px;
-        width: 491.406px;
+        transform-origin: 258.539px 24.7969px;
+        width: 517.078px;
         border: 0px none rgb(255, 255, 255);
         font: 500 16px / 16.8px Omnes;
         outline: rgb(255, 255, 255) none 0px;
@@ -663,20 +705,20 @@
         column-rule-color: rgb(255, 255, 255);
         display: flex;
         height: 99.1719px;
-        inline-size: 491.406px;
+        inline-size: 517.078px;
         min-inline-size: 288px;
         min-width: 288px;
         padding-block-end: 16px;
         padding-block-start: 16px;
         padding-inline-end: 16px;
         padding-inline-start: 16px;
-        perspective-origin: 245.703px 49.5781px;
+        perspective-origin: 258.531px 49.5781px;
         text-align: left;
         text-decoration: none solid rgb(255, 255, 255);
         text-emphasis-color: rgb(255, 255, 255);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 49.5859px;
-        width: 491.406px;
+        transform-origin: 258.539px 49.5859px;
+        width: 517.078px;
         background: rgba(255, 255, 255, 0.19) none repeat scroll 0% 0% / auto padding-box border-box;
         border: 0px none rgb(255, 255, 255);
         border-radius: 15px;
@@ -1109,20 +1151,20 @@
         column-rule-color: rgb(51, 51, 51);
         display: flex;
         height: 32px;
-        inline-size: 491.406px;
+        inline-size: 517.078px;
         justify-content: space-between;
         min-block-size: auto;
         min-height: auto;
         min-inline-size: auto;
         min-width: auto;
         padding-block-end: 12px;
-        perspective-origin: 245.703px 16px;
+        perspective-origin: 258.531px 16px;
         text-align: left;
         text-decoration: none solid rgb(51, 51, 51);
         text-emphasis-color: rgb(51, 51, 51);
         text-size-adjust: 100%;
-        transform-origin: 245.703px 16px;
-        width: 491.406px;
+        transform-origin: 258.539px 16px;
+        width: 517.078px;
         border: 0px none rgb(51, 51, 51);
         font: 12px / 20px Omnes;
         outline: rgb(51, 51, 51) none 0px;

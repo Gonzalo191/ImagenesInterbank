@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section class="home">
+            <div class="in-flex">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, blanditiis magnam. Repellendus porro doloribus dolor, eveniet impedit sint, ea maxime dignissimos ut, nemo perferendis accusantium qui quod distinctio aspernatur placeat.
+            </div>
+            <div class="in-flex">
+                <!--div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa delectus, animi cupiditate nam aspernatur facere illum modi minima enim molestiae corrupti, dolores, accusantium expedita nesciunt illo nostrum officiis. Modi, unde.</div>
+                <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi doloribus, sequi aut, exercitationem rem repellat natus repudiandae nam aspernatur beatae facilis, in culpa sint placeat nostrum consequatur consequuntur porro nesciunt.</div-->
+                <div class="in-flex">
+                    b
+                    <div class="in-flex">a</div>
+                </div>
+            </div>
+            
+        </section>
+    </body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .home{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .in-flex {
+            flex: 1;
+            min-width: 300px;
+        }
+        .in-flex:first-child {
+            flex: 2;
+            margin: 20px;
+            background-color: aqua;
+        }
+        .in-flex div{
+            padding: 25px;
+        }
+    </style>
+</html>
