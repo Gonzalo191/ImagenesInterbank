@@ -1,4 +1,5 @@
 <html>
+    <head><script src="https://kit.fontawesome.com/f90a82ec42.js" crossorigin="anonymous"></script></head>
     <body>
         <div id="FONDO">
             <mat id="MAT-DIALOG-CONTAINER_1">
@@ -17,8 +18,9 @@
                                     <span id="SPAN_11">Si tienes un inconveniente para validar tu identidad ingresando la Banca por Internet para Empresas, llama al</span> <a href="tel:01 311 9001" id="A_12">(01) 311 9001</a> (Lima) o al <a href="tel:0 801 00801" id="A_13">0801 00801</a> (Provincias) <span id="SPAN_14">y marca la opción 3 para solicitar tu código de activación. Luego ingresa el código indicado.</span>
                                 </div>
                                 <ibk id="IBK-DISCLAIMER_15">
-                                    <ibk id="IBK-ICON_16">
-                                    </ibk>
+                                    <!--ibk id="IBK-ICON_16">
+                                    </ibk-->
+                                    <i id="info" class="fa-solid fa-circle-info"></i>
                                     <div id="DIV_17">
                                         <span id="SPAN_18">Recuerda que</span> <span id="SPAN_19">solo el dueño del acceso debe comunicarse con nosotros</span>
                                     </div>
@@ -112,6 +114,11 @@
         height: 100vh;
         width: 100vw;
         transition: all .5s;
+        }
+
+        #info{
+            margin-right: 4px;
+            padding-top: 4px;
         }
 
         #MAT-DIALOG-CONTAINER_1 {

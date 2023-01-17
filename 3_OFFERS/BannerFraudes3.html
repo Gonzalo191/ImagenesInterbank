@@ -20,13 +20,13 @@
         padding: 0;
         border: none;
         border-radius: 10px;
-        /*height: 97%;
-        cursor: pointer;*/
+        height: 85%;
+        /*cursor: pointer;*/
       }
 
       .popup__wrapper {
         position: fixed;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         /*width: 304px;
@@ -146,17 +146,17 @@
         display: block;
       }
 
-      /*
-      img {
-        height: 80%;
-        width: 80%;
+      
+      #image {
+        width: 0;
+        min-width: 508px;
       }
-      */
+      
 
 
       @media (min-width: 768px) {
        .popup__wrapper {
-        /*width: 416px;*/
+        min-width: 680px;
       }
        .popup__body {
         padding: 20px 32px 36px;
@@ -168,8 +168,10 @@
        .popup__content {
         /*width: 80%;*/
       }
-
-
+       #image {
+        width: 0;
+        min-width: 680px;
+      }
       }
 
 
@@ -219,11 +221,11 @@
 
           var picture = popup.querySelector("#pic");
           var divTitle = document.createElement("source");
-          divTitle.srcset = options.imgDesktop2x;
+          divTitle.srcset = options.imgMobile2x;
           divTitle.media = '(min-width: 768px)';
 
           var divTitle2 = document.createElement("img");
-          divTitle2.src = options.imgMobile2x;
+          divTitle2.src = options.imgDesktop2x;
           divTitle2.alt = 'testing image'
           picture.appendChild(divTitle);
           picture.appendChild(divTitle2);
@@ -256,7 +258,7 @@
           areaTag.target = "_blank";
           mapTag.appendChild(areaTag);
 
-          divTitle2.setAttribute("usemap", "#image");
+          divTitle2.setAttribute("id", "#image");
 
 
           var close2 = popup.querySelector(".popup__close");

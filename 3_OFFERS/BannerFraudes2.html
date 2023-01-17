@@ -146,17 +146,17 @@
         display: block;
       }
 
-      /*
-      img {
-        height: 80%;
-        width: 80%;
+      
+      #image {
+        width: 0;
+        min-width: 508px;
       }
-      */
+      
 
 
       @media (min-width: 768px) {
        .popup__wrapper {
-        /*width: 416px;*/
+        min-width: 680px;
       }
        .popup__body {
         padding: 20px 32px 36px;
@@ -168,8 +168,10 @@
        .popup__content {
         /*width: 80%;*/
       }
-
-
+       #image {
+        width: 0;
+        min-width: 680px;
+      }
       }
 
 
@@ -256,7 +258,7 @@
           areaTag.target = "_blank";
           mapTag.appendChild(areaTag);
 
-          divTitle2.setAttribute("usemap", "#image");
+          divTitle2.setAttribute("id", "#image");
 
 
           var close2 = popup.querySelector(".popup__close");
@@ -288,13 +290,13 @@
           text: "Cambiar ahora",
         },
         imgDesktop1x:
-        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/5d/5d938baa-0969-432c-98f5-7a7556d28c00/img_modal-3_%5Bfraudes%5D-banner-bpi_desktop_1x.png",
+        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/32/323d77e0-f02d-4745-8018-39ce7d30f78b/img_modal-2_%5Bfraudes%5D-banner-bpi_desktop_1x.png",
         imgDesktop2x:
-        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/32/322e185f-b9af-4f3b-a7fb-571628490659/img_modal-3_%5Bfraudes%5D-banner-bpi_desktop_2x.png",
+        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/06/06adeb5e-b146-438f-9e71-2d8ba60c7e61/img_modal-2_%5Bfraudes%5D-banner-bpi_desktop_2x.png",
         imgMobile1x:
-        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8b/8bc8fa06-0bec-4fc8-88ea-a261e2cdef5f/img_modal-3_%5Bfraudes%5D-banner-bpi_mobile_1x.png",
+        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/db/db977d38-c30f-4193-90bf-ffa5b0d05c0f/img_modal-2_%5Bfraudes%5D-banner-bpi_mobile_1x.png",
         imgMobile2x:
-        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f4/f44ffff2-7c88-4ccd-8ded-c9d0b09e9007/img_modal-3_%5Bfraudes%5D-banner-bpi_mobile_2x.png",
+        "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/50/5062c73a-09b3-47f3-bd18-bf78328ec87d/img_modal-2_%5Bfraudes%5D-banner-bpi_mobile_2x.png",
       };
       var popup = new popupJS(options);
       popup.show();
