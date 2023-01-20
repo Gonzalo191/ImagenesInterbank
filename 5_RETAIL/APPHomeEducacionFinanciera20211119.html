@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name=ADBMessageAssets content='[
+        [ "https://eu1mktprdstg001.blob.core.windows.net/appinterbank/general/fondo_inapp2x.png" ],
+        [ "https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/fondo_principal.png?raw=true" ],
+        [ "https://eu1mktprdstg001.blob.core.windows.net/appinterbank/experimento_seguridad/paso1_alternativas2x.png" ],
+        ["https://eu1mktprdstg001.blob.core.windows.net/appinterbank/experimento_seguridad/paso1_ahorano2x.png"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/sms.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Caja%20de%20opciones.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Opcion_correcta.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Opcion_incorrecta1.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Opcion_incorrecta2.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/boto%CC%81n_entendido.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Fondo_blanco.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/respuesta%20correcta.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Respuest_incorrecta1_try.png?raw=true"]
+        ["https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Respuesta_incorrecta2_try.png?raw=true"]
+    ]' />
+    <title></title>
+  </head>
+  <style media="screen">
+
+  html,body {
+    margin:0;
+    padding:0;
+    text-align:center;
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .card_background{
+    background-image: url('https://eu1mktprdstg001.blob.core.windows.net/appinterbank/general/fondo_inapp.png');
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .card_body {
+    top: 50%; transform: translateY(-50%);
+    position: relative;
+    margin:0 auto;
+    width: auto;
+
+    max-width: 290px;
+    max-height: 421px;
+    z-index: 2;
+    border-radius: 5px;
+    height: auto;
+    color: #333333;
+  }
+
+  .card_body--main {
+    background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/fondo_principal.png?raw=true');
+	background-size: cover;
+	width: 270px;
+    height: 421px;
+    clear: both;
+    overflow: auto;
+	display: block;
+  }
+
+  .card_body--bottom {
+    width: 100%;
+    overflow: auto;
+    margin-top: 90%;
+	height : 250px;
+  }
+
+  .card_content_wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn__close1 {
+      background-size: 25px 25px;
+      width: 25px;
+      height: 25px;
+      display: block;
+      position: relative;
+      float: right;
+      margin-top: 40px;
+      margin-right: 10px;
+      text-decoration:none;
+      color: #003ca3;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: "Geneva", Verdana, Sans-serif;
+  }
+
+  .btn__close2 {
+      background-size: 25px 25px;
+      width: 25px;
+      height: 25px;
+      display: block;
+      position: relative;
+      float: right;
+      margin-top: 10px;
+      margin-right: 10px;
+      text-decoration:none;
+      color: #003ca3;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: "Geneva", Verdana, Sans-serif;
+  }
+
+  .card_body--title {
+
+    text-align: center;
+    line-height: 22px;
+    font-size: 17.5px;
+  }
+
+  .card_body--text {
+    text-align: left;
+    overflow: auto;
+	margin: 0px 10px;
+
+  }
+
+
+  .card_body--text--p{
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+  }
+
+
+  .card_body--button--ligth{
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #00AA4C;
+    text-decoration: none;
+    line-height: 18px;
+    font-size: 14px;
+	font-weight: bold;
+    border-radius: 4px;
+    padding: 12px 0;
+    width: 80%;
+    margin: 0 0px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    display:inline-block;
+  }
+
+  .card_body--button--ligth a{
+    text-align: center;
+    color: #00AA4C;
+    text-decoration: none;
+  }
+
+  .card_body--content1 {
+
+	  display: block;
+    width: 260px;
+    overflow: hidden;
+	  height:100px;
+	  text-align: center;
+	  margin-top: 210px;
+	  margin-left: 5px;
+  }
+
+  .card_content1--button1 {
+	  background-image: url('https://eu1mktprdstg001.blob.core.windows.net/appinterbank/experimento_seguridad/paso1_alternativas2x.png');
+	  background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 260px;
+	  height:75px;
+    cursor: pointer;
+  }
+
+  .card_content1--button2 {
+	  background-image: url('https://eu1mktprdstg001.blob.core.windows.net/appinterbank/experimento_seguridad/paso1_ahorano2x.png');
+	  background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 190px;
+	  height: 12px;
+    cursor: pointer;
+	  margin-top: 10px;
+	  margin-left: 35px;
+  }
+
+  .card_body--content2 {
+
+	  display: block;
+    width: 280px;
+    overflow: hidden;
+	  height:350px;
+	  text-align: center;
+	  margin-top: 10px;
+  }
+
+  .card_content2--sms {
+    background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/sms.png?raw=true');
+    background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 240px;
+    height:115px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 23px;
+  }
+
+  .card_content2--questions {
+    background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Caja%20de%20opciones.png?raw=true');
+    position: absolute;
+    background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 265px;
+    height:220px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 12px;
+  }
+
+  .card_content2--button1 {
+	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Opcion_correcta.png?raw=true');
+    position: relative;
+	  background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 243px;
+	  height:46px;
+    cursor: pointer;
+	  margin-top: 50px;
+	  margin-left: 24px;
+  }
+
+  .card_content2--button2 {
+	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Opcion_incorrecta1.png?raw=true');
+    position: relative;
+	  background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 243px;
+	  height:46px;
+    cursor: pointer;
+	  margin-top: 10px;
+	  margin-left: 24px;
+  }
+
+	.card_content2--button3 {
+    background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Opcion_incorrecta2.png?raw=true');
+    position: relative;
+    background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 243px;
+    height:46px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 24px;
+  }
+
+  .card_body--content3 {
+
+	  display: block;
+    width: 280px;
+    overflow: hidden;
+	  height: 40px;
+	  text-align: center;
+	  margin-top: 325px;
+  }
+
+  .card_content3--button1 {
+	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/boto%CC%81n_entendido.png?raw=true');
+	  background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 120px;
+	  height: 30px;
+    cursor: pointer;
+	  margin-left  : 84px;
+    margin-top: 330px;
+  }
+
+  .card_body--button a{
+    text-align: center;
+    color: #eb0046;
+    text-decoration: none;
+  }
+
+  .card_body--top{
+   display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .alert__container--numbering {margin: 0;padding: 0;list-style-type: none;}
+  .alert__container--numbering li {font-size: 13px;   counter-increment: step-counter;margin-bottom: 1px;}
+  .alert__container--numbering li::before {float:left; content: counter(step-counter);margin-right: 4px;font-size: 65%;color: #FFFFFF;background-color: #5794DD;border: #5794DD 0.8px solid;padding: 2.6px 5.2px;border-radius: 100%;}
+
+  /* MEDIA QUERIES */
+
+  @media only screen and (min-width: 200px) {
+    .card_body {
+      width: 85vw;
+      max-height: 97vh;
+    }
+  }
+
+  @media only screen and (min-width: 321px) {
+    .card_body {
+      width: 90vw;
+    }
+
+    .card_body--main {
+      margin-top: 0!important;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .card_body--title {
+      font-size: 16px;
+    }
+
+    .card_body--top {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  /* FORM */
+  .card_body--second_card {
+	  display:none;
+	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Fondo_blanco.png?raw=true');
+	  background-size: cover;
+    color: #FFFFFF;
+	  width: 300px;
+    height: 410px;
+    clear: both;
+    overflow: auto;
+  }
+
+  .card_body--third_card {
+	  display: none;
+	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/respuesta%20correcta.png?raw=true');
+	  background-size: cover;
+	  width: 290px;
+    height: 380px;
+    clear: both;
+    overflow: auto;
+  }
+  .card_body--fourth_card {
+	  display: none;
+	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Respuest_incorrecta1_try.png?raw=true');
+	  background-size: cover;
+	  width: 290px;
+    height: 380px;
+    clear: both;
+    overflow: auto;
+  }
+  .card_body--fifth_card {
+	  display: none;
+	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Rpt_incorrecta2.png?raw=true');
+	  background-size: cover;
+	  width: 290px;
+    height: 380px;
+    clear: both;
+    overflow: auto;
+  }
+  </style>
+  <body>
+    <div class="card_background">
+      <div class="card_body " id="banner_body">
+        <div class="card_content_wrapper" id = "cuerpo">
+          <!-- Inapp: Primera pantalla-->
+			    <div class="card_body--main">
+				    <div class="card_body--top">
+					    <a class="btn__close1" href="adbinapp://cancel">X</a>
+				    </div>
+            <div class="card_body--content1">
+              <a class="card_content1--button1" onclick="start()"></a>
+              <a class="card_content1--button2" href="adbinapp://cancel"></a>
+            </div>
+			    </div>
+          <!-- Out Inapp: Primera pantalla-->
+			    <!-- Inapp: Segunda pantalla-->
+			    <div class="card_content card_content--left card_content--block  card_body--second_card">
+				<div class="card_body--top">
+					<a class="btn__close2" href="adbinapp://cancel">X</a>
+				</div>
+				<div class="card_body--content2">
+          <a class="card_content2--sms" id="sms_muestra"></a>
+          <a class="card_content2--questions" id="questions_box"></a> 
+          <div>
+            <a class="card_content2--button1" onclick="answer_correct()"></a>
+          <a class="card_content2--button2" onclick="answer_incorrect_1()"></a>
+          <a class="card_content2--button3" onclick="answer_incorrect_2()"></a>
+          </div>
+				</div>
+			    </div>
+          <!--Out Inapp: Segunda pantalla-->
+          <!-- Inapp: Tercera pantalla-->
+          <div class="card_content card_content--left card_content--block  card_body--third_card">
+            <div class="card_body--top">
+              <a class="card_content3--button1" href="adbinapp://confirm"></a>
+            </div>
+          </div>
+          <!--Out Inapp: Tercera pantalla-->
+          <!--Inapp: Cuarta pantalla-->
+          <div class="card_content card_content--left card_content--block  card_body--fourth_card">
+            <div class="card_body--top">
+              <a class="card_content3--button1" href="adbinapp://confirm"></a>
+            </div>
+          </div>
+          <!--Out Inapp: Cuarta pantalla-->
+          <!--Inapp: Quinta pantalla-->
+      		<div class="card_content card_content--left card_content--block  card_body--fifth_card">
+				<div class="card_body--top">
+					<a class="card_content3--button1" href="adbinapp://confirm"></a>
+				</div>
+			    </div>
+          <!--Out Inapp: Quinta pantalla-->
+        </div>
+      </div>
+    </div>
+
+	  <script type="text/javascript">
+
+    var surveyDiv = document.getElementById('banner_body')
+    var second = surveyDiv.querySelector('.card_body--second_card');
+    var third = surveyDiv.querySelector('.card_body--third_card');
+    var fourth = surveyDiv.querySelector('.card_body--fourth_card');
+    var fifth = surveyDiv.querySelector('.card_body--fifth_card');
+    var first = surveyDiv.querySelector('.card_body--main');
+
+    var id = parseInt((Math.random() * (999999 - 100000 + 1)), 10) + 100000;
+
+    function answer_correct() {
+      first.style.display = 'none';
+      second.style.display = 'none';
+      third.style.display = 'block';
+      fourth.style.display = 'none';
+      first.style.display = 'none';
+    }
+
+    function answer_incorrect_1() {
+      first.style.display = 'none';
+      second.style.display = 'none';
+      third.style.display = 'none';
+      fourth.style.display = 'block';
+      first.style.display = 'none';
+    }
+
+	  function answer_incorrect_2() {
+      first.style.display = 'none';
+      second.style.display = 'none';
+      third.style.display = 'none';
+      fourth.style.display = 'none';
+      fifth.style.display = 'block';
+    }
+
+    function start() {
+      first.style.display = 'none';
+      second.style.display = 'block';
+      third.style.display = 'none';
+      fourth.style.display = 'none';
+      first.style.display = 'none';
+    }
+
+    </script>
+  </body>
+</html>
