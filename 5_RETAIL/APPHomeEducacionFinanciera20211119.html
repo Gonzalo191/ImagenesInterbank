@@ -64,12 +64,12 @@
 
   .card_body--main {
     background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/fondo_principal.png?raw=true');
-	background-size: cover;
-	width: 270px;
+	  background-size: cover;
+	  width: 270px;
     height: 421px;
     clear: both;
     overflow: auto;
-	display: block;
+	  display: block;
   }
 
   .card_body--bottom {
@@ -401,18 +401,18 @@
           <!-- Out Inapp: Primera pantalla-->
 			    <!-- Inapp: Segunda pantalla-->
 			    <div class="card_content card_content--left card_content--block  card_body--second_card">
-				<div class="card_body--top">
-					<a class="btn__close2" href="adbinapp://cancel">X</a>
-				</div>
-				<div class="card_body--content2">
-          <a class="card_content2--sms" id="sms_muestra"></a>
-          <a class="card_content2--questions" id="questions_box"></a> 
-          <div>
-            <a class="card_content2--button1" onclick="answer_correct()"></a>
-          <a class="card_content2--button2" onclick="answer_incorrect_1()"></a>
-          <a class="card_content2--button3" onclick="answer_incorrect_2()"></a>
-          </div>
-				</div>
+            <div class="card_body--top">
+              <a class="btn__close2" href="adbinapp://cancel">X</a>
+            </div>
+            <div class="card_body--content2">
+              <a class="card_content2--sms" id="sms_muestra"></a>
+              <a class="card_content2--questions" id="questions_box"></a> 
+              <div>
+                <a class="card_content2--button1" onclick="answer_correct()"></a>
+                <a class="card_content2--button2" onclick="answer_incorrect_1()"></a>
+                <a class="card_content2--button3" onclick="answer_incorrect_2()"></a>
+              </div>
+            </div>
 			    </div>
           <!--Out Inapp: Segunda pantalla-->
           <!-- Inapp: Tercera pantalla-->
@@ -431,9 +431,9 @@
           <!--Out Inapp: Cuarta pantalla-->
           <!--Inapp: Quinta pantalla-->
       		<div class="card_content card_content--left card_content--block  card_body--fifth_card">
-				<div class="card_body--top">
-					<a class="card_content3--button1" href="adbinapp://confirm"></a>
-				</div>
+            <div class="card_body--top">
+              <a class="card_content3--button1" href="adbinapp://confirm"></a>
+            </div>
 			    </div>
           <!--Out Inapp: Quinta pantalla-->
         </div>
@@ -456,7 +456,7 @@
       second.style.display = 'none';
       third.style.display = 'block';
       fourth.style.display = 'none';
-      first.style.display = 'none';
+      fifth.style.display = 'none';
     }
 
     function answer_incorrect_1() {
