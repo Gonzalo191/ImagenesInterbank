@@ -10,7 +10,7 @@
         [ "https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true"],
         ["https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/check-correcto.png?raw=true"],
         ["https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/respuesta%20correcta.png?raw=true"],
-        [""],
+        ["https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/adv-incorrecto.png?raw=true"],
         [""],
         [""],
 
@@ -377,7 +377,7 @@
   .tercera-pantalla--texto1{
     margin-top: 10px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .tercera-pantalla--opcioncorrecta{
@@ -412,10 +412,11 @@
     justify-content: center;
     align-items: center;
     margin: 25px;
+    
   }
 
   .cuarta-pantalla--adv{
-    background-image: url('');
+    background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/adv-incorrecto.png?raw=true');
     background-size: cover;
     width: 45px;
 	  height: 45px;
@@ -424,15 +425,15 @@
   .cuarta-pantalla--texto1{
     margin-top: 10px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .cuarta-pantalla--opcionincorrecta{
-    background-image: url('');
+    background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/respuesta%20incorrecta.png?raw=true');
     background-size: cover;
-    margin-top: 30px;
-    width: 215px;
-	  height: 40px;
+    margin-top: 25px;
+    width: 240px;
+	  height: 45px;
   }
 
   .cuarta-pantalla--textoopcion{
@@ -440,7 +441,7 @@
     font-size: 11px;
     margin-left: 50px;
     align-items: center;
-    height: 40px;
+    height: 45px;
     display: flex;
     justify-content: left;
     margin-right: 20px;
@@ -448,11 +449,57 @@
   }
 
   .cuarta-pantalla--texto2{
-    margin-top: 27px;
-    font-size: 14px;
+    margin-top: 15px;
+    font-size: 15px;
   }
 
   /*QUINTA PANTALLA*/
+  .quinta-pantalla{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    
+  }
+
+  .quinta-pantalla--adv{
+    background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/adv-incorrecto.png?raw=true');
+    background-size: cover;
+    width: 45px;
+	  height: 45px;
+  }
+
+  .quinta-pantalla--texto1{
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: 13px;
+  }
+
+  .quinta-pantalla--opcionincorrecta{
+    background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/respuesta%20incorrecta.png?raw=true');
+    background-size: cover;
+    margin-top: 25px;
+    width: 240px;
+	  height: 45px;
+  }
+
+  .quinta-pantalla--textoopcion{
+    color: white;
+    font-size: 11px;
+    margin-left: 50px;
+    align-items: center;
+    height: 45px;
+    display: flex;
+    justify-content: left;
+    margin-right: 20px;
+    text-align: left;
+  }
+
+  .quinta-pantalla--texto2{
+    margin-top: 15px;
+    font-size: 15px;
+  }
 
   .card_content3--button1 {
 	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/boto%CC%81n_entendido.png?raw=true');
@@ -464,7 +511,7 @@
 	  height: 30px;
     cursor: pointer;
 	  margin-left  : 84px;
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   .card_body--button a{
@@ -474,7 +521,7 @@
   }
 
   .card_body--top{
-   display: block;
+    display: block;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -526,7 +573,7 @@
   }
 
   .card_body--third_card {
-	  display: none;
+	  /*display: none;*/
 	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
 	  background-size: cover;
 	  width: 290px;
@@ -536,7 +583,7 @@
   }
   .card_body--fourth_card {
 	  display: none;
-	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Respuest_incorrecta1_try.png?raw=true');
+	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
 	  background-size: cover;
 	  width: 290px;
     height: 380px;
@@ -545,7 +592,7 @@
   }
   .card_body--fifth_card {
 	  display: none;
-	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/Rpt_incorrecta2.png?raw=true');
+	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
 	  background-size: cover;
 	  width: 290px;
     height: 380px;
@@ -612,7 +659,7 @@
               <div class="tercera-pantalla--opcioncorrecta">
                 <div class="tercera-pantalla--textoopcion">No le hago clic al enlace, ni comparto mis datos.</div>
               </div>
-              <div class="tercera-pantalla--texto2">Interbank solo te te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.</div>
+              <div class="tercera-pantalla--texto2">Interbank solo te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.</div>
             </div>
             <div class="card_body--top">
               <a class="card_content3--button1" href="adbinapp://confirm"></a>
@@ -623,12 +670,12 @@
           <div class="card_content card_content--left card_content--block  card_body--fourth_card">
             <div class="cuarta-pantalla">
               <div class="cuarta-pantalla--adv"></div>
-              <div class="cuarta-pantalla--texto1">¡Muy bien!</div>
+              <div class="cuarta-pantalla--texto1">¡Ups, cuidado!</div>
               <div class="cuarta-pantalla--opcionincorrecta">
                 <div class="cuarta-pantalla--textoopcion">Le hago clic e indico mis datos porque puedo participar en promociones y concursos.</div>
               </div>
               <div class="cuarta-pantalla--texto2">
-                Estos mensaje intentan obtener tu información. <br><br>Recuerda que Interbank solo te te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.
+                Estos mensaje intentan obtener tu información. <br><br>Recuerda que Interbank solo te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.
               </div>
             </div>
             <div class="card_body--top">
@@ -638,6 +685,16 @@
           <!--Out Inapp: Cuarta pantalla-->
           <!--Inapp: Quinta pantalla-->
       		<div class="card_content card_content--left card_content--block  card_body--fifth_card">
+            <div class="quinta-pantalla">
+              <div class="quinta-pantalla--adv"></div>
+              <div class="quinta-pantalla--texto1">¡Ups, cuidado!</div>
+              <div class="quinta-pantalla--opcionincorrecta">
+                <div class="quinta-pantalla--textoopcion">Abro el link pero no indico mis datos.</div>
+              </div>
+              <div class="quinta-pantalla--texto2">
+                Estos mensaje intentan obtener tu información. <br><br>Recuerda que Interbank solo te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.
+              </div>
+            </div>
             <div class="card_body--top">
               <a class="card_content3--button1" href="adbinapp://confirm"></a>
             </div>
