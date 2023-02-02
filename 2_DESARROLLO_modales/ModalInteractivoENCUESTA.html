@@ -405,24 +405,24 @@
   }
 
   .card_content2--questions {
-    background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/Caja%20de%20opciones.png?raw=true');
-    position: absolute;
+    /*background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/Caja%20de%20opciones.png?raw=true');
+    */position: absolute;
     background-size: cover;
     text-align: center;
     text-decoration: none;
     display: block;
     width: 265px;
     height:220px;
-    margin-top: 10px;
     margin-left: 12px;
   }
 
   .card_content2--pregunta{
-    font-size: 11px;
+    font-size: 18px;
     display: flex;
     text-align: center;
     justify-content: center;
     margin-top: 8px;
+    color: #003ca3;
   }
 
   .card_content2--button1 {
@@ -435,13 +435,13 @@
     width: 243px;
 	  height:46px;
     cursor: pointer;
-	  margin-top: 50px;
+	  margin-top: 15px;
 	  margin-left: 24px;
   }
 
   .card_content2--p1,.card_content2--p2,.card_content2--p3{
     color: black;
-    font-size: 11px;
+    font-size: 15px;
     margin-left: 45px;
     align-items: center;
     height: 45px;
@@ -526,7 +526,7 @@
 
   .tercera-pantalla--textoopcion{
     color: white;
-    font-size: 11px;
+    font-size: 15px;
     margin-left: 50px;
     align-items: center;
     height: 40px;
@@ -576,7 +576,7 @@
 
   .cuarta-pantalla--textoopcion{
     color: white;
-    font-size: 11px;
+    font-size: 15px;
     margin-left: 50px;
     align-items: center;
     height: 45px;
@@ -627,7 +627,7 @@
 
   .quinta-pantalla--textoopcion{
     color: white;
-    font-size: 11px;
+    font-size: 15px;
     margin-left: 50px;
     align-items: center;
     height: 45px;
@@ -750,6 +750,42 @@
     clear: both;
     overflow: auto;
   }
+  .card_body--OPCION1_card {
+	  display: none;
+	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
+	  background-size: cover;
+	  width: 290px;
+    height: 380px;
+    clear: both;
+    overflow: auto;
+  }
+  .card_body--OPCION2_card {
+	  display: none;
+	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
+	  background-size: cover;
+	  width: 290px;
+    height: 380px;
+    clear: both;
+    overflow: auto;
+  }
+  .card_body--OPCION4_card {
+	  display: none;
+	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
+	  background-size: cover;
+	  width: 290px;
+    height: 380px;
+    clear: both;
+    overflow: auto;
+  }
+  .card_body--OPCION3_card {
+	  display: none;
+	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
+	  background-size: cover;
+	  width: 290px;
+    height: 380px;
+    clear: both;
+    overflow: auto;
+  }
   .card_body--fourth_card {
 	  display: none;
 	  background-image: url('https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/fondo-blanco.png?raw=true');
@@ -817,14 +853,14 @@
           </div>
           <div class="card_body--content1">
             <div class="card_body--titulo">
-              ¿Sabes cómo identificar sms <br>fraudulentos?
+              ¿Te gustaría evaluar nuestro<br> flujo de Token Digital?
             </div>
             <div class="botones-start">
               <a id="botones-start1" class="card_content1--button1" onclick="start()">
-                Sé algunas <br>cosas
+                Sí claro
               </a>
               <a id="botones-start2" class="card_content1--button1" onclick="start()">
-                ¿Qué es eso?
+                Afirmacion<br>2
               </a>
             </div>
             <a id="popup__cerrar3" class="card_content1--button2">
@@ -839,19 +875,26 @@
             <a id="popup__cerrar2" class="btn__close2">X</a>
           </div>
           <div class="card_body--content2">
-            <a class="card_content2--sms" id="sms_muestra"></a>
-            <a class="card_content2--questions" id="questions_box">
+            
+            <!--a> class="card_content2--questions" id="questions_box">
               <div class="card_content2--pregunta">¿Sabes cómo identificar sms fraudulentos?</div>
-            </a> 
+            </a--> 
+            <div class="card_content2--pregunta">¿Qué te pareció nuestro<br>flujo de Token Digital?</div>
             <div>
-              <a id="opcion1" class="card_content2--button1" onclick="answer_correct()">
-                <div class="card_content2--p1">No le hago clic al enlace, ni comparto mis datos.</div>
+              <a id="opcion1" class="card_content2--button1" onclick="answer_1()">
+                <div class="card_content2--p1">¡INCREIBLE!.</div>
               </a>
-              <a id="opcion2" class="card_content2--button2" onclick="answer_incorrect_1()">
-                <div class="card_content2--p2">Le hago clic e indico mis datos porque puedo participar en promociones y concursos.</div>
+              <a id="opcion2" class="card_content2--button2" onclick="answer_2()">
+                <div class="card_content2--p2">Muy bueno.</div>
               </a>
-              <a id="opcion3" class="card_content2--button3" onclick="answer_incorrect_2()">
-                <div class="card_content2--p3">Abro el link pero no indico mis datos.</div>
+              <a id="opcion3" class="card_content2--button3" onclick="answer_3()">
+                <div class="card_content2--p3">Aceptable.</div>
+              </a>
+              <a id="opcion4" class="card_content2--button3" onclick="answer_4()">
+                <div class="card_content2--p3">Tuve problemas.</div>
+              </a>
+              <a id="opcion5" class="card_content2--button3" onclick="answer_5()">
+                <div class="card_content2--p3">Muy malo, necesita mejorar.</div>
               </a>
             </div>
           </div>
@@ -861,17 +904,81 @@
         <div class="card_content card_content--left card_content--block  card_body--third_card">
           <div class="tercera-pantalla">
             <div class="tercera-pantalla--check"></div>
-            <div class="tercera-pantalla--texto1">¡Muy bien!</div>
+            <div class="tercera-pantalla--texto1">¡Gracias por responder!</div>
             <div class="tercera-pantalla--opcioncorrecta">
-              <div class="tercera-pantalla--textoopcion">No le hago clic al enlace, ni comparto mis datos.</div>
+              <div class="tercera-pantalla--textoopcion">¡INCREIBLE!.</div>
             </div>
-            <div class="tercera-pantalla--texto2">Interbank solo te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.</div>
+            <div class="tercera-pantalla--texto2">Tu opinión es muy valiosa para nosotros</div>
           </div>
           <div class="card_body--top">
             <a id="entendido1" class="card_content3--button1" ></a>
           </div>
         </div>
         <!--Out Inapp: Tercera pantalla-->
+        <!-- Inapp: OPCION1 pantalla-->
+        <div class="card_content card_content--left card_content--block  card_body--OPCION1_card">
+          <div class="tercera-pantalla">
+            <div class="tercera-pantalla--check"></div>
+            <div class="tercera-pantalla--texto1">¡Gracias por responder!</div>
+            <div class="tercera-pantalla--opcioncorrecta">
+              <div class="tercera-pantalla--textoopcion">Muy bueno.</div>
+            </div>
+            <div class="tercera-pantalla--texto2">Tu opinión es muy valiosa para nosotros</div>
+          </div>
+          <div class="card_body--top">
+            <a id="entendido1" class="card_content3--button1" ></a>
+          </div>
+        </div>
+        <!--Out Inapp: OPCION1 pantalla-->
+        <!-- Inapp: OPCION2 pantalla-->
+        <div class="card_content card_content--left card_content--block  card_body--OPCION2_card">
+          <div class="tercera-pantalla">
+            <div class="tercera-pantalla--check"></div>
+            <div class="tercera-pantalla--texto1">¡Gracias por responder!</div>
+            <div class="tercera-pantalla--opcioncorrecta">
+              <div class="tercera-pantalla--textoopcion">Aceptable.</div>
+            </div>
+            <div class="tercera-pantalla--texto2">Tu opinión es muy valiosa para nosotros</div>
+          </div>
+          <div class="card_body--top">
+            <a id="entendido1" class="card_content3--button1" ></a>
+          </div>
+        </div>
+        <!--Out Inapp: OPCION2 pantalla-->
+        <!--Inapp: OPCION3 pantalla-->
+        <div class="card_content card_content--left card_content--block  card_body--OPCION3_card">
+          <div class="cuarta-pantalla">
+            <div class="cuarta-pantalla--adv"></div>
+            <div class="cuarta-pantalla--texto1">¡Gracias por responder!</div>
+            <div class="cuarta-pantalla--opcionincorrecta">
+              <div class="cuarta-pantalla--textoopcion">Tuve problemas.</div>
+            </div>
+            <div class="cuarta-pantalla--texto2">
+              Lamentamos oir eso<br><br>Haremos lo posible para seguir mejorando
+            </div>
+          </div>
+          <div class="card_body--top">
+            <a id="entendido2" class="card_content3--button2"></a>
+          </div>
+        </div>
+        <!--Out Inapp: OPCION3 pantalla-->
+        <!--Inapp: OPCION4 pantalla-->
+        <div class="card_content card_content--left card_content--block  card_body--OPCION4_card">
+          <div class="cuarta-pantalla">
+            <div class="cuarta-pantalla--adv"></div>
+            <div class="cuarta-pantalla--texto1">¡Gracias por responder!</div>
+            <div class="cuarta-pantalla--opcionincorrecta">
+              <div class="cuarta-pantalla--textoopcion">Muy malo, necesita mejorar.</div>
+            </div>
+            <div class="cuarta-pantalla--texto2">
+              Lamentamos oir eso<br><br>Haremos lo posible para seguir mejorando
+            </div>
+          </div>
+          <div class="card_body--top">
+            <a id="entendido2" class="card_content3--button2"></a>
+          </div>
+        </div>
+        <!--Out Inapp: OPCION4 pantalla-->
         <!--Inapp: Cuarta pantalla-->
         <div class="card_content card_content--left card_content--block  card_body--fourth_card">
           <div class="cuarta-pantalla">
@@ -991,19 +1098,30 @@
     <script>
       //BotonesCambioPantalla
       document.getElementById("opcion1").onclick = function () {
-        answer_correct();
+        answer_1();
         cambioPantalla1();
       };
 
       document.getElementById("opcion2").onclick = function () {
-        answer_incorrect_1();
+        answer_2();
         cambioPantalla2();
       };
 
       document.getElementById("opcion3").onclick = function () {
-        answer_incorrect_2();
+        answer_3();
         cambioPantalla3();
       };
+
+      document.getElementById("opcion4").onclick = function () {
+        answer_4();
+        cambioPantalla4();
+      };
+
+      document.getElementById("opcion5").onclick = function () {
+        answer_5();
+        cambioPantalla5();
+      };
+
 
       function cambioPantalla1() {
         _satellite.track("trackAction", {
@@ -1011,7 +1129,7 @@
             action: {
               action: "click",
               category: "ModalInteractivo",
-              label: "cambio-pantalla-1"
+              label: "respuesta--increible"
             }
           }
         });
@@ -1023,7 +1141,7 @@
             action: {
               action: "click",
               category: "ModalInteractivo",
-              label: "cambio-pantalla-2"
+              label: "respuesta--muybueno"
             }
           }
         });
@@ -1035,7 +1153,29 @@
             action: {
               action: "click",
               category: "ModalInteractivo",
-              label: "cambio-pantalla-3"
+              label: "respuesta--aceptable"
+            }
+          }
+        });
+      }
+      function cambioPantalla4() {
+        _satellite.track("trackAction", {
+          eventProperties: {
+            action: {
+              action: "click",
+              category: "ModalInteractivo",
+              label: "respuesta--tuveproblemas"
+            }
+          }
+        });
+      }
+      function cambioPantalla5() {
+        _satellite.track("trackAction", {
+          eventProperties: {
+            action: {
+              action: "click",
+              category: "ModalInteractivo",
+              label: "respuesta--muymalo"
             }
           }
         });
@@ -1146,34 +1286,72 @@
     var surveyDiv = document.getElementById('banner_body')
     var second = surveyDiv.querySelector('.card_body--second_card');
     var third = surveyDiv.querySelector('.card_body--third_card');
+    var opcion1 = surveyDiv.querySelector('.card_body--OPCION1_card');
+    var opcion2 = surveyDiv.querySelector('.card_body--OPCION2_card');
+    var opcion3 = surveyDiv.querySelector('.card_body--OPCION3_card');
+    var opcion4 = surveyDiv.querySelector('.card_body--OPCION4_card');
     var fourth = surveyDiv.querySelector('.card_body--fourth_card');
     var fifth = surveyDiv.querySelector('.card_body--fifth_card');
     var first = surveyDiv.querySelector('.card_body--main');
 
     var id = parseInt((Math.random() * (999999 - 100000 + 1)), 10) + 100000;
 
-    function answer_correct() {
+    function answer_1() {
       first.style.display = 'none';
       second.style.display = 'none';
       third.style.display = 'block';
+      opcion1.style.display = 'none';
+      opcion2.style.display = 'none';
+      opcion3.style.display = 'none';
+      opcion4.style.display = 'none';
       fourth.style.display = 'none';
       fifth.style.display = 'none';
     }
 
-    function answer_incorrect_1() {
+    function answer_2() {
       first.style.display = 'none';
       second.style.display = 'none';
       third.style.display = 'none';
-      fourth.style.display = 'block';
+      opcion1.style.display = 'block';
+      opcion2.style.display = 'none';
+      opcion3.style.display = 'none';
+      opcion4.style.display = 'none';
+      fourth.style.display = 'none';
       first.style.display = 'none';
     }
 
-	  function answer_incorrect_2() {
+	  function answer_3() {
       first.style.display = 'none';
       second.style.display = 'none';
       third.style.display = 'none';
+      opcion1.style.display = 'none';
+      opcion2.style.display = 'block';
+      opcion3.style.display = 'none';
+      opcion4.style.display = 'none';
       fourth.style.display = 'none';
-      fifth.style.display = 'block';
+      fifth.style.display = 'none';
+    }
+    function answer_4() {
+      first.style.display = 'none';
+      second.style.display = 'none';
+      third.style.display = 'none';
+      opcion1.style.display = 'none';
+      opcion2.style.display = 'none';
+      opcion3.style.display = 'block';
+      opcion4.style.display = 'none';
+      fourth.style.display = 'none';
+      fifth.style.display = 'none';
+    }
+    function answer_5() {
+      first.style.display = 'none';
+      second.style.display = 'none';
+      third.style.display = 'none';
+      opcion1.style.display = 'none';
+      opcion2.style.display = 'none';
+      opcion3.style.display = 'none';
+      opcion4.style.display = 'block';
+      fourth.style.display = 'none';
+      fifth.style.display = 'none';
     }
 
     function start() {
@@ -1182,6 +1360,10 @@
       third.style.display = 'none';
       fourth.style.display = 'none';
       first.style.display = 'none';
+      opcion1.style.display = 'none';
+      opcion2.style.display = 'none';
+      opcion3.style.display = 'none';
+      opcion4.style.display = 'none';
     }
     </script>
 
