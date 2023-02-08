@@ -1,367 +1,362 @@
-<!DOCTYPE html>
-<html lang="es">
- <head>
-    <meta charset="utf-8">
-    <title>[WEB] Modal soloWeb</title>
-
-<style>
-
+<div id="action_insert_16553066210341850">
+  <style>
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
 
-      .overlay_web {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 99;
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+    }
+
+    .popup * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 10px;
+      height: 85%;
+      /*cursor: pointer;*/
+    }
+
+    .popup__wrapper {
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /*width: 304px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      */
+      border-radius: 10px;
+    }
+
+    .popup__header {
+      /*
+      cursor: pointer;
+      background: #021d5f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      */
+    }
+
+    .popup__close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .popup__close::before,
+    .popup__close::after {
+      content: "";
+      display: block;
+      background: #000000;
+      margin-bottom: 4px;
+      border-radius: 2px;
+      width: 15px;
+      height: 4px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      cursor: pointer;
+    }
+
+    .popup__close::before {
+      transform: rotate(45deg) translate(-1px, 10px);
+    }
+
+    .popup__close::after {
+      transform: rotate(-45deg) translate(-10px, -1px);
+    }
+
+    .popup__body {
+      width: 100%;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .popup__title {
+      width: 100%;
+      color: #0f191e;
+      font-family: "Omnes";
+      font-weight: 500;
+      letter-spacing: -1px;
+      text-align: center;
+      margin: 5px 0 10px 0;
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    .popup__content {
+      color: #0f191e;
+      font-size: 16px;
+      font-family: "Omnes";
+      letter-spacing: -0.1px;
+      line-height: 20px;
+      text-align: center;
+      /*width: 90%;*/
+      align-content: center;
+      margin: 0 0 20px 0;
+    }
+
+    .testing {
+      color: #0f191e;
+      font-size: 14px;
+      font-family: "Omnes";
+      letter-spacing: -0.1px;
+      text-align: center;
+      width: 90%;
+      align-content: center;
+      margin: 20px 0 10px 0;
+    }
+
+    #popup__link {
+      text-decoration: underline;
+      color: #05be50;
+    }
+
+    .popup__content strong {
+      font-weight: 600;
+    }
+
+    .popup__btn {
+      width: 50%;
+      color: #ffffff;
+      font-family: "Omnes";
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.09px;
+      text-align: center;
+      text-decoration: none;
+      line-height: 55px;
+      border-radius: 4px;
+      background-color: #05be50;
+      display: block;
+    }
+
+    
+    #image {
+      width: 0;
+      min-width: 508px;
+      max-width: 0%;
+    }
+    img{
+      vertical-align: middle;
+      max-height: 100%;
+      max-width: 1000px;
+    }
+
+
+    @media (min-width: 768px) {
+     .popup__wrapper {
+      min-width: 680px;
+    }
+     .popup__body {
+      padding: 20px 32px 36px;
+    }
+     .popup__title {
+      font-size: 24px;
+      line-height: 28px;
+    }
+     .popup__content {
+      /*width: 80%;*/
+    }
+     #image {
+      width: 0;
+      min-width: 680px;        
+      max-width: 0%;
+    }
+    }
+
+
+
+
+  </style>
+  <script>
+    var popupJS = /** @class */ (function () {
+      function popupJS(options) {
+        options.link.target = options.link.target || "_self";
+        this.elementOverlay = this.overlay();
       }
 
-      .popup_web * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        border: none;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-      }
+      popupJS.prototype.events = function (close) {
+        var body = document.querySelector("body") || document.body;
+        body.classList.add("tg");
+        var overlay = this.elementOverlay;
+        close.addEventListener("click", function (e) {
+          e.preventDefault();
+          overlay.classList.add("animate__fadeOut");
+          overlay.remove();
+          console.log("close test");
+        });
+      };
 
-      .popup__wrapper_web {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 500px;
-        height: 56%;
-        background: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-      }
 
-      .popup__header_web {
-        margin:0;
-      }
-
-      .popup__close_web {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        width: 16px;
-        height: 16px;
-      }
-
-      .popup__close_web::before,
-      .popup__close_web::after {
-        content: "";
-        display: block;
-        background: #000000;
-        margin-bottom: 4px;
-        border-radius: 2px;
-        width: 16px;
-        height: 4px;
-        position: absolute;
-        left: 50%;
-        top: 0;
-        cursor: pointer;
-      }
-
-      .popup__close_web::before {
-        transform: rotate(45deg) translate(-1px, 10px);
-      }
-
-      .popup__close_web::after {
-        transform: rotate(-45deg) translate(-10px, -1px);
-      }
-
-      .popup__body_web {
-        width: 100%;
-        padding: 20px 24px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content:space-between;
-      }
-
-      .popup__footer_web {
-        width: 60%;
-        padding-right: 24px;
-        padding-left: 24px;
-        padding-top: 40px;
-        display: flex;
-        margin-left: 20%;
-        justify-content:center;
-      }
-
-      .popup__divisor1_web {
-        width: 50%;
-        padding-right: 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .popup__divisor2_web {
-        display: flex;
-        align-items: center;
-      }
-
-      .popup__title_web {
-        width: 80%;
-        color: rgb(47, 74, 159);
-        font-family: "Omnes";
-        font-weight: 500;
-        letter-spacing: -1px;
-        text-align: left;
-        margin: 5px 0 10px 0;
-        font-size: 24px;
-        line-height: 25px;
-      }
-
-      .popup__content_web {
-        color: rgba(0, 0, 0, 0.87);
-        font-size: 16px;
-        font-family: "Omnes";
-        letter-spacing: -0.1px;
-        line-height: 20px;
-        text-align: left;
-        width: 80%;
-        align-content: center;
-        padding-top: 10px;
-        margin: 0 0 20px 0;
-      }
-
-      .testing_web {
-        color: #0f191e;
-        font-size: 14px;
-        font-family: "Omnes";
-        letter-spacing: -0.1px;
-        text-align: center;
-        width: 90%;
-        align-content: center;
-        margin: 20px 0 10px 0;
-      }
-
-      #popup__link_web {
-        text-decoration: underline;
-        color: #05be50;
-      }
-
-      .popup__content_web strong {
-        font-weight: 600;
-      }
-
-      .popup__btn_web {
-        width: 50%;
-        color: #ffffff;
-        font-family: "Omnes";
-        font-size: 18px;
-        font-weight: 500;
-        letter-spacing: 0.09px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        border-radius: 4px;
-        background-color: #05be50;
-        display: block;
-      }
-
-      
-
-      img{
-        width: 300px;
-        height: 259px;
-      }
-
-      @media (min-width: 768px) {
-       .popup__wrapper_web {
-        width: 720px;
-        height: 56%;
-      }
-       .popup__body_web {
-        padding: 100px 32px 16px;
-      }
-       .popup__title_web {
-        font-size: 26px;
-        line-height: 28px;
-      }
-
-      }
-     </style>
-      </head>
-    <div>
-  </div>
-    <script>
-      var popupJS = /** @class */ (function () {
-        function popupJS(options) {
-          options.link.target = options.link.target || "_self";
-          this.elementOverlay = this.overlay_web();
-        }
-
-        popupJS.prototype.events = function (close) {
-          var body = document.querySelector("body") || document.body;
-          body.classList.add("tg");
-          var overlay_web = this.elementOverlay;
-          close.addEventListener("click", function (e) {
-            e.preventDefault();
-            overlay_web.classList.add("animate__fadeOut");
-            overlay_web.remove();
-            console.log("close test");
-          });
-        };
-        popupJS.prototype.show = function () {
-          var overlay_web = this.elementOverlay;
-          var popup_web = document.createElement("div");
-          popup_web.classList.add("popup_web");
-          popup_web.innerHTML = `
-<div class="popup__wrapper_web">
-  <div class="popup__header_web">
-    <div id="popup__cerrar" class="popup__close_web"></div>
-      
-  </div>
-  <div class="popup__body_web">
-    <div class="popup__divisor1_web"></div>
-    <div class="popup__divisor2_web">
-      <picture id='pic_web'></picture>
-    </div>
-  </div>
-  <div class="popup__footer_web"></div>
+      popupJS.prototype.show = function () {
+        var overlay = this.elementOverlay;
+        var popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.innerHTML = `
+<div class="popup__wrapper">
+<div class="popup__header">
+  <div id="popup__cerrar" class="popup__close"></div>
+  <picture id='pic'></picture>
+</div>
+<div class="popup__body" style='display:none'>
+</div>
 </div>
 `;
-          var popupBody = popup_web.querySelector(".popup__divisor1_web");
-          var divTitle = document.createElement("div");
-          divTitle.classList.add("popup__title_web");
-          divTitle.innerHTML = options.title;
-          popupBody.appendChild(divTitle);
+        var popupBody = popup.querySelector(".popup__body");
+        var divTitle = document.createElement("div");
+        divTitle.classList.add("popup__title");
+        divTitle.innerHTML = options.title;
+        divTitle.style.display = 'none';
+        popupBody.appendChild(divTitle);
 
-          var popupFooter = popup_web.querySelector(".popup__footer_web");
-          var divFooter = document.createElement("div");
-          popupFooter.appendChild(divFooter);
+        var picture = popup.querySelector("#pic");
+        var divTitle = document.createElement("source");
+        divTitle.srcset = options.imgMobile2x;
+        divTitle.media = '(min-width: 768px)';
 
-          var picture = popup_web.querySelector("#pic_web");
-          var divSource = document.createElement("source");
-          divSource.srcset = options.imgDesktop1x + ' ,'+options.imgDesktop2x + ' 2x';
-          divSource.media = '(min-width: 768px)';
-          var divTitle2 = document.createElement("img");
-          divTitle2.srcset = options.imgMobile1x + ' ,'+options.imgMobile2x + ' 2x';
-          picture.appendChild(divSource);
-          picture.appendChild(divTitle2);
+        var divTitle2 = document.createElement("img");
+        divTitle2.src = options.imgDesktop2x;
+        divTitle2.alt = 'testing image'
+        picture.appendChild(divTitle);
+        picture.appendChild(divTitle2);
 
-          var divContent = document.createElement("div");
-          divContent.classList.add("popup__content_web");
-          divContent.innerHTML = options.content;
-          popupBody.appendChild(divContent);
+        var divContent = document.createElement("div");
+        divContent.classList.add("popup__content");
+        divContent.innerHTML = options.content;
+        popupBody.appendChild(divContent);
 
-          var aLink = document.createElement("a");
-          aLink.classList.add("popup__btn_web");
-          aLink.id = "popup__entendido_web";
-          aLink.href = options.link.url;
-          if (options.link.target) aLink.target = options.link.target;
-          aLink.title = options.link.text;
-          aLink.innerHTML = options.link.text;
-          popupFooter.appendChild(aLink);
+        var aLink = document.createElement("a");
+        aLink.classList.add("popup__btn");
+        aLink.id = "popup__entendido";
+        aLink.href = options.link.url;
+        if (options.link.target) aLink.target = options.link.target;
+        aLink.title = options.link.text;
+        aLink.innerHTML = options.link.text;
+        popupBody.appendChild(aLink);
 
-          var close2 = popup_web.querySelector(".popup__close_web");
-          var close = popup_web.querySelector(".popup__btn_web");
+        var popupHeader= popup.querySelector("#pic")
+        var mapTag = document.createElement("map");
+        mapTag.name= 'image-map';
+        popupHeader.appendChild(mapTag);
 
-          this.events(close2);
-          overlay_web.appendChild(popup_web);
-          document.body.appendChild(overlay_web);
+        var areaTag = document.createElement("area");
+        areaTag.coords= "243,794,86,741";
+        areaTag.shape= "rect";
+        areaTag.alt= "entendido";
+        areaTag.href= "https://empresas.interbank.pe";
+        areaTag.title= "ver";
+        areaTag.target = "_blank";
+        mapTag.appendChild(areaTag);
 
-          this.events(close);
-          overlay_web.appendChild(popup_web);
-          document.body.appendChild(overlay_web);
-        };
-        popupJS.prototype.overlay_web = function () {
-          var overlay_web = document.createElement("div");
-          overlay_web.classList.add("overlay_web");
-          return overlay_web;
-        };
-        return popupJS;
-      })();
-      var options = {
-        title: "<strong>¡Hola,</strong> Gonzalo!",
-        content: "Nos hemos dado cuenta que es tu primera vez iniciando sesión desde este dispositivo. Por tu seguridad, ayúdanos a validar tu identidad.",
-        link: {
-          url:
-            "javascript:void(0)",
-          text: "Continuar",
-        },
-        imgDesktop1x: 'https://empresas.interbank.pe/assets/img/identity-digital-warning.svg',
-    imgDesktop2x: 'https://empresas.interbank.pe/assets/img/identity-digital-warning.svg',
-    imgMobile1x: 'https://empresas.interbank.pe/assets/img/identity-digital-warning.svg',
-    imgMobile2x: 'https://empresas.interbank.pe/assets/img/identity-digital-warning.svg',
+        divTitle2.setAttribute("id", "#image");
+
+
+        var close2 = popup.querySelector(".popup__close");
+
+        this.events(close2);
+        overlay.appendChild(popup);
+        document.body.appendChild(overlay);
+        
+
+        var close = popup.querySelector("#pic");
+        this.events(close);
+
+         console.log(popup);
+
       };
-      var popup_web = new popupJS(options);
-      popup_web.show();
-    </script>
-
-    <script>
-      document.getElementById("popup__cerrar").onclick = function () {
-        popUpClose();
+      popupJS.prototype.overlay = function () {
+        var overlay = document.createElement("div");
+        overlay.classList.add("overlay");
+        return overlay;
       };
+      return popupJS;
+    })();
+    var options = {
+      title: "",
+      content: "",
+      link: {
+        url:
+          "javascript:void(0)",
+        text: "Cambiar ahora",
+      },
+      imgDesktop1x:
+      "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/5d/5d938baa-0969-432c-98f5-7a7556d28c00/img_modal-3_%5Bfraudes%5D-banner-bpi_desktop_1x.png",
+      imgDesktop2x:
+      "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/32/322e185f-b9af-4f3b-a7fb-571628490659/img_modal-3_%5Bfraudes%5D-banner-bpi_desktop_2x.png",
+      imgMobile1x:
+      "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8b/8bc8fa06-0bec-4fc8-88ea-a261e2cdef5f/img_modal-3_%5Bfraudes%5D-banner-bpi_mobile_1x.png",
+      imgMobile2x:
+      "https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f4/f44ffff2-7c88-4ccd-8ded-c9d0b09e9007/img_modal-3_%5Bfraudes%5D-banner-bpi_mobile_2x.png",
+    };
+    var popup = new popupJS(options);
+    popup.show();
+  </script>
+
+  <script>
+    document.getElementById("popup__cerrar").onclick = function () {
+      popUpClose();
+    };
 
 
-      function popUpClose() {
-        _satellite.track("trackAction", {
-          eventProperties: {
-            action: {
-              action: "click",
-              category: "RenovacionDebCN",
-              label: "cerrar"
-            }
+    function popUpClose() {
+      _satellite.track("trackAction", {
+        eventProperties: {
+          action: {
+            action: "click",
+            category: "popUpfraude",
+            label: "cerrar"
           }
-        });
-      }
+        }
+      });
+    }
 
-      //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
-        popUpBtn();
-      };
+    //Boton Entendido
+    document.getElementById("popup__entendido").onclick = function () {
+      popUpBtn();
+    };
 
-         function popUpBtn() {
-        _satellite.track("trackAction", {
-          eventProperties: {
-            action: {
-              action: "click",
-              category: "RenovacionDebCN",
-              label: "entendido"
-            }
+    function popUpBtn() {
+      _satellite.track("trackAction", {
+        eventProperties: {
+          action: {
+            action: "click",
+            category: "popUpfraude",
+            label: "entendido"
           }
-        });
-      }
+        }
+      });
+    }
 
-      function popUpView() {
-        _satellite.track("trackView", {
-          eventProperties: {
-            view: {
-              action: "popupView",
-              category: "RenovacionDebCN"
-            }
-          }
-        });
-      }
 
-      document.body.onload = function() {
-        popUpView();
-      }
+    /* ======================= CTA ========================= */
 
-/*
-      //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
-        popUpBte();
-      };
+    //Boton Entendido
+    document.getElementById("popup__entendido").onclick = function () {
+      popUpBte();
+    };
 
-      function popUpBte() {
-        console.log("-> popUpBte");
-        cordova.InAppBrowser.open(
-          "https://empresas.interbank.pe/login",
-          "_system",
-          "location=yes"
-        );
-      }
-    */
-    </script>
+    function popUpBte() {
+      console.log("-> popUpBte");
+      cordova.InAppBrowser.open("https://empresas.interbank.pe/login","_system","location=yes");
+    }
 
-</html>
+
+  
+  </script>
+</div>
