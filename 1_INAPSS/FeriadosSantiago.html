@@ -99,12 +99,12 @@
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 17px;
+        font-size: 16px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 90%;
+        width: 100%;
         align-content: center;
         margin: 0 0 0px 0;
       }
@@ -147,6 +147,9 @@
 
        #pic_web{
         height: 150px;
+        width: 300px;
+        margin: 20px 0px 20px 0px;
+        background-color: red;
       }
 
       @media (min-width: 768px) {
@@ -161,7 +164,12 @@
         font-size: 32px;
         line-height: 28px;
       }
-
+      #pic_web{
+        height: 160px;
+        width: 350px;
+        margin: 20px 0px 20px 0px;
+        background-color: red;
+      }
 
       }
      </style>
@@ -260,10 +268,10 @@
             "javascript:void(0)",
           text: "Entendido",
         },
-        imgDesktop1x: '',
+        /*imgDesktop1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_imagen-td-cn_desktop_1x.png?raw=true',
         /*imgDesktop1x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_1x.png',*/
     imgDesktop2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_2x.png',
-    imgMobile1x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_1x.png',
+    /*imgMobile1x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_1x.png',*/
     imgMobile2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_2x.png',
       };
       var popup_web = new popupJS(options);
