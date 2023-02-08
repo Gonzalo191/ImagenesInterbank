@@ -670,7 +670,7 @@
     margin-top: 40px;
   }
 
-  .card_content3--button3 {
+  .card_content3--button3,.card_content3--button4,.card_content3--button5 {
 	  background-image: url('https://github.com/AdrianBV25/Inapp_Interactivo_Noviembre/blob/main/boto%CC%81n_entendido.png?raw=true');
 	  background-size: cover;
     text-align: center;
@@ -860,7 +860,7 @@
                 Sí claro
               </a>
               <a id="botones-start2" class="card_content1--button1" onclick="start()">
-                Afirmacion<br>2
+                Por<br>supuesto
               </a>
             </div>
             <a id="popup__cerrar3" class="card_content1--button2">
@@ -926,7 +926,7 @@
             <div class="tercera-pantalla--texto2">Tu opinión es muy valiosa para nosotros</div>
           </div>
           <div class="card_body--top">
-            <a id="entendido1" class="card_content3--button1" ></a>
+            <a id="entendido2" class="card_content3--button2" ></a>
           </div>
         </div>
         <!--Out Inapp: OPCION1 pantalla-->
@@ -941,7 +941,7 @@
             <div class="tercera-pantalla--texto2">Tu opinión es muy valiosa para nosotros</div>
           </div>
           <div class="card_body--top">
-            <a id="entendido1" class="card_content3--button1" ></a>
+            <a id="entendido3" class="card_content3--button3" ></a>
           </div>
         </div>
         <!--Out Inapp: OPCION2 pantalla-->
@@ -958,7 +958,7 @@
             </div>
           </div>
           <div class="card_body--top">
-            <a id="entendido2" class="card_content3--button2"></a>
+            <a id="entendido4" class="card_content3--button4"></a>
           </div>
         </div>
         <!--Out Inapp: OPCION3 pantalla-->
@@ -975,44 +975,11 @@
             </div>
           </div>
           <div class="card_body--top">
-            <a id="entendido2" class="card_content3--button2"></a>
+            <a id="entendido5" class="card_content3--button5"></a>
           </div>
         </div>
         <!--Out Inapp: OPCION4 pantalla-->
-        <!--Inapp: Cuarta pantalla-->
-        <div class="card_content card_content--left card_content--block  card_body--fourth_card">
-          <div class="cuarta-pantalla">
-            <div class="cuarta-pantalla--adv"></div>
-            <div class="cuarta-pantalla--texto1">¡Ups, cuidado!</div>
-            <div class="cuarta-pantalla--opcionincorrecta">
-              <div class="cuarta-pantalla--textoopcion">Le hago clic e indico mis datos porque puedo participar en promociones y concursos.</div>
-            </div>
-            <div class="cuarta-pantalla--texto2">
-              Estos mensaje intentan obtener tu información. <br><br>Recuerda que Interbank solo te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.
-            </div>
-          </div>
-          <div class="card_body--top">
-            <a id="entendido2" class="card_content3--button2"></a>
-          </div>
-        </div>
-        <!--Out Inapp: Cuarta pantalla-->
-        <!--Inapp: Quinta pantalla-->
-        <div class="card_content card_content--left card_content--block  card_body--fifth_card">
-          <div class="quinta-pantalla">
-            <div class="quinta-pantalla--adv"></div>
-            <div class="quinta-pantalla--texto1">¡Ups, cuidado!</div>
-            <div class="quinta-pantalla--opcionincorrecta">
-              <div class="quinta-pantalla--textoopcion">Abro el link pero no indico mis datos.</div>
-            </div>
-            <div class="quinta-pantalla--texto2">
-              Estos mensaje intentan obtener tu información. <br><br>Recuerda que Interbank solo te enviará mensajes desde los números 311 y 31222 nunca te pedirá datos personales.
-            </div>
-          </div>
-          <div class="card_body--top">
-            <a id="entendido3" class="card_content3--button3"></a>
-          </div>
-        </div>
-        <!--Out Inapp: Quinta pantalla-->
+
       </div>
     </div>
   </div>
@@ -1039,6 +1006,8 @@
           aLink.innerHTML = options.link.text;
           popupBody.appendChild(aLink);
 
+          var close9 = popup_web.querySelector(".card_content3--button5");
+          var close8 = popup_web.querySelector(".card_content3--button4");
           var close7 = popup_web.querySelector(".card_content3--button3");
           var close6 = popup_web.querySelector(".card_content3--button2");
           var close5 = popup_web.querySelector(".card_content3--button1");
@@ -1046,6 +1015,14 @@
           var close3 = popup_web.querySelector(".btn__close2");
           var close2 = popup_web.querySelector(".btn__close1");
           var close = popup_web.querySelector(".popup__btn_web");
+
+          this.events(close9);
+          overlay_web.appendChild(popup_web);
+          document.body.appendChild(overlay_web);
+          
+          this.events(close8);
+          overlay_web.appendChild(popup_web);
+          document.body.appendChild(overlay_web);
 
           this.events(close7);
           overlay_web.appendChild(popup_web);
@@ -1239,6 +1216,12 @@
       document.getElementById("entendido3").onclick = function () {
         popUpBtn();
       };
+      document.getElementById("entendido4").onclick = function () {
+        popUpBtn();
+      };
+      document.getElementById("entendido5").onclick = function () {
+        popUpBtn();
+      };
 
          function popUpBtn() {
         _satellite.track("trackAction", {
@@ -1266,23 +1249,7 @@
       document.body.onload = function() {
         popUpView();
       }
-
-/*
-      //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
-        popUpBte();
-      };
-
-      function popUpBte() {
-        console.log("-> popUpBte");
-        cordova.InAppBrowser.open(
-          "https://empresas.interbank.pe/login",
-          "_system",
-          "location=yes"
-        );
-      }
-    */
-
+      
     var surveyDiv = document.getElementById('banner_body')
     var second = surveyDiv.querySelector('.card_body--second_card');
     var third = surveyDiv.querySelector('.card_body--third_card');
@@ -1290,8 +1257,6 @@
     var opcion2 = surveyDiv.querySelector('.card_body--OPCION2_card');
     var opcion3 = surveyDiv.querySelector('.card_body--OPCION3_card');
     var opcion4 = surveyDiv.querySelector('.card_body--OPCION4_card');
-    var fourth = surveyDiv.querySelector('.card_body--fourth_card');
-    var fifth = surveyDiv.querySelector('.card_body--fifth_card');
     var first = surveyDiv.querySelector('.card_body--main');
 
     var id = parseInt((Math.random() * (999999 - 100000 + 1)), 10) + 100000;
@@ -1304,8 +1269,6 @@
       opcion2.style.display = 'none';
       opcion3.style.display = 'none';
       opcion4.style.display = 'none';
-      fourth.style.display = 'none';
-      fifth.style.display = 'none';
     }
 
     function answer_2() {
@@ -1316,8 +1279,6 @@
       opcion2.style.display = 'none';
       opcion3.style.display = 'none';
       opcion4.style.display = 'none';
-      fourth.style.display = 'none';
-      first.style.display = 'none';
     }
 
 	  function answer_3() {
@@ -1328,8 +1289,6 @@
       opcion2.style.display = 'block';
       opcion3.style.display = 'none';
       opcion4.style.display = 'none';
-      fourth.style.display = 'none';
-      fifth.style.display = 'none';
     }
     function answer_4() {
       first.style.display = 'none';
@@ -1339,8 +1298,6 @@
       opcion2.style.display = 'none';
       opcion3.style.display = 'block';
       opcion4.style.display = 'none';
-      fourth.style.display = 'none';
-      fifth.style.display = 'none';
     }
     function answer_5() {
       first.style.display = 'none';
@@ -1350,16 +1307,12 @@
       opcion2.style.display = 'none';
       opcion3.style.display = 'none';
       opcion4.style.display = 'block';
-      fourth.style.display = 'none';
-      fifth.style.display = 'none';
     }
 
     function start() {
       first.style.display = 'none';
       second.style.display = 'block';
       third.style.display = 'none';
-      fourth.style.display = 'none';
-      first.style.display = 'none';
       opcion1.style.display = 'none';
       opcion2.style.display = 'none';
       opcion3.style.display = 'none';

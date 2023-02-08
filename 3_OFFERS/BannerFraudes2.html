@@ -197,7 +197,7 @@
             e.preventDefault();
             overlay.classList.add("animate__fadeOut");
             overlay.remove();
-            console.log("close test");
+            console.log("cerrar_modal");
           });
         };
 
@@ -275,7 +275,20 @@
           var close = popup.querySelector("#pic");
           this.events(close);
 
-           console.log(popup);
+          console.log(popup);
+          console.log("mostrar_modal1");
+          function popUpView() {
+            console.log("mostrar_modal");
+            _satellite.track("trackView", {
+              eventProperties: {
+                view: {
+                  action: "popupView",
+                  category: "popUpFraude2"
+                }
+              }
+            });
+          }
+          popUpView();
 
         };
         popupJS.prototype.overlay = function () {
@@ -310,15 +323,28 @@
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
-
+      document.getElementById("pic").onclick = function () {
+        popUpClose2();
+      };
 
       function popUpClose() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "popUpfraude",
+              category: "fraude-notecontactaremos",
               label: "cerrar"
+            }
+          }
+        });
+      }
+      function popUpClose2() {
+        _satellite.track("trackAction", {
+          eventProperties: {
+            action: {
+              action: "click",
+              category: "fraude-notecontactaremos",
+              label: "entendido"
             }
           }
         });
@@ -339,6 +365,12 @@
             }
           }
         });
+      }
+
+      
+
+      document.body.onload = function() {
+        popUpView();
       }
 
 
