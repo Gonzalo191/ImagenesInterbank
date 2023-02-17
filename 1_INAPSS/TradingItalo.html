@@ -234,6 +234,19 @@
           this.events(close);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
+
+          function popUpView() {
+            _satellite.track("trackView", {
+              eventProperties: {
+                view: {
+                  action: "popupView",
+                  category: "CampañaTrading"
+                }
+              }
+            });
+          }
+          popUpView();
+
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -292,21 +305,6 @@
             }
           }
         });
-      }
-
-      function popUpView() {
-        _satellite.track("trackView", {
-          eventProperties: {
-            view: {
-              action: "popupView",
-              category: "CampañaTrading"
-            }
-          }
-        });
-      }
-
-      document.body.onload = function() {
-        popUpView();
       }
 
 /*

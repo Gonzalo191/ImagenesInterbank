@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal soloWeb</title>
+    <title>[WEB] Modal Feriados</title>
 
 <style>
 
@@ -173,7 +173,7 @@
 
       }
      </style>
-      </head>
+      
     <div>
   </div>
     <script>
@@ -252,6 +252,20 @@
           this.events(close);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
+
+          function popUpView() {
+            console.log("mostrar_modal");
+            _satellite.track("trackView", {
+              eventProperties: {
+                view: {
+                  action: "popupView",
+                  category: "ModalFeriados-CreditosBPE"
+                }
+              }
+            });
+          }
+          popUpView();
+
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -314,20 +328,11 @@
         });
       }
 
-      function popUpView() {
-        _satellite.track("trackView", {
-          eventProperties: {
-            view: {
-              action: "popupView",
-              category: "ModalFeriados-CreditosBPE"
-            }
-          }
-        });
-      }
-
+      
+/*
       document.body.onload = function() {
         popUpView();
-      }
+      }*/
 
 /*
       //Boton Entendido
