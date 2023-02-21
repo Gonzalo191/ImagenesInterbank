@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal soloWeb</title>
+    <title>[WEB] Modal Recaudación</title>
 
 <style>
 
@@ -234,6 +234,18 @@
           this.events(close);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
+
+          function popUpView() {
+            _satellite.track("trackView", {
+              eventProperties: {
+                view: {
+                  action: "popupView",
+                  category: "CampañaRecaudacion"
+                }
+              }
+            });
+          }
+          popUpView();
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -244,16 +256,16 @@
       })();
       var options = {
         title: "<strong>¡Gestiona tus cobranzas ágilmente con el servicio de Recaudación!</strong>",
-        content: "¿Sabías que puedes <b>recaudar los pagos</b> de tus clientes en tus cuentas Interbank con nuestro servicio de Recaudación?",
+        content: "Puedes recibir los pagos de tus clientes en tus cuentas Interbank con nuestro servicio de Recaudación",
         link: {
           url:
-            "javascript:void(0)",
+            "https://interbank.pe/inscripcion/registro-de-recaudacion#!terminos-y-condiciones?mcid=web-empresas:target:2022-12_bpi_recaudacion-inapps_conversion:personalizada:popup:1",
           text: "Estoy Interesado",
         },
-        imgDesktop1x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_1x.png',
-    imgDesktop2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_2x.png',
-    imgMobile1x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_1x.png',
-    imgMobile2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_2x.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/37/377e8e11-08ab-45ea-abd0-06d5576aee1a/desktop1.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/42/4200e10a-3830-48c9-84ce-0111ba489d96/desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/3c/3ccc6495-9f5e-4d4c-803b-ba538c588ed6/mobile1.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/1a/1a3ab999-d73a-45c8-8d55-f4ec8642dbd4/mobile2.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -278,36 +290,26 @@
       }
 
       //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
+      var boton = document.getElementById("popup__entendido_web");
+      boton.addEventListener("click",function () {
+        window.open(boton.href);
         popUpBtn();
-      };
+      });
 
          function popUpBtn() {
-        _satellite.track("trackAction", {
-          eventProperties: {
-            action: {
-              action: "click",
-              category: "CampañaRecaudacion",
-              label: "entendido"
+         console.log("test_boton") 
+          _satellite.track("trackAction", {
+            eventProperties: {
+              action: {
+                action: "click",
+                category: "CampañaRecaudacion",
+                label: "EstoyInteresado"
+              }
             }
-          }
-        });
+          });
       }
 
-      function popUpView() {
-        _satellite.track("trackView", {
-          eventProperties: {
-            view: {
-              action: "popupView",
-              category: "CampañaRecaudacion"
-            }
-          }
-        });
-      }
 
-      document.body.onload = function() {
-        popUpView();
-      }
 
 /*
       //Boton Entendido
