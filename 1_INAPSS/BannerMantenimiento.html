@@ -92,7 +92,7 @@ html {
 } 
 
 .banner-credits-bpe { 
-    background-color: #5cafea;
+    background-color: #00a94f;
     color: #fff;
 } 
 
@@ -150,8 +150,14 @@ img {
 
 .banner-credits-bpe--caption { 
     width: 636px; 
+    font-size: 18px; 
+    line-height: normal;
+    letter-spacing: 1px;
+} 
+.banner-credits-bpe--caption-content { 
+    width: 636px; 
     margin: 0 24px; 
-    font-size: 20px; 
+    font-size: 16px; 
     line-height: normal;
     letter-spacing: 1px;
 } 
@@ -165,8 +171,13 @@ img {
 @media (max-width: 1245px){ 
   .banner-credits-bpe--caption { 
     width: 570px; 
+    font-size: 16px;
+    letter-spacing: 1px;
+  } 
+  .banner-credits-bpe--caption-content { 
+    width: 570px; 
     margin: 0 4px; 
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 1px;
   } 
 }     
@@ -374,8 +385,8 @@ button,[type="button"]  {
 }
 
 #imgBanner{
-    height: 78px;
-    width: 120px;
+    height: 90px;
+    width: 90px;
     margin-right: 10px;
 }
 
@@ -383,18 +394,16 @@ button,[type="button"]  {
 
     <div class="banner-credits-bpe snipcss-CeVJs">
       <div class="banner-credits-bpe--content d-flex align-items-center justify-content-between mx-auto">
-        <img id="imgBanner" alt="credits-bpe" src="https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/d9/d928439f-c146-4a7c-8192-57f6cf3bf2b6/Desktop1.png">
-        <div class="banner-credits-bpe--caption fweight-400">
-          <span class="fweight-600">
-            ¡Adelanta el cobro de tus ventas al crédito sin evaluación previa y ten el efectivo que necesitas, hoy!
-          </span>
-            <!--br>Con Factura Negociable, ten tu dinero adelantado hoy mismo.-->
+        <img id="imgBanner" alt="credits-bpe" src="https://eu1mktprdstg001.blob.core.windows.net/appinterbank/icons/icon-error.png">
+        <div class="banner-credits-bpe--caption-content fweight-400">
+          <span class="banner-credits-bpe--caption fweight-600">¡Aviso Importante! Trabajamos para mejorar tu experiencia.</span>
+            <br>Este 05 de marzo de 3:00 am a 5:00 am la Banca por Internet Empresas, no estará disponible por mantenimiento. Gracias por tu comprensión.
         </div>
-        <ibk-button class="ibk-button ibk-button--large m-0" type="button" style="pointer-events: none;">
+        <!--ibk-button class="ibk-button ibk-button--large m-0" type="button" style="pointer-events: none;">
           <a href="https://bancacomercial.interbank.pe/factoring/solicitud/simulador?mcid=web-empresas:target:2023-03_bpi-web_campaña-escolar-bpi_conversion:personalizada:banner:1" target="_blank">
           <button mat-button="" mattooltipclass="tooltip" class="mat-button mat-raised-button" id="pagalo" type="button" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
             <span class="mat-button-wrapper" id="textoboton">
-              Solicitalo aquí
+              Cotiza aquí
             </span>
             <div class="mat-button-ripple mat-ripple" matripple="">
             </div>
@@ -402,7 +411,7 @@ button,[type="button"]  {
             </div>
           </button>
           </a>
-        </ibk-button>
+        </ibk-button-->
       </div>
     </div>
 
