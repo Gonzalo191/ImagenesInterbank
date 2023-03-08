@@ -2,14 +2,20 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Recaudación</title>
+    <title>[WEB] Modal Mantenimiento</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-      
+
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
+      }
+
       .overlay_web {
         position: fixed;
         top: 0;
@@ -20,11 +26,6 @@
         z-index: 99;
       }
 
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
-        }
       .popup_web * {
         box-sizing: border-box;
         margin: 0;
@@ -39,7 +40,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 304px;
+        width: 400px;
+        height: 40%;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
@@ -49,7 +51,7 @@
         margin:0;
       }
 
-      .popup__close_web {
+      /*.popup__close_web {
         position: absolute;
         top: 8px;
         right: 8px;
@@ -61,7 +63,7 @@
       .popup__close_web::after {
         content: "";
         display: block;
-        background: #ffffff;
+        background: #000000;
         margin-bottom: 4px;
         border-radius: 2px;
         width: 16px;
@@ -78,26 +80,27 @@
 
       .popup__close_web::after {
         transform: rotate(-45deg) translate(-10px, -1px);
-      }
+      }*/
 
       .popup__body_web {
         width: 100%;
-        padding: 20px 24px;
+        padding: 20px 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        width: 100%;
-        color: #0f191e;
+        color: rgb(47, 74, 159);
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
         margin: 5px 0 15px 0;
-        font-size: 24px;
+        font-size: 32px;
         line-height: 25px;
+        width: 85%;
+        padding: 0px 0px 8px;
       }
 
       .popup__content_web {
@@ -107,23 +110,11 @@
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 90%;
-        align-content: center;
-        margin: 0 0 20px 0;
-      }
-
-      .popup__botones{
         width: 100%;
-        height: 47px;
-        font-family: "Omnes";
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        align-content: center;
+        margin: 0 0 0px 0;
       }
-
+      
       .testing_web {
         color: #0f191e;
         font-size: 14px;
@@ -145,95 +136,50 @@
       }
 
       .popup__btn_web {
-        width: 45%;
+        width: 30%;
         color: #ffffff;
         font-family: "Omnes";
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 500;
         letter-spacing: 0.09px;
         text-align: center;
         text-decoration: none;
         line-height: 45px;
-        border-radius: 4px;
+        border-radius: 45px;
         background-color: #05be50;
         display: block;
-      }
-      .popup__btn_web_2 {
-        width: 45%;
-        color: #000000;
-        border-color: #000000;
-        font-family: "Omnes";
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.09px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        border-radius: 4px;
-        background-color: #ffffff;
-        display: block;
-        border: 0.5px solid rgb(182, 182, 182);
+        margin-top: 5%;
       }
 
        #pic_web{
-        height: 84px;
+        /*height: 150px;
+        width: 300px;*/
+        margin: 20px 0px 20px 0px;
+        /*background-color: red;*/
       }
 
       @media (min-width: 768px) {
        .popup__wrapper_web {
-        width: 416px;
+        /*width: 600px;*/
+        height: 40%;
       }
        .popup__body_web {
-        padding: 20px 32px 36px;
+        padding: 20px 40px 20px;
       }
        .popup__title_web {
-        font-size: 28px;
+        font-size: 32px;
         line-height: 28px;
       }
-       .popup__botones{
-        width: 90%;
-        font-family: "Omnes";
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-      }
-      .popup__btn_web {
-        width: 45%;
-        color: #ffffff;
-        font-family: "Omnes";
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.09px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        border-radius: 4px;
-        background-color: #05be50;
-        display: block;
-      }
-      .popup__btn_web_2 {
-        width: 45%;
-        color: #000000;
-        border-color: #000000;
-        font-family: "Omnes";
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.09px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        border-radius: 4px;
-        background-color: #ffffff;
-        display: block;
-        border: 0.5px solid rgb(182, 182, 182);
+      #pic_web{
+        /*height: 160px;
+        width: 350px;*/
+        margin: 20px 0px 20px 0px;
+        /*background-color: red;*/
       }
 
       }
      </style>
-      </head>
+      
     <div>
   </div>
     <script>
@@ -262,13 +208,18 @@
 <div class="popup__wrapper_web">
   <div class="popup__header_web">
     <div id="popup__cerrar" class="popup__close_web"></div>
-    <picture id='pic_web'></picture>
-  </div>
+    </div>
   <div class="popup__body_web">
+      <picture id='pic_web'></picture>
   </div>
 </div>
 `;
           var popupBody = popup_web.querySelector(".popup__body_web");
+          /*var divImg = document.createElement("div");
+          divImg.classList.add("popup__img_web");
+          divImg.srcset = options.imgTest;
+          popupBody.appendChild(divImg);*/
+
           var divTitle = document.createElement("div");
           divTitle.classList.add("popup__title_web");
           divTitle.innerHTML = options.title;
@@ -288,36 +239,18 @@
           divContent.innerHTML = options.content;
           popupBody.appendChild(divContent);
 
-          var botones = document.createElement("div");
-          botones.classList.add("popup__botones");
-          popupBody.appendChild(botones);
-
-          var aLink = document.createElement("a");
+          /*var aLink = document.createElement("a");
           aLink.classList.add("popup__btn_web");
           aLink.id = "popup__entendido_web";
           aLink.href = options.link.url;
           if (options.link.target) aLink.target = options.link.target;
           aLink.title = options.link.text;
           aLink.innerHTML = options.link.text;
-          botones.appendChild(aLink);
+          popupBody.appendChild(aLink);*/
 
-          var aLink2 = document.createElement("a");
-          aLink2.classList.add("popup__btn_web_2");
-          aLink2.id = "popup__entendido_web_2";
-          aLink2.href = options.link.url2;
-          if (options.link.target) aLink2.target = options.link.target;
-          aLink2.title = options.link.text2;
-          aLink2.innerHTML = options.link.text2;
-          botones.appendChild(aLink2);
-
-          var close3 = popup_web.querySelector(".popup__btn_web_2");
           var close2 = popup_web.querySelector(".popup__close_web");
           var close = popup_web.querySelector(".popup__btn_web");
 
-          this.events(close3);
-          overlay_web.appendChild(popup_web);
-          document.body.appendChild(overlay_web);
-          
           this.events(close2);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
@@ -327,16 +260,18 @@
           document.body.appendChild(overlay_web);
 
           function popUpView() {
+            console.log("mostrar_modal");
             _satellite.track("trackView", {
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "CampañaRecaudacion"
+                  category: "ModalFeriados-CreditosBPE"
                 }
               }
             });
           }
           popUpView();
+
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -346,51 +281,34 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>Gestiona tus cobranzas con el servicio de Recaudación</strong>",
-        content: "Podrás recibir los pagos de tus clientes en tus cuentas Interbank de manera ágil",
+        title: "<strong>Estamos en mantenimiento </strong>",
+        content: "La Banca por Internet Empresas se encuentra en mantenimiento de<b> 3:00 a.m. a 5:00 a.m.</b>. Gracias por la comprensión.",
         link: {
           url:
-            "https://interbank.pe/inscripcion/registro-de-recaudacion?mcid=web-empresas:target:2022-12_bpi_recaudacion-inapps_conversion:personalizada:popup:1",
-          text: "Estoy interesado",
-          text2: "Ahora no",
-          url2:"javascript:void(0)",
+            "javascript:void(0)",
+          text: "Entendido",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/37/377e8e11-08ab-45ea-abd0-06d5576aee1a/desktop1.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/42/4200e10a-3830-48c9-84ce-0111ba489d96/desktop2.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/3c/3ccc6495-9f5e-4d4c-803b-ba538c588ed6/mobile1.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/1a/1a3ab999-d73a-45c8-8d55-f4ec8642dbd4/mobile2.png',
+        imgDesktop1x: 'https://eu1mktprdstg001.blob.core.windows.net/appinterbank/icons/icon-tiempo.png',
+    /*imgDesktop2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_2x.png',*/
+    imgMobile1x: 'https://eu1mktprdstg001.blob.core.windows.net/appinterbank/icons/icon-tiempo.png',
+    /*imgMobile2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_2x.png',*/
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
-      document.getElementById("popup__entendido_web_2").onclick = function () {
-        popUpClose();
-      };
-
-      function popUpClose() {
-        _satellite.track("trackAction", {
-          eventProperties: {
-            action: {
-              action: "click",
-              category: "CampañaRecaudacion",
-              label: "cerrar-ahorano"
-            }
-          }
-        });
-      }
-
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
 
+
       function popUpClose() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaRecaudacion",
+              category: "ModalFeriados-CreditosBPE",
               label: "cerrar"
             }
           }
@@ -398,26 +316,27 @@
       }
 
       //Boton Entendido
-      var boton = document.getElementById("popup__entendido_web");
-      boton.addEventListener("click",function () {
-        window.open(boton.href);
+      document.getElementById("popup__entendido_web").onclick = function () {
         popUpBtn();
-      });
+      };
 
          function popUpBtn() {
-         console.log("test_boton") 
-          _satellite.track("trackAction", {
-            eventProperties: {
-              action: {
-                action: "click",
-                category: "CampañaRecaudacion",
-                label: "EstoyInteresado"
-              }
+        _satellite.track("trackAction", {
+          eventProperties: {
+            action: {
+              action: "click",
+              category: "ModalFeriados-CreditosBPE",
+              label: "entendido"
             }
-          });
+          }
+        });
       }
 
-
+      
+/*
+      document.body.onload = function() {
+        popUpView();
+      }*/
 
 /*
       //Boton Entendido

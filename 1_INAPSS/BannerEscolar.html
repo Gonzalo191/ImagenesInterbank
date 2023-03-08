@@ -151,7 +151,7 @@ img {
 .banner-credits-bpe--caption { 
     width: 636px; 
     margin: 0 24px; 
-    font-size: 20px; 
+    font-size: 19px; 
     line-height: normal;
     letter-spacing: 1px;
 } 
@@ -195,6 +195,9 @@ img {
 
 .fweight-600 { 
     font-weight: 600!important;
+} 
+.fweight-800 { 
+    font-weight: 1000!important;
 } 
 
 button { 
@@ -385,10 +388,14 @@ button,[type="button"]  {
       <div class="banner-credits-bpe--content d-flex align-items-center justify-content-between mx-auto">
         <img id="imgBanner" alt="credits-bpe" src="https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/d9/d928439f-c146-4a7c-8192-57f6cf3bf2b6/Desktop1.png">
         <div class="banner-credits-bpe--caption fweight-400">
+    
           <span class="fweight-600">
-            ¡Adelanta el cobro de tus ventas al crédito sin evaluación previa y ten el efectivo que necesitas, hoy!
+            ¡Adelanta el cobro de tus ventas al crédito 
+            <span class="fweight-800">
+                sin evaluación previa!
+            </span>
           </span>
-            <!--br>Con Factura Negociable, ten tu dinero adelantado hoy mismo.-->
+            <br>Con Factura Negociable, ten tu dinero adelantado hoy mismo.
         </div>
         <ibk-button class="ibk-button ibk-button--large m-0" type="button" style="pointer-events: none;">
           <a href="https://bancacomercial.interbank.pe/factoring/solicitud/simulador?mcid=web-empresas:target:2023-03_bpi-web_campaña-escolar-bpi_conversion:personalizada:banner:1" target="_blank">
@@ -407,14 +414,15 @@ button,[type="button"]  {
     </div>
 
 <script type="text/javascript">
+    
   
    //Boton Entendido
       document.getElementById("pagalo").onclick = function () {
         console.log('click boton')
-        popUpBtn();
+        popUpBtnEscolar();
       };
 
-      function popUpBtn() {
+      function popUpBtnEscolar() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
@@ -426,6 +434,18 @@ button,[type="button"]  {
         });
       }
 
+    function popUpViewBanner() {
+        console.log("mostrar_modal");
+        _satellite.track("trackView", {
+            eventProperties: {
+            view: {
+                action: "popupView",
+                category: "banner-escolar-FN"
+            }
+            }
+        });
+    }
+    popUpViewBanner();
 
 </script>
    
