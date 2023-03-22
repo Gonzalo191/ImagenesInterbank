@@ -2,18 +2,14 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Migracion CN</title>
+    <title>[WEB] Modal soloWeb</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
-        } 
+
       .overlay_web {
         position: fixed;
         top: 0;
@@ -37,8 +33,7 @@
         position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 304px;
+        transform: translate(-50%, -50%);  
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
@@ -78,39 +73,40 @@
       .popup__close_web::after {
         transform: rotate(-45deg) translate(-10px, -1px);
       }
-
+/*
       .popup__body_web {
         width: 100%;
-        padding: 20px 24px;
+        padding: 70px 20px 24px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        width: 100%;
-        color: #0f191e;
+        color: rgb(47, 74, 159);
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
-        margin: 5px 0 15px 0;
-        font-size: 24px;
+        margin: 5px 0 10px 0;
+        font-size: 32px;
         line-height: 25px;
+        width: 85%;
+        padding: 0px 0px 8px;
       }
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 15px;
+        font-size: 17px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 96%;
+        width: 90%;
         align-content: center;
         margin: 0 0 20px 0;
       }
-
+      
       .testing_web {
         color: #0f191e;
         font-size: 14px;
@@ -132,7 +128,7 @@
       }
 
       .popup__btn_web {
-        width: 50%;
+        width: 30%;
         color: #ffffff;
         font-family: "Omnes";
         font-size: 18px;
@@ -144,6 +140,7 @@
         border-radius: 4px;
         background-color: #05be50;
         display: block;
+        margin-top: 5%;
       }
 
        #pic_web{
@@ -152,18 +149,125 @@
 
       @media (min-width: 768px) {
        .popup__wrapper_web {
-        width: 416px;
+        width: 600px;
+        height: 44%;
       }
        .popup__body_web {
-        padding: 20px 32px 36px;
+        padding: 85px 40px 40px;
       }
        .popup__title_web {
-        font-size: 28px;
+        font-size: 32px;
         line-height: 28px;
       }
 
       }
+*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+
+      @font-face {
+        font-family: 'Omnes';
+        src: url(../fonts/Omnes.ttf);
+      }
+
+      #MAT-DIALOG-CONTAINER_1 {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 11px 15px -7px, rgba(0, 0, 0, 0.14) 0px 24px 38px 3px, rgba(0, 0, 0, 0.12) 0px 9px 46px 8px;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.87);
+            height: 484.812px;
+            width: 600px;
+            padding: 64px 64px 0px;
+            font-family: "Omnes";
+        }
+
+        .titulo{
+            /*background-color: aqua;*/
+            height: 82px;
+            padding: 0px 16px 0px;
+            font-size: 25px;
+            color: rgb(47, 74, 159);
+            font-family: "Omnes";
+        }
+
+        .texto{
+          /*background-color: rgb(0, 255, 0);*/
+          font-size: 16px;
+          padding: 0px 16px 16px;
+        }
+        
+        .imagenes{
+          /*background-color: blue;*/
+          display: flex;
+          flex-direction: row;
+          height: 286px;
+          align-items: center;
+          justify-content: center;
+        }
+        .imagenes div{
+          /*background-color: aqua;*/
+        }
+        .botones{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 210px;
+          width: 100%;
+        }
+        .b1 {
+          width: 176px;
+          height: 48px;
+          color: #ffffff;
+          font-family: "Omnes";
+          font-size: 12px;
+          font-weight: 100;
+          text-align: center;
+          text-decoration: none;
+          border-radius: 45px;
+          background: #00a94f;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          margin-top: 5%;
+        } 
+        .b2{
+          text-align: center;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+        }
+        .subtexto{
+            font-size: 12px;
+            color:rgb(155, 155, 155);
+            margin-bottom: 16px;
+        }
+        
+        #IMG_1{
+            height: 288px;
+        }
+        #IMG_2{
+            height: 71px;
+            width: 85px;
+        }
+
+        #apple, #google{
+            color: #ffffff;
+            padding: 5px ;
+        }
+
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
      </style>
+     <script src="https://kit.fontawesome.com/f90a82ec42.js" crossorigin="anonymous"></script>
       </head>
     <div>
   </div>
@@ -192,28 +296,55 @@
           popup_web.innerHTML = `
 <div class="popup__wrapper_web">
   <div class="popup__header_web">
-    <div id="popup__cerrar" class="popup__close_web"></div>
+    <div id="popup__cerrar9999" class="popup__close_web"></div>
     <picture id='pic_web'></picture>
   </div>
   <div class="popup__body_web">
   </div>
+  <div id="MAT-DIALOG-CONTAINER_1">
+    <div class="titulo">
+      !Hazlo desde tu <br><b>App Interbank Empresas!</b>
+    </div>
+      <div class="texto">
+          Ingresa a Pagos SUNAT desde tu App y disfruta el banco en tus manos.
+        </div>
+        <div class="imagenes">
+          <div class="imagen">
+            <img alt="transferencia entre cuentas.GIF" src="https://empresas.interbank.pe/assets/gifs/sunat.gif" id="IMG_1">
+          </div>
+          <div class="botones">
+            <img alt="Interbank logo" src="https://empresas.interbank.pe/assets/img/ibk-app-logo.svg" width="20%" id="IMG_2">
+            <div class="subtexto">
+                ¿No tienes el App? Descárgala aquí:
+            </div>
+            <div class="boton_1">
+              <a class="b1" href="https://apps.apple.com/pe/app/interbank-empresas/id1460901367" target="”_blank”">
+                <i id="apple" class="fa-brands fa-apple fa-2xl"> | </i>
+                <span class="b2">
+                  Disponible en<br>App Store
+                </span>
+              </a>
+            </div>
+            <div class="boton_2">
+              <a class="b1" href="https://play.google.com/store/apps/details?id=pe.interbank.bie&amp;hl=es_PE&amp;gl=US" target="”_blank”">
+                <i class="fa-brands fa-google-play fa-2xl"> | </i>
+                <span class="b2">
+                  Disponible en<br>Google Play
+                </span>
+              </a>
+            </div>
+        </div>
+      </div>
+  </div>
 </div>
 `;
-          var popupBody = popup_web.querySelector(".popup__body_web");
+
+         var popupBody = popup_web.querySelector(".popup__body_web");
           var divTitle = document.createElement("div");
           divTitle.classList.add("popup__title_web");
           divTitle.innerHTML = options.title;
           popupBody.appendChild(divTitle);
-
-          var picture = popup_web.querySelector("#pic_web");
-          var divSource = document.createElement("source");
-          divSource.srcset = options.imgDesktop1x + ' ,'+options.imgDesktop2x + ' 2x';
-          divSource.media = '(min-width: 768px)';
-          var divTitle2 = document.createElement("img");
-          divTitle2.srcset = options.imgMobile1x + ' ,'+options.imgMobile2x + ' 2x';
-          picture.appendChild(divSource);
-          picture.appendChild(divTitle2);
-
+         
           var divContent = document.createElement("div");
           divContent.classList.add("popup__content_web");
           divContent.innerHTML = options.content;
@@ -228,33 +359,13 @@
           aLink.innerHTML = options.link.text;
           popupBody.appendChild(aLink);
 
-          var close2 = popup_web.querySelector(".popup__close_web");
+
           var close = popup_web.querySelector(".popup__btn_web");
 
-          this.events(close2);
-          overlay_web.appendChild(popup_web);
-          document.body.appendChild(overlay_web);
 
           this.events(close);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
-
-          var IDusuario = _satellite.getVar('userId');
-
-          function popUpView() {
-            _satellite.track("trackView", {
-              eventProperties: {
-                view: {
-                  action: "popupView",
-                  category: "Migracion-CuentaNegocio",
-                  userId: IDusuario,
-                }
-              }
-            });
-          }
-          
-          popUpView();
-
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -264,23 +375,23 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>¡Migra a tu nueva Tarjeta de Debito Cuenta Negocios!</strong>",
-        content: "Con la nueva Tarjeta de Débito Cuenta Negocios <b>recibirás notificaciones por todas tus operaciones.</b><br>Renuévala en cualquier Tienda Interbank <b>sin costo</b>.",
+        title: "",
+        content: "",
         link: {
           url:
             "javascript:void(0)",
-          text: "Entendido",
+          text: "",
         },
-        imgDesktop1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_desktop_1x.png?raw=true',
-    imgDesktop2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_desktop_2x.png?raw=true',
-    imgMobile1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_mobile_1x.png?raw=true',
-    imgMobile2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_mobile_2x.png?raw=true',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
+      
+      
+
+      //Cerrar
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -291,45 +402,53 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "Migracion-CuentaNegocio",
+              category: "ModalInteractivo",
               label: "cerrar"
             }
           }
         });
       }
 
-      //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
-        popUpBtn();
+      //Botones Start
+      document.getElementById("botones-start1").onclick = function () {
+        start()
+        popUpBtnStart();
+      };
+      document.getElementById("botones-start2").onclick = function () {
+        start()
+        popUpBtnStart();
       };
 
-         function popUpBtn() {
+         function popUpBtnStart() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "Migracion-CuentaNegocio",
-              label: "entendido"
+              category: "ModalInteractivo",
+              label: "inicio-encuesta"
             }
           }
         });
       }
 
-/*
-      //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
-        popUpBte();
-      };
+      
 
-      function popUpBte() {
-        console.log("-> popUpBte");
-        cordova.InAppBrowser.open(
-          "https://empresas.interbank.pe/login",
-          "_system",
-          "location=yes"
-        );
+      function popUpView() {
+        _satellite.track("trackView", {
+          eventProperties: {
+            view: {
+              action: "popupView",
+              category: "ModalInteractivo"
+            }
+          }
+        });
       }
-    */
+
+      document.body.onload = function() {
+        popUpView();
+      }
+      
+    
     </script>
 
 </html>

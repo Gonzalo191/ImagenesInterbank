@@ -2,18 +2,18 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Migracion CN</title>
+    <title>[WEB] Modal Trading</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
+
       @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
-        } 
+        font-family: 'Omnes';
+        src: url(../fonts/Omnes.ttf);
+      }
       .overlay_web {
         position: fixed;
         top: 0;
@@ -101,12 +101,12 @@
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 15px;
+        font-size: 16px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 96%;
+        width: 90%;
         align-content: center;
         margin: 0 0 20px 0;
       }
@@ -246,7 +246,7 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "Migracion-CuentaNegocio",
+                  category: "CamapañaTrading-2",
                   userId: IDusuario,
                 }
               }
@@ -264,17 +264,17 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>¡Migra a tu nueva Tarjeta de Debito Cuenta Negocios!</strong>",
-        content: "Con la nueva Tarjeta de Débito Cuenta Negocios <b>recibirás notificaciones por todas tus operaciones.</b><br>Renuévala en cualquier Tienda Interbank <b>sin costo</b>.",
+        title: "<strong>¡Tienes un tipo de cambio especial!</strong>",
+        content: "Realiza tus operaciones de cambio desde tu Banca por Internet Empresas o App Empresas y aprovecha el <b>precio preferencial</b> que tenemos para ti.",
         link: {
           url:
             "javascript:void(0)",
           text: "Entendido",
         },
-        imgDesktop1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_desktop_1x.png?raw=true',
-    imgDesktop2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_desktop_2x.png?raw=true',
-    imgMobile1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_mobile_1x.png?raw=true',
-    imgMobile2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_pop-up-td-cuenta-negocios_mobile_2x.png?raw=true',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f4/f4f1683f-ce43-44b6-b325-3b00816e7683/Desktop1.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/24/2414a1cd-41f2-4128-926e-7a44fbc61744/Desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8a/8a5db416-04db-46ee-b5ea-290acec312d7/Mobile1.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/17/17a44195-735f-4a0b-ac2d-350c8172bde2/Mobile2.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -291,7 +291,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "Migracion-CuentaNegocio",
+              category: "CamapañaTrading-2",
               label: "cerrar"
             }
           }
@@ -308,7 +308,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "Migracion-CuentaNegocio",
+              category: "CamapañaTrading-2",
               label: "entendido"
             }
           }
