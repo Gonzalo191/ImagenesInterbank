@@ -20,6 +20,12 @@
         z-index: 99;
       }
 
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
+      }
+
       .popup_web * {
         box-sizing: border-box;
         margin: 0;
@@ -41,7 +47,7 @@
       }
 
       .popup__header_web {
-        margin:0;
+        margin-top:5px;
       }
 
       .popup__close_web {
@@ -151,7 +157,7 @@
         width: 416px;
       }
        .popup__body_web {
-        padding: 20px 32px 36px;
+        padding: 20px 32px 32px;
       }
        .popup__title_web {
         font-size: 28px;
@@ -259,17 +265,17 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>Sabías que también puedes pagar tus servicios por la Banca por Internet y la App</strong>",
-        content: "<b>¡Estamos fin de mes!</b><br>Ingresa ahora al módulo de pago de servicios y gestiona tu empresa.",
+        title: "<strong>Puedes pagar tus servicios por la Banca por Internet y la App Empresas</strong>",
+        content: "<b>¡Estamos fin de mes!</b><br>Ingresa ahora a el módulo de pago de servicios y gestiona tu empresa.",
         link: {
           url:
             "javascript:void(0)",
           text: "Pagar ahora",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f4/f4f1683f-ce43-44b6-b325-3b00816e7683/Desktop1.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/24/2414a1cd-41f2-4128-926e-7a44fbc61744/Desktop2.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8a/8a5db416-04db-46ee-b5ea-290acec312d7/Mobile1.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/17/17a44195-735f-4a0b-ac2d-350c8172bde2/Mobile2.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/d8/d83bfd6e-3507-405f-9fb2-58ea3ee67b3c/deskto1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f1/f103fab0-aa8f-4dfd-ad03-6ab1084a2c94/desktop2x.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/3f/3fc57943-cfca-4128-b14a-6f2dcf1abbcb/mobile1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/d1/d126d096-3cc2-4ecf-8494-d83b0006525d/mobile2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();

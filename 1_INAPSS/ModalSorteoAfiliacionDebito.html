@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal soloWeb</title>
+    <title>[WEB] Modal Trading</title>
 
 <style>
 
@@ -31,9 +31,10 @@
 
       .popup__wrapper_web {
         position: fixed;
-        top: 20%;
-        left: 77%;
-        transform: translate(-50%, -50%);  
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 304px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
@@ -73,31 +74,30 @@
       .popup__close_web::after {
         transform: rotate(-45deg) translate(-10px, -1px);
       }
-/*
+
       .popup__body_web {
         width: 100%;
-        padding: 70px 20px 24px;
+        padding: 20px 24px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        color: rgb(47, 74, 159);
+        width: 100%;
+        color: #0f191e;
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
-        margin: 5px 0 10px 0;
-        font-size: 32px;
+        margin: 5px 0 15px 0;
+        font-size: 24px;
         line-height: 25px;
-        width: 85%;
-        padding: 0px 0px 8px;
       }
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 17px;
+        font-size: 16px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
@@ -106,7 +106,7 @@
         align-content: center;
         margin: 0 0 20px 0;
       }
-      
+
       .testing_web {
         color: #0f191e;
         font-size: 14px;
@@ -128,7 +128,7 @@
       }
 
       .popup__btn_web {
-        width: 30%;
+        width: 50%;
         color: #ffffff;
         font-family: "Omnes";
         font-size: 18px;
@@ -140,7 +140,6 @@
         border-radius: 4px;
         background-color: #05be50;
         display: block;
-        margin-top: 5%;
       }
 
        #pic_web{
@@ -149,112 +148,18 @@
 
       @media (min-width: 768px) {
        .popup__wrapper_web {
-        width: 600px;
-        height: 44%;
+        width: 416px;
       }
-      
-*/
-      
-
-/*---------------------------------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------*/
-
-      @font-face {
-        font-family: 'Omnes';
-        src: url(../fonts/Omnes.ttf);
+       .popup__body_web {
+        padding: 20px 32px 36px;
+      }
+       .popup__title_web {
+        font-size: 28px;
+        line-height: 28px;
       }
 
-      #CONTENEDOR_2{
-            display: flex;
-            flex-direction: column;
-        }
-    
-        #MAT-DIALOG-CONTAINER_1 {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 11px 15px -7px, rgba(0, 0, 0, 0.14) 0px 24px 38px 3px, rgba(0, 0, 0, 0.12) 0px 9px 46px 8px;
-            box-sizing: border-box;
-            color: rgba(0, 0, 0, 0.87);
-            height: 104px;
-            width: 563px;
-            padding: 24px;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        .titulo{
-            
-            font-size: 16px;
-            color: rgb(0, 0, 0);
-            align-items: center;
-        }
-
-        .texto{
-            /*background-color: rgb(0, 255, 0);*/
-            font-size: 12px;
-            text-align: center;
-            color: rgb(155, 155, 155);
-        }
-        
-        .imagen{
-            /*background-color: blue;*/
-            margin: 0px 0px 16px;
-            padding: 8px 0px 0px; 
-            height: 101px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        /*.estrellas{
-            margin: 10px 0px 5px;
-            max-width: 150px;
-        }*/
-        
-        
-        .star-rating {
-        font-size: 0;
-        white-space: nowrap;
-        display: inline-block;
-        width: 150px;
-        height: 30px;
-        overflow: hidden;
-        }
-
-        .star-rating input[type="radio"] {
-        display: none;
-        }
-
-        .star-rating label.star {
-        color: #ccc;
-        font-size: 23px;
-        padding: 0px 5px;
-        display: inline-block;
-        cursor: pointer;
-        }
-
-        .star-rating input[type="radio"]:checked + label.star {
-        color: #ffcc00;
-        }
-        
-        .star-rating input[type="radio"]:checked + label.star ~ input[type="radio"]:not(:checked) + label.star {
-          color: #ccc;
-        }
-
-        
-        #IMG_1{
-            height: 100%;
-        }
-
-/*---------------------------------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------*/
+      }
      </style>
-     <script src="https://kit.fontawesome.com/f90a82ec42.js" crossorigin="anonymous"></script>
       </head>
     <div>
   </div>
@@ -288,40 +193,23 @@
   </div>
   <div class="popup__body_web">
   </div>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <div id="MAT-DIALOG-CONTAINER_1">
-      <div class="titulo">
-        ¡Cuéntanos sobre tu experiencia<BR>en la plataforma!
-      </div>  
-      <div id="CONTENEDOR_2">
-          <div class="texto">
-            ¡Calíficanos!
-          </div>
-          <div class="cont_estrellas">
-            <div class="star-rating">
-              <input id="star-1" type="radio" name="rating" value="1">
-              <label for="star-1" class="star">&#9733;</label>
-              <input id="star-2" type="radio" name="rating" value="2">
-              <label for="star-2" class="star">&#9733;</label>
-              <input id="star-3" type="radio" name="rating" value="3">
-              <label for="star-3" class="star">&#9733;</label>
-              <input id="star-4" type="radio" name="rating" value="4">
-              <label for="star-4" class="star">&#9733;</label>
-              <input id="star-5" type="radio" name="rating" value="5">
-              <label for="star-5" class="star">&#9733;</label>
-            </div>                  
-          </div>
-      </div>
-    </div>
 </div>
 `;
-
-         var popupBody = popup_web.querySelector(".popup__body_web");
+          var popupBody = popup_web.querySelector(".popup__body_web");
           var divTitle = document.createElement("div");
           divTitle.classList.add("popup__title_web");
           divTitle.innerHTML = options.title;
           popupBody.appendChild(divTitle);
-         
+
+          var picture = popup_web.querySelector("#pic_web");
+          var divSource = document.createElement("source");
+          divSource.srcset = options.imgDesktop1x + ' ,'+options.imgDesktop2x + ' 2x';
+          divSource.media = '(min-width: 768px)';
+          var divTitle2 = document.createElement("img");
+          divTitle2.srcset = options.imgMobile1x + ' ,'+options.imgMobile2x + ' 2x';
+          picture.appendChild(divSource);
+          picture.appendChild(divTitle2);
+
           var divContent = document.createElement("div");
           divContent.classList.add("popup__content_web");
           divContent.innerHTML = options.content;
@@ -336,13 +224,32 @@
           aLink.innerHTML = options.link.text;
           popupBody.appendChild(aLink);
 
+          var close2 = popup_web.querySelector(".popup__close_web");
+          var close = popup_web.querySelector(".popup__btn_web");
 
-          var close = popup_web.querySelector(".popup__close_web");
-
+          this.events(close2);
+          overlay_web.appendChild(popup_web);
+          document.body.appendChild(overlay_web);
 
           this.events(close);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
+
+          var IDusuario = _satellite.getVar('userId');
+
+          function popUpView() {
+            _satellite.track("trackView", {
+              eventProperties: {
+                view: {
+                  action: "popupView",
+                  category: "CampañaCrossSell-B",
+                  userId: IDusuario,
+                }
+              }
+            });
+          }
+          popUpView();
+
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -352,23 +259,23 @@
         return popupJS;
       })();
       var options = {
-        title: "",
-        content: "",
+        title: "<strong>Afíliate a Débito Automático y participa por S/.500</strong>",
+        content: "Tu podrás ser <b>uno de los 3 ganadores.</b><br>Participa afiliando el pago de tu ",
         link: {
           url:
             "javascript:void(0)",
-          text: "",
+          text: "Pagar ahora",
         },
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f4/f4f1683f-ce43-44b6-b325-3b00816e7683/Desktop1.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/24/2414a1cd-41f2-4128-926e-7a44fbc61744/Desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8a/8a5db416-04db-46ee-b5ea-290acec312d7/Mobile1.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/17/17a44195-735f-4a0b-ac2d-350c8172bde2/Mobile2.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
-      
-      
-
-      //Cerrar
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -379,53 +286,45 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "ModalInteractivo",
+              category: "CampañaCrossSell-B",
               label: "cerrar"
             }
           }
         });
       }
 
-      //Botones Start
-      document.getElementById("botones-start1").onclick = function () {
-        start()
-        popUpBtnStart();
-      };
-      document.getElementById("botones-start2").onclick = function () {
-        start()
-        popUpBtnStart();
+      //Boton Entendido
+      document.getElementById("popup__entendido_web").onclick = function () {
+        popUpBtn();
       };
 
-         function popUpBtnStart() {
+         function popUpBtn() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "ModalInteractivo",
-              label: "inicio-encuesta"
+              category: "CampañaCrossSell-B",
+              label: "entendido"
             }
           }
         });
       }
 
-      
+/*
+      //Boton Entendido
+      document.getElementById("popup__entendido_web").onclick = function () {
+        popUpBte();
+      };
 
-      function popUpView() {
-        _satellite.track("trackView", {
-          eventProperties: {
-            view: {
-              action: "popupView",
-              category: "ModalInteractivo"
-            }
-          }
-        });
+      function popUpBte() {
+        console.log("-> popUpBte");
+        cordova.InAppBrowser.open(
+          "https://empresas.interbank.pe/login",
+          "_system",
+          "location=yes"
+        );
       }
-
-      document.body.onload = function() {
-        popUpView();
-      }
-      
-    
+    */
     </script>
 
 </html>

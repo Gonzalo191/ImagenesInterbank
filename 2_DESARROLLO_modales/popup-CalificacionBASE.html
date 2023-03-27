@@ -1,0 +1,130 @@
+<html>
+    
+    <body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <div id="MAT-DIALOG-CONTAINER_1">
+            <div class="titulo">
+                ¡Cuéntanos sobre tu experiencia<BR>en la plataforma!
+            </div>  
+            <div id="CONTENEDOR_2">
+                <div class="texto">
+                    ¡Calíficanos!
+                </div>
+                <div class="cont_estrellas">
+                    <div class="star-rating">
+                        <input id="star-1" type="radio" name="rating" value="1">
+                        <label for="star-1" class="star">&#9733;</label>
+                        <input id="star-2" type="radio" name="rating" value="2">
+                        <label for="star-2" class="star">&#9733;</label>
+                        <input id="star-3" type="radio" name="rating" value="3">
+                        <label for="star-3" class="star">&#9733;</label>
+                        <input id="star-4" type="radio" name="rating" value="4">
+                        <label for="star-4" class="star">&#9733;</label>
+                        <input id="star-5" type="radio" name="rating" value="5">
+                        <label for="star-5" class="star">&#9733;</label>
+                      </div>                  
+    
+                </div>
+            </div>
+            
+        </div>
+
+    </body>
+    <style>
+        #CONTENEDOR_2{
+            display: flex;
+            flex-direction: column;
+        }
+    
+        #MAT-DIALOG-CONTAINER_1 {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 11px 15px -7px, rgba(0, 0, 0, 0.14) 0px 24px 38px 3px, rgba(0, 0, 0, 0.12) 0px 9px 46px 8px;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.87);
+            height: 104px;
+            width: 563px;
+            padding: 24px;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .titulo{
+            
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            align-items: center;
+        }
+
+        .texto{
+            /*background-color: rgb(0, 255, 0);*/
+            font-size: 12px;
+            text-align: center;
+            color: rgb(155, 155, 155);
+        }
+        
+        .imagen{
+            /*background-color: blue;*/
+            margin: 0px 0px 16px;
+            padding: 8px 0px 0px; 
+            height: 101px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /*.estrellas{
+            margin: 10px 0px 5px;
+            max-width: 150px;
+        }*/
+        
+        
+        .star-rating {
+        font-size: 0;
+        white-space: nowrap;
+        display: inline-block;
+        width: 150px;
+        height: 30px;
+        overflow: hidden;
+        }
+
+        .star-rating input[type="radio"] {
+        display: none;
+        }
+
+        .star-rating label.star {
+        color: #ffcc00;
+        font-size: 23px;
+        padding: 0px 5px;
+        display: inline-block;
+        cursor: pointer;
+        }
+
+        .star-rating input[type="radio"]:checked ~ label.star {
+        color: #ccc;
+        }
+
+              
+        
+        #IMG_1{
+            height: 100%;
+        }
+        
+        /*.in-flex {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 0px;
+        }
+        .in-flex:first-child {
+            flex: 2;
+            margin: 25px;
+            background-color: aqua;
+            padding: 25px;
+        }
+        .in-flex div{
+            padding: 25px;
+            margin: 20px;
+            background-color: aqua;
+        }*/
+    </style>
+</html>
