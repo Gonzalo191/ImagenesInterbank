@@ -326,12 +326,15 @@
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
 
+          var IDusuario = _satellite.getVar('userId');
+
           function popUpView() {
             _satellite.track("trackView", {
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "CampañaRecaudacion"
+                  category: "CampañaRecaudacion-2",
+                  userId: IDusuario,
                 }
               }
             });
@@ -350,7 +353,7 @@
         content: "Podrás recibir los pagos de tus clientes en tus cuentas Interbank de manera ágil",
         link: {
           url:
-            "https://interbank.pe/inscripcion/registro-de-recaudacion?mcid=web-empresas:target:2022-12_bpi_recaudacion-inapps_conversion:personalizada:popup:1",
+            "https://interbank.pe/inscripcion/registro-de-recaudacion?mcid=web-empresas:target:2023-03_bpi_recaudacion-inapps-2_conversion:personalizada:popup:2",
           text: "Estoy interesado",
           text2: "Ahora no",
           url2:"javascript:void(0)",
@@ -374,7 +377,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaRecaudacion",
+              category: "CampañaRecaudacion-2",
               label: "cerrar-ahorano"
             }
           }
@@ -390,7 +393,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaRecaudacion",
+              category: "CampañaRecaudacion-2",
               label: "cerrar"
             }
           }
@@ -410,7 +413,7 @@
             eventProperties: {
               action: {
                 action: "click",
-                category: "CampañaRecaudacion",
+                category: "CampañaRecaudacion-2",
                 label: "EstoyInteresado"
               }
             }

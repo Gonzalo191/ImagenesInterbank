@@ -272,16 +272,23 @@
             "javascript:void(0)",
           text: "Pagar ahora",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/d8/d83bfd6e-3507-405f-9fb2-58ea3ee67b3c/deskto1x.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f1/f103fab0-aa8f-4dfd-ad03-6ab1084a2c94/desktop2x.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/3f/3fc57943-cfca-4128-b14a-6f2dcf1abbcb/mobile1x.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/d1/d126d096-3cc2-4ecf-8494-d83b0006525d/mobile2x.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/4c/4c74e6c0-b8fc-4fc5-8feb-6d73ae89e660/dektop1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/15/15f9d706-0955-4364-b4a1-428f75b34f09/desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/31/31615739-5a82-4912-b7dd-55be816915c2/mobile1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/41/4136c6d9-6120-4a9e-9cd0-240a0ce0cabd/mobile2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
+      function ejecutEventAdbNexbiRoute(path) {
+        const messageEvent = new CustomEvent('adbNexbiRoute', {
+          detail: { path }
+        });
+        document.dispatchEvent(messageEvent);
+      }
+      
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -302,6 +309,7 @@
       //Boton Entendido
       document.getElementById("popup__entendido_web").onclick = function () {
         popUpBtn();
+        ejecutEventAdbNexbiRoute('/pagos-transferencias/servicios/paso-1');
       };
 
          function popUpBtn() {
@@ -315,6 +323,7 @@
           }
         });
       }
+      
 
 /*
       //Boton Entendido
