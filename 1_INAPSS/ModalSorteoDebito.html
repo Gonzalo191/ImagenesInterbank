@@ -2,14 +2,18 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Trading</title>
+    <title>[WEB] Modal Nueva App 1</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
+        } 
       .overlay_web {
         position: fixed;
         top: 0;
@@ -97,12 +101,12 @@
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 16px;
+        font-size: 15px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 90%;
+        width: 87%;
         align-content: center;
         margin: 0 0 20px 0;
       }
@@ -242,12 +246,13 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "CampañaCrossSell-B",
+                  category: "Modal-SorteoDebito",
                   userId: IDusuario,
                 }
               }
             });
           }
+          
           popUpView();
 
         };
@@ -260,16 +265,16 @@
       })();
       var options = {
         title: "<strong>Afíliate a Débito Automático y participa por S/.500</strong>",
-        content: "Tu podrás ser <b>uno de los 3 ganadores.</b><br>Participa afiliando el pago de tu ",
+        content: "Tú podrás ser uno de los 3 ganadores.<br>Participa afiliando el pago de tu Débito Automático y olvídate de tener que pagar en otros medios.",
         link: {
           url:
-            "javascript:void(0)",
-          text: "Pagar ahora",
+            "https://interbank.pe/promociones/inscripcion/sorteo-afiliacion-debitoautomatico?mcid=emailing:mail:202304_capital-de-trabajo_pagocreditos_stock_conversion:personalizada:html:1",
+          text: "Afíliate",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f4/f4f1683f-ce43-44b6-b325-3b00816e7683/Desktop1.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/24/2414a1cd-41f2-4128-926e-7a44fbc61744/Desktop2.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8a/8a5db416-04db-46ee-b5ea-290acec312d7/Mobile1.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/17/17a44195-735f-4a0b-ac2d-350c8172bde2/Mobile2.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/d7/d76b7fe9-1983-4bc1-8175-ee22ac8a04a9/desktop1.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/87/873ae3dc-9856-4ef9-a81f-52b0c8183bc8/desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/b0/b065167c-9443-4d44-b49b-01ba82997d0a/mobile1.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8f/8f536540-dcb1-40db-bc62-ecd8f4408f90/mobile2.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -286,7 +291,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaCrossSell-B",
+              category: "Modal-SorteoDebito",
               label: "cerrar"
             }
           }
@@ -294,17 +299,19 @@
       }
 
       //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
+      var boton = document.getElementById("popup__entendido_web");
+      boton.addEventListener("click",function () {
+        window.open(boton.href);
         popUpBtn();
-      };
+      });
 
-         function popUpBtn() {
+      function popUpBtn() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaCrossSell-B",
-              label: "entendido"
+              category: "Modal-SorteoDebito",
+              label: "afiliate"
             }
           }
         });
