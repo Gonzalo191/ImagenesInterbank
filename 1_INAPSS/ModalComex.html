@@ -2,18 +2,14 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Escolar FINVENTAS</title>
+    <title>[WEB] Modal Comex</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
-        } 
+
       .overlay_web {
         position: fixed;
         top: 0;
@@ -22,6 +18,12 @@
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
         z-index: 99;
+      }
+
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
       }
 
       .popup_web * {
@@ -45,7 +47,7 @@
       }
 
       .popup__header_web {
-        margin:0;
+        margin-top:5px;
       }
 
       .popup__close_web {
@@ -101,12 +103,12 @@
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 15px;
+        font-size: 16px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 85%;
+        width: 90%;
         align-content: center;
         margin: 0 0 20px 0;
       }
@@ -155,7 +157,7 @@
         width: 416px;
       }
        .popup__body_web {
-        padding: 20px 32px 36px;
+        padding: 20px 32px 32px;
       }
        .popup__title_web {
         font-size: 28px;
@@ -246,13 +248,12 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "Modal-EscolarFinVentas",
+                  category: "CampañaComex",
                   userId: IDusuario,
                 }
               }
             });
           }
-          
           popUpView();
 
         };
@@ -264,23 +265,30 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>¡Sácale el jugo a esta campaña escolar!</strong>",
-        content: "Adelanta tus facturas y obtén el dinero de tus ventas hoy con la mejor oferta para tu empresa<br><strong>¡Cotiza hoy!</strong>",
+        title: "<strong>¿Sabías que tienes un tipo de cambio especial?</strong>",
+        content: "Compruebalo tú mismo y aprovecha el tipo de cambio que te ofrecemos hoy para realizar todas tus operaciones.",
         link: {
           url:
-            "https://bancacomercial.interbank.pe/factoring/solicitud/simulador?mcid=app-empresas:target:2023-03_assi-hyperloop_campañaescolarfv_adquisicion:personalizada:popup:1",
-          text: "Cotiza aquí",
+            "javascript:void(0)",
+          text: "Ver oferta",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/23/2345b143-8cbf-42d4-bb7a-465c7dcf6145/img_modal_87700_otro-fin-ventas_desktop_1x.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/a1/a1186f0e-c2c8-4571-bb88-a03f21e41a54/img_modal_87700_otro-fin-ventas_desktop_2x.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/14/14c2e6ad-a5b4-46ea-805e-433928892fb2/img_modal_87700_otro-fin-ventas_mobile_1x.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/92/927883bb-b428-49cb-9860-94db784aa788/img_modal_87700_otro-fin-ventas_mobile_2x.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/4c/4c74e6c0-b8fc-4fc5-8feb-6d73ae89e660/dektop1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/15/15f9d706-0955-4364-b4a1-428f75b34f09/desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/31/31615739-5a82-4912-b7dd-55be816915c2/mobile1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/41/4136c6d9-6120-4a9e-9cd0-240a0ce0cabd/mobile2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
+      function ejecutEventAdbNexbiRoute(path) {
+        const messageEvent = new CustomEvent('adbNexbiRoute', {
+          detail: { path }
+        });
+        document.dispatchEvent(messageEvent);
+      }
+      
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -291,7 +299,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "Modal-EscolarFinVentas",
+              category: "CampañaComex",
               label: "cerrar"
             }
           }
@@ -299,19 +307,18 @@
       }
 
       //Boton Entendido
-      var boton = document.getElementById("popup__entendido_web");
-      boton.addEventListener("click",function () {
-        window.open(boton.href);
+      document.getElementById("popup__entendido_web").onclick = function () {
         popUpBtn();
-      });
+        ejecutEventAdbNexbiRoute('/pagos-transferencias/cambio-moneda/cotizar/paso-1');
+      };
 
-      function popUpBtn() {
+         function popUpBtn() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "Modal-EscolarFinVentas",
-              label: "afiliate"
+              category: "CampañaComex",
+              label: "entendido"
             }
           }
         });
