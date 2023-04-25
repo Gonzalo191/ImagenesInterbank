@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Comex</title>
+    <title>[WEB] Modal Trading</title>
 
 <style>
 
@@ -10,6 +10,10 @@
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
 
+      @font-face {
+        font-family: 'Omnes';
+        src: url(../fonts/Omnes.ttf);
+      }
       .overlay_web {
         position: fixed;
         top: 0;
@@ -18,12 +22,6 @@
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
         z-index: 99;
-      }
-
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
       }
 
       .popup_web * {
@@ -47,7 +45,7 @@
       }
 
       .popup__header_web {
-        margin-top:5px;
+        margin:0;
       }
 
       .popup__close_web {
@@ -157,7 +155,7 @@
         width: 416px;
       }
        .popup__body_web {
-        padding: 20px 32px 32px;
+        padding: 20px 32px 36px;
       }
        .popup__title_web {
         font-size: 28px;
@@ -248,12 +246,13 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "CampañaComex",
+                  category: "CamapañaTrading-3",
                   userId: IDusuario,
                 }
               }
             });
           }
+          
           popUpView();
 
         };
@@ -265,17 +264,17 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>¿Sabías que tienes un tipo de cambio especial?</strong>",
-        content: "Compruebalo tú mismo y aprovecha el tipo de cambio que te ofrecemos hoy para realizar todas tus operaciones.",
+        title: "<strong>¡Tienes un tipo de cambio especial!</strong>",
+        content: "Realiza tus operaciones de cambio desde tu Banca por Internet Empresas o App Empresas y aprovecha el <b>precio preferencial</b> que tenemos para ti.",
         link: {
           url:
             "javascript:void(0)",
-          text: "Ver oferta",
+          text: "Entendido",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/0b/0bd924cc-fb89-489d-a9ba-552e50977b82/img_modal_91524_otro_trading_desktop_1x.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/1b/1be2418a-587e-43b4-bef5-2a7a5edb5427/img_modal_91524_otro_trading_desktop_2x.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/c9/c9fb3d09-f182-4cfa-bcef-3ba1df50199a/img_modal_91524_otro_trading_mobile_1x.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/b8/b8b31512-edd4-40f9-9750-8a294e3b2e28/img_modal_91524_otro_trading_mobile_2x.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/f4/f4f1683f-ce43-44b6-b325-3b00816e7683/Desktop1.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/24/2414a1cd-41f2-4128-926e-7a44fbc61744/Desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8a/8a5db416-04db-46ee-b5ea-290acec312d7/Mobile1.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/17/17a44195-735f-4a0b-ac2d-350c8172bde2/Mobile2.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -288,7 +287,7 @@
         });
         document.dispatchEvent(messageEvent);
       }
-      
+
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -299,7 +298,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaComex",
+              category: "CamapañaTrading-3",
               label: "cerrar"
             }
           }
@@ -317,7 +316,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaComex",
+              category: "CamapañaTrading-3",
               label: "entendido"
             }
           }
