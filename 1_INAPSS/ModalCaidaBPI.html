@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Feriados</title>
+    <title>[WEB] Modal Mantenimiento</title>
 
 <style>
 
@@ -10,11 +10,12 @@
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
 
-@font-face {
-      font-family: 'Omnes';
-      src: url(../fonts/Omnes.ttf);
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
         
-    } 
+      }
+
       .overlay_web {
         position: fixed;
         top: 0;
@@ -40,7 +41,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 400px;
-        height: 44%;
+        height: 45%;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
@@ -49,8 +50,8 @@
       .popup__header_web {
         margin:0;
       }
-/*
-      .popup__close_web {
+
+      /*.popup__close_web {
         position: absolute;
         top: 8px;
         right: 8px;
@@ -83,14 +84,14 @@
 
       .popup__body_web {
         width: 100%;
-        padding: 20px 20px 15px;
+        padding: 20px 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        color: black;
+        color: rgb(47, 74, 159);
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
@@ -151,16 +152,16 @@
       }
 
        #pic_web{
-        height: 150px;
-        width: 300px;
+        /*height: 150px;
+        width: 300px;*/
         margin: 20px 0px 20px 0px;
         /*background-color: red;*/
       }
 
       @media (min-width: 768px) {
        .popup__wrapper_web {
-        width: 600px;
-        height: 44%;
+        width: 400px;
+        height: 45%;
       }
        .popup__body_web {
         padding: 20px 40px 20px;
@@ -170,8 +171,8 @@
         line-height: 28px;
       }
       #pic_web{
-        height: 160px;
-        width: 350px;
+        /*height: 160px;
+        width: 350px;*/
         margin: 20px 0px 20px 0px;
         /*background-color: red;*/
       }
@@ -238,14 +239,14 @@
           divContent.innerHTML = options.content;
           popupBody.appendChild(divContent);
 
-          var aLink = document.createElement("a");
+          /*var aLink = document.createElement("a");
           aLink.classList.add("popup__btn_web");
           aLink.id = "popup__entendido_web";
           aLink.href = options.link.url;
           if (options.link.target) aLink.target = options.link.target;
           aLink.title = options.link.text;
           aLink.innerHTML = options.link.text;
-          popupBody.appendChild(aLink);
+          popupBody.appendChild(aLink);*/
 
           var close2 = popup_web.querySelector(".popup__close_web");
           var close = popup_web.querySelector(".popup__btn_web");
@@ -264,7 +265,7 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "ModalFeriados-CreditosBPE"
+                  category: "ModalCaidaBPI"
                 }
               }
             });
@@ -280,16 +281,16 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>Fuera de horario</strong>",
-        content: "Los pagos de créditos pequeña empresa se encuentran habilitados de <b>lunes a viernes de 8:00 a.m. a 5:00 p.m.</b> excepto los sábados, domingos y feriados",
+        title: "<strong>Estamos en mantenimiento</strong>",
+        content: "Lo sentimos la Banca por Internet Empresas no está disponible en estos momentos.<br>Podrás ingresar con normalidad en breve<br>Gracias por tu compresión.",
         link: {
           url:
             "javascript:void(0)",
-          text: "Ver mis cuentas",
+          text: "Entendido",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/27/27c0e86f-d17a-42eb-92bf-f8886c08cc8f/Desktop.png',
+        imgDesktop1x: 'https://eu1mktprdstg001.blob.core.windows.net/appinterbank/icons/icon-error.png',
     /*imgDesktop2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_2x.png',*/
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8a/8acf6c82-2636-4c93-bfea-740a31ad511f/Mobile.png',
+    imgMobile1x: 'https://eu1mktprdstg001.blob.core.windows.net/appinterbank/icons/icon-error.png',
     /*imgMobile2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_2x.png',*/
       };
       var popup_web = new popupJS(options);
@@ -297,13 +298,6 @@
     </script>
 
     <script>
-      function ejecutEventAdbNexbiRoute(path) {
-        const messageEvent = new CustomEvent('adbNexbiRoute', {
-          detail: { path }
-        });
-        document.dispatchEvent(messageEvent);
-      }
-
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -314,7 +308,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "ModalFeriados-CreditosBPE",
+              category: "ModalCaidaBPI",
               label: "cerrar"
             }
           }
@@ -324,7 +318,6 @@
       //Boton Entendido
       document.getElementById("popup__entendido_web").onclick = function () {
         popUpBtn();
-        ejecutEventAdbNexbiRoute('/home');
       };
 
          function popUpBtn() {
@@ -332,7 +325,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "ModalFeriados-CreditosBPE",
+              category: "ModalCaidaBPI",
               label: "entendido"
             }
           }

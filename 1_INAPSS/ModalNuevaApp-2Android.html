@@ -246,7 +246,7 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "NuevaApp-2",
+                  category: "NuevaApp-2Android",
                   userId: IDusuario,
                 }
               }
@@ -268,7 +268,7 @@
         content: "Tu APP se renovó para que seas cada vez más digital, desde donde estés.",
         link: {
           url:
-            "javascript:void(0)",
+            "https://play.google.com/store/apps/details?id=pe.interbank.bie",
           text: "Actualizar ahora",
         },
         imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/4e/4e26538f-51ec-4bb2-9284-46e3d1b86892/desktop1.png',
@@ -291,7 +291,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "NuevaApp-2",
+              category: "NuevaApp-2Android",
               label: "cerrar"
             }
           }
@@ -299,16 +299,18 @@
       }
 
       //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
+      var boton = document.getElementById("popup__entendido_web");
+      boton.addEventListener("click",function () {
+        window.open(boton.href);
         popUpBtn();
-      };
+      });
 
          function popUpBtn() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "NuevaApp-2",
+              category: "NuevaApp-2Android",
               label: "actualizar"
             }
           }

@@ -2,19 +2,18 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Feriados</title>
+    <title>[WEB] Modal Sorteo Cuzco</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-
-@font-face {
-      font-family: 'Omnes';
-      src: url(../fonts/Omnes.ttf);
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
         
-    } 
+        } 
       .overlay_web {
         position: fixed;
         top: 0;
@@ -39,8 +38,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 400px;
-        height: 44%;
+        width: 304px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
@@ -49,7 +47,7 @@
       .popup__header_web {
         margin:0;
       }
-/*
+
       .popup__close_web {
         position: absolute;
         top: 8px;
@@ -79,41 +77,40 @@
 
       .popup__close_web::after {
         transform: rotate(-45deg) translate(-10px, -1px);
-      }*/
+      }
 
       .popup__body_web {
         width: 100%;
-        padding: 20px 20px 15px;
+        padding: 20px 24px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        color: black;
+        width: 100%;
+        color: #0f191e;
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
         margin: 5px 0 15px 0;
-        font-size: 32px;
+        font-size: 24px;
         line-height: 25px;
-        width: 85%;
-        padding: 0px 0px 8px;
       }
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 16px;
+        font-size: 15px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 100%;
+        width: 87%;
         align-content: center;
-        margin: 0 0 0px 0;
+        margin: 0 0 20px 0;
       }
-      
+
       .testing_web {
         color: #0f191e;
         font-size: 14px;
@@ -135,7 +132,7 @@
       }
 
       .popup__btn_web {
-        width: 30%;
+        width: 50%;
         color: #ffffff;
         font-family: "Omnes";
         font-size: 18px;
@@ -144,41 +141,30 @@
         text-align: center;
         text-decoration: none;
         line-height: 45px;
-        border-radius: 45px;
+        border-radius: 4px;
         background-color: #05be50;
         display: block;
-        margin-top: 5%;
       }
 
        #pic_web{
-        height: 150px;
-        width: 300px;
-        margin: 20px 0px 20px 0px;
-        /*background-color: red;*/
+        height: 84px;
       }
 
       @media (min-width: 768px) {
        .popup__wrapper_web {
-        width: 600px;
-        height: 44%;
+        width: 416px;
       }
        .popup__body_web {
-        padding: 20px 40px 20px;
+        padding: 20px 32px 36px;
       }
        .popup__title_web {
-        font-size: 32px;
+        font-size: 28px;
         line-height: 28px;
-      }
-      #pic_web{
-        height: 160px;
-        width: 350px;
-        margin: 20px 0px 20px 0px;
-        /*background-color: red;*/
       }
 
       }
      </style>
-      
+      </head>
     <div>
   </div>
     <script>
@@ -207,18 +193,13 @@
 <div class="popup__wrapper_web">
   <div class="popup__header_web">
     <div id="popup__cerrar" class="popup__close_web"></div>
-    </div>
+    <picture id='pic_web'></picture>
+  </div>
   <div class="popup__body_web">
-      <picture id='pic_web'></picture>
   </div>
 </div>
 `;
           var popupBody = popup_web.querySelector(".popup__body_web");
-          /*var divImg = document.createElement("div");
-          divImg.classList.add("popup__img_web");
-          divImg.srcset = options.imgTest;
-          popupBody.appendChild(divImg);*/
-
           var divTitle = document.createElement("div");
           divTitle.classList.add("popup__title_web");
           divTitle.innerHTML = options.title;
@@ -258,17 +239,20 @@
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
 
+          var IDusuario = _satellite.getVar('userId');
+
           function popUpView() {
-            console.log("mostrar_modal");
             _satellite.track("trackView", {
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "ModalFeriados-CreditosBPE"
+                  category: "Modal-SorteoCuzco",
+                  userId: IDusuario,
                 }
               }
             });
           }
+          
           popUpView();
 
         };
@@ -280,30 +264,23 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>Fuera de horario</strong>",
-        content: "Los pagos de créditos pequeña empresa se encuentran habilitados de <b>lunes a viernes de 8:00 a.m. a 5:00 p.m.</b> excepto los sábados, domingos y feriados",
+        title: "<strong>¡Abre tu Cuenta Negocios y gana un pasaje doble a Cusco con fecha abierta!</strong>",
+        content: "Hazlo en menos de 5 minutos y de manera 100% online desde tu celular. Tienes hasta el 16 de julio para participar.",
         link: {
           url:
             "javascript:void(0)",
-          text: "Ver mis cuentas",
+          text: "Entendido",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/27/27c0e86f-d17a-42eb-92bf-f8886c08cc8f/Desktop.png',
-    /*imgDesktop2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_2x.png',*/
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/8a/8acf6c82-2636-4c93-bfea-740a31ad511f/Mobile.png',
-    /*imgMobile2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_2x.png',*/
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/75/75aff7e9-f12e-4b1b-9238-ce84ec56a608/img_pop-up_imagen-campa%C3%B1a-sorteo_desktop_1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/25/25c26632-c100-4ab9-bf48-ae7a90154763/img_pop-up_imagen-campa%C3%B1a-sorteo_desktop_2x.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/87/87fdfff4-9872-4ace-821c-e2d8f5b4ec1d/img_pop-up_imagen-campa%C3%B1a-sorteo_mobile_1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/98/98df6562-9646-40d2-9038-d4a1bd27f314/img_pop-up_imagen-campa%C3%B1a-sorteo_mobile_2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
-      function ejecutEventAdbNexbiRoute(path) {
-        const messageEvent = new CustomEvent('adbNexbiRoute', {
-          detail: { path }
-        });
-        document.dispatchEvent(messageEvent);
-      }
-
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -314,7 +291,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "ModalFeriados-CreditosBPE",
+              category: "Modal-SorteoCuzco",
               label: "cerrar"
             }
           }
@@ -322,28 +299,23 @@
       }
 
       //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
+      var boton = document.getElementById("popup__entendido_web");
+      boton.addEventListener("click",function () {
+        window.open(boton.href);
         popUpBtn();
-        ejecutEventAdbNexbiRoute('/home');
-      };
+      });
 
-         function popUpBtn() {
+      function popUpBtn() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "ModalFeriados-CreditosBPE",
-              label: "entendido"
+              category: "Modal-SorteoCuzco",
+              label: "afiliate"
             }
           }
         });
       }
-
-      
-/*
-      document.body.onload = function() {
-        popUpView();
-      }*/
 
 /*
       //Boton Entendido
