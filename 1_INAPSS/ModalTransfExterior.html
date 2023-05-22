@@ -2,18 +2,14 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Sorteo Cuzco</title>
+    <title>[WEB] Modal Trading</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
-        } 
+
       .overlay_web {
         position: fixed;
         top: 0;
@@ -22,6 +18,12 @@
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
         z-index: 99;
+      }
+
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
       }
 
       .popup_web * {
@@ -45,7 +47,7 @@
       }
 
       .popup__header_web {
-        margin:0;
+        margin-top:5px;
       }
 
       .popup__close_web {
@@ -90,7 +92,7 @@
       .popup__title_web {
         width: 100%;
         color: #0f191e;
-        font-family: "Geometria-Medium";
+        font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
@@ -101,12 +103,12 @@
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 15px;
-        font-family: "Geometria-Medium";
+        font-size: 16px;
+        font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 87%;
+        width: 90%;
         align-content: center;
         margin: 0 0 20px 0;
       }
@@ -114,7 +116,7 @@
       .testing_web {
         color: #0f191e;
         font-size: 14px;
-        font-family: "Geometria-Medium";
+        font-family: "Omnes";
         letter-spacing: -0.1px;
         text-align: center;
         width: 90%;
@@ -134,7 +136,7 @@
       .popup__btn_web {
         width: 50%;
         color: #ffffff;
-        font-family: "Geometria-Medium";
+        font-family: "Omnes";
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 0.09px;
@@ -155,7 +157,7 @@
         width: 416px;
       }
        .popup__body_web {
-        padding: 20px 32px 36px;
+        padding: 20px 32px 32px;
       }
        .popup__title_web {
         font-size: 28px;
@@ -246,13 +248,12 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "Modal-SorteoCuzco",
+                  category: "TransferenciaExterior",
                   userId: IDusuario,
                 }
               }
             });
           }
-          
           popUpView();
 
         };
@@ -264,23 +265,30 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>¡Abre tu Cuenta Negocios y gana un pasaje doble a Cusco con fecha abierta!</strong>",
-        content: "Hazlo en menos de 5 minutos y de manera 100% online. Tienes hasta el 16 de julio para participar.",
+        title: "<strong>Conoce la diferencia entre Código SWIFT y ABA</strong>",
+        content: "ABA = Son numéricos (9) : bancos de EEUU y Puerto Rico SWIFT= Alfa numéricos (8 u 11)",
         link: {
           url:
             "javascript:void(0)",
           text: "Entendido",
         },
-        imgDesktop1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_hero-%5B91520_PIEZAGR%C3%81FICA_OTRO_CUENTANEGOCIOS_IMAGENPARAMODALCN%5D_%5Bdesktop%5D_1x.png?raw=true',
-    imgDesktop2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_hero-%5B91520_PIEZAGR%C3%81FICA_OTRO_CUENTANEGOCIOS_IMAGENPARAMODALCN%5D_%5Bdesktop%5D_2x.png?raw=true',
-    imgMobile1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_hero-%5B91520_PIEZAGR%C3%81FICA_OTRO_CUENTANEGOCIOS_IMAGENPARAMODALCN%5D_%5Bmobile%5D_1x.png?raw=true',
-    imgMobile2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/img_hero-%5B91520_PIEZAGR%C3%81FICA_OTRO_CUENTANEGOCIOS_IMAGENPARAMODALCN%5D_%5Bmobile%5D_2x.png?raw=true',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/4c/4c74e6c0-b8fc-4fc5-8feb-6d73ae89e660/dektop1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/15/15f9d706-0955-4364-b4a1-428f75b34f09/desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/31/31615739-5a82-4912-b7dd-55be816915c2/mobile1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/41/4136c6d9-6120-4a9e-9cd0-240a0ce0cabd/mobile2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
+      function ejecutEventAdbNexbiRoute(path) {
+        const messageEvent = new CustomEvent('adbNexbiRoute', {
+          detail: { path }
+        });
+        document.dispatchEvent(messageEvent);
+      }
+      
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -291,7 +299,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "Modal-SorteoCuzco",
+              category: "TransferenciaExterior",
               label: "cerrar"
             }
           }
@@ -301,15 +309,16 @@
       //Boton Entendido
       document.getElementById("popup__entendido_web").onclick = function () {
         popUpBtn();
+        ejecutEventAdbNexbiRoute('/pagos-transferencias/servicios/paso-1');
       };
 
-      function popUpBtn() {
+         function popUpBtn() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "Modal-SorteoCuzco",
-              label: "afiliate"
+              category: "TransferenciaExterior",
+              label: "entendido"
             }
           }
         });

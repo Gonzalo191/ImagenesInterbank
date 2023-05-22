@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Trading</title>
+    <title>[WEB] Modal Comex</title>
 
 <style>
 
@@ -248,7 +248,7 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "CampañaCrossSell-A",
+                  category: "CampañaComex-2",
                   userId: IDusuario,
                 }
               }
@@ -265,17 +265,17 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>Conoce la diferencia entre Código SWIFT y ABA</strong>",
-        content: "ABA = Son numéricos (9) : bancos de EEUU y Puerto Rico SWIFT= Alfa numéricos (8 u 11)",
+        title: "<strong>Cierra el mes con el mejor tipo de cambio</strong>",
+        content: "Tenemos un tipo de cambio especial para ti hasta fin de mes. Aprovéchalo y maximiza tus ganacias.",
         link: {
           url:
             "javascript:void(0)",
-          text: "Entendido",
+          text: "Ver oferta",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/4c/4c74e6c0-b8fc-4fc5-8feb-6d73ae89e660/dektop1x.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/15/15f9d706-0955-4364-b4a1-428f75b34f09/desktop2.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/31/31615739-5a82-4912-b7dd-55be816915c2/mobile1x.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/41/4136c6d9-6120-4a9e-9cd0-240a0ce0cabd/mobile2x.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/0b/0bd924cc-fb89-489d-a9ba-552e50977b82/img_modal_91524_otro_trading_desktop_1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/1b/1be2418a-587e-43b4-bef5-2a7a5edb5427/img_modal_91524_otro_trading_desktop_2x.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/c9/c9fb3d09-f182-4cfa-bcef-3ba1df50199a/img_modal_91524_otro_trading_mobile_1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/b8/b8b31512-edd4-40f9-9750-8a294e3b2e28/img_modal_91524_otro_trading_mobile_2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -299,7 +299,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaCrossSell-A",
+              category: "CampañaComex-2",
               label: "cerrar"
             }
           }
@@ -309,7 +309,7 @@
       //Boton Entendido
       document.getElementById("popup__entendido_web").onclick = function () {
         popUpBtn();
-        ejecutEventAdbNexbiRoute('/pagos-transferencias/servicios/paso-1');
+        ejecutEventAdbNexbiRoute('/pagos-transferencias/cambio-moneda/cotizar/paso-1');
       };
 
          function popUpBtn() {
@@ -317,7 +317,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaCrossSell-A",
+              category: "CampañaComex-2",
               label: "entendido"
             }
           }

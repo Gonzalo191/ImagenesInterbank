@@ -22,7 +22,15 @@
 
     .mk-bold {
       font-family: "Geometria-Bold", sans-serif;
-      font-weight: bold
+      font-weight: bold;
+      display:flex;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .subtitulo {
+      display:flex;
+      justify-content: center;
+      text-align: center;
     }
 
     .mk-semibold {
@@ -60,6 +68,7 @@
       width: 100%;
       display: block;
       line-height: 32px;
+      background-color: #ffffff00;
       border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important
     }
 
@@ -361,7 +370,10 @@
 
     .mkv10--popup_result__icon {
       text-align: center;
-      min-width: 100%
+      min-width: 100%;
+      display: flex;
+      justify-content:center;
+
     }
 
     @media (min-width:480px) {
@@ -373,7 +385,8 @@
 
     .mkv10--popup_result__paragraph {
       text-align: center;
-      font-size: 14px
+      font-size: 14px;
+      color: black;
     }
 
     @media (min-width:480px) {
@@ -571,7 +584,7 @@
       line-height: 1.5;
       -ms-flex-line-pack: center;
       align-content: center;
-      margin-bottom: 32px
+      margin-bottom: 15px;
     }
 
     @media (min-width:767px) {
@@ -1027,7 +1040,7 @@
         var popup = document.createElement('div');
         popup.setAttribute('id', 'mkv10Popup');
         popup.classList.add('mkv10--popup');
-        popup.innerHTML = "\n    <div class=\"mkv10--popup__wrapper\" id=\"mkv10PopupWrapper1\">\n   <div class=\"mkv10--popup__grid\">\n   <div class=\"mkv10--popup__header\">\n      <div class=\"mkv10--popup__close\" id=\"mkv10--popup__cerrar\"></div>\n    <div class=\"mkv10--popup__title\">".concat(options.title, "</div>\n    </div>\n    <div class=\"mkv10--popup__section\">\n    <div class=\"mkv10--popup__img mkv10--popup__img_lg\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__body\">\n      <div class=\"mkv10--popup__content\">").concat(options.content, "</div>\n    <div class=\"mkv10--form__content\">    <form class=\"mkv10--form\" id=\"mkv10Form\">    <div class=\"mkv10--form__row\">    <label class=\"mk-sronly\" for=\"updatedEmail\">Ingresa tu correo actualizado</label>\n <input type=\"email\" class=\"mk-input--linebottom\" name=\"updatedEmail\" id=\"updatedEmail\" placeholder=\"Ingresa tu correo actualizado\" />    <p class=\"mk-input--error\" id=\"updatedEmailError\"></p>    </div>\n    <div class=\"mkv10--form__row mk-coloured\">\n    <p class=\"mk-input--error\" id=\"termsConditionsError\"></p>    </div>\n    <div class=\"mkv10--popup__img mkv10--popup__img_sm\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__btn_content\">\n    <button type=\"submit\" class=\"mkv10--popup__btn\" id=\"formSubmit\">").concat(options.link.text, "</button>\n    </div>\n     </form>\n     </div>\n    </div>\n    </div>\n     </div>\n    </div>");
+        popup.innerHTML = "\n    <div class=\"mkv10--popup__wrapper\" id=\"mkv10PopupWrapper1\">\n   <div class=\"mkv10--popup__grid\">\n   <div class=\"mkv10--popup__header\">\n      <div class=\"mkv10--popup__close\" id=\"mkv10--popup__cerrar\"></div>\n    <div class=\"mkv10--popup__title\">".concat(options.title, "</div>\n    </div>\n    <div class=\"mkv10--popup__section\">\n    <div class=\"mkv10--popup__img mkv10--popup__img_lg\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__body\">\n      <div class=\"mkv10--popup__content\">").concat(options.content, "</div>\n    <div class=\"mkv10--form__content\">    <form class=\"mkv10--form\" id=\"mkv10Form\">    <div class=\"mkv10--form__row\">    <label class=\"mk-sronly\" for=\"updatedEmail\">Ingresa tu número de teléfono</label>\n <input type=\"tel\" class=\"mk-input--linebottom\" name=\"updatedEmail\" id=\"updatedEmail\" placeholder=\"Ingresa tu número de teléfono\" />    <p class=\"mk-input--error\" id=\"updatedEmailError\"></p>    </div>\n    <div class=\"mkv10--form__row mk-coloured\">\n    <p class=\"mk-input--error\" id=\"termsConditionsError\"></p>    </div>\n    <div class=\"mkv10--popup__img mkv10--popup__img_sm\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__btn_content\">\n    <button type=\"submit\" class=\"mkv10--popup__btn\" id=\"formSubmit\">").concat(options.link.text, "</button>\n    </div>\n     </form>\n     </div>\n    </div>\n    </div>\n     </div>\n    </div>");
 
         var close = popup.querySelector('.mkv10--popup__close');
         var btnEnviar = popup.querySelector('#sendBtn');
@@ -1083,8 +1096,8 @@
       return popupJS;
     }());
     var options = {
-      title: '<span class="mk-bold">Actualiza tu correo</span> y participa por una de las 100 tablets',
-      content: 'Tener actualizado tu correo te da más seguridad en tus operaciones.',
+      title: '<span class="mk-bold">¡Felicidades!</span><span class="subtitulo">Tienes una campaña de crédito aprobada para que tu negocio crezca</span>',
+      content: 'Déjanos tu número de teléfono para brindarte más detalle:',
       link: {
         url: '#',
         text: 'Enviar',
@@ -1092,8 +1105,8 @@
       },
       imgDesktop1x: 'https://paolopacheco.github.io/ibk-media/images/ilustraci-n-250-x-200-1.png',
       imgDesktop2x: 'https://paolopacheco.github.io/ibk-media/images/ilustraci-n-250-x-200-1@2x.png',
-      imgMobile1x: 'https://paolopacheco.github.io/ibk-media/images/ilustraci-n-250-x-200-1.png',
-      imgMobile2x: 'https://paolopacheco.github.io/ibk-media/images/ilustraci-n-250-x-200-1@2x.png',
+      imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/5f/5f75bb10-05d2-4f2d-9555-3ed86849ae70/desktop_mobile_1x.png',
+      imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/50/502e885f-bc14-438d-acae-bfb60ab6dc7a/desktop_mobile_2x.png',
       imgResult1x: 'https://paolopacheco.github.io/ibk-media/images/ilustracion-check.svg',
       imgResult2x: 'https://paolopacheco.github.io/ibk-media/images/ilustracion-check.svg',
     };

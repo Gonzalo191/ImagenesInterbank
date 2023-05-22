@@ -1,0 +1,276 @@
+<div id="action_insert_16553066210341850">
+            <script>
+                /*
+                adobe.target.trackEvent({ mbox: 'activityVisit_popupMigracionTIE' });
+                //Boton Cerrar
+                const btnCerrar = document.getElementsByClassName("popup__close");
+                btnCerrar.addEventListener("click", popUpClose);
+                function popUpClose() {
+                  adobe.target.trackEvent({ mbox: 'activityVisit_popupMigracionTIE_X',
+                  "params":{
+                     "category": 'login popupMigracionTIE',
+                     "action": 'click',
+                    "label": 'cerrar'
+                  } });
+                }
+                //Boton Entendido
+                const btnEntendido = document.getElementsByClassName("popup__btn");
+                btnEntendido.addEventListener("click", popUpBtn);
+                function popUpBtn() {
+                  adobe.target.trackEvent({ mbox: 'activityVisit_popupMigracionTIE_BTN',
+                  "params":{
+                     "category": 'login popupMigracionTIE',
+                     "action": 'click',
+                    "label": 'cerrar'
+                  } });
+                }
+                //Link Tengo problemas para migrar
+                const lknMigrar = document.getElementsByClassName("testing");
+                lknMigrar.addEventListener("click", popUpLkn);
+                function popUpLkn() {
+                  adobe.target.trackEvent({ mbox: 'activityVisit_popupMigracionTIE_LKN',
+                  "params":{
+                     "category": 'login popupMigracionTIE',
+                     "action": 'click link',
+                    "label": 'Tengo problemas para migrar'
+                  } });
+                }
+                */
+            </script>
+            <style>
+   
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+ .popup * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+ .popup__wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 304px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+ .popup__header {
+  background: #021d5f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+ .popup__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+}
+ .popup__close::before,
+ .popup__close::after {
+  content: '';
+  display: block;
+  background: #fff;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  width: 16px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  cursor: pointer;
+}
+
+ .popup__close::before {
+  transform: rotate(45deg) translate(-1px, 10px);
+}
+
+ .popup__close::after {
+  transform: rotate(-45deg) translate(-10px, -1px);
+}
+
+ .popup__body {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ .popup__title {
+  width: 100%;
+  color: #0f191e;
+  font-family: "Omnes";
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 28px;
+  text-align: center;
+  margin: 5px 0 10px 0;
+	 font-size: 20px;
+	 line-height: 25px;
+}
+
+ .popup__content {
+  color: #0f191e;
+  font-size: 14px;
+  font-family: "Omnes";
+  letter-spacing: -0.1px;
+  line-height: 20px;
+  text-align: center;
+  width: 90%;
+  align-content: center;
+  margin: 0 0 20px 0;
+}
+  
+.testing{
+color: #0f191e;
+  font-size: 12px;
+  font-family: "Omnes";
+  letter-spacing: -0.1px;
+  text-align: center;
+  width: 90%;
+  align-content: center;
+  margin: 20px 0 10px 0;			
+}
+				
+ #popup__link {
+  text-decoration: underline;
+
+}
+
+ .popup__content strong {
+  font-weight: 600;
+}
+
+ .popup__btn {
+  width: 60%;
+  color: #ffffff;
+  font-family: "Omnes";
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.09px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 48px;
+  border-radius: 4px;
+  background-color: #05be50;
+  display: block;
+}
+
+@media (min-width: 768px) {
+   .popup__wrapper {
+    width: 416px;
+  }
+   .popup__body {
+    padding: 20px 32px 36px;
+  }
+   .popup__title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+   .popup__content {
+    width: 80%;
+  }
+}
+            </style>
+            <script>
+                "use strict";
+
+var popupJS = /** @class */ (function () {
+    function popupJS(options) {
+        options.link.target = options.link.target || '_self';
+        this.elementOverlay = this.overlay();
+    }
+    popupJS.prototype.events = function (close) {
+        var body = document.querySelector('body') || document.body;
+        body.classList.add('tg');
+        var overlay = this.elementOverlay;
+        close.addEventListener('click', function (e) {
+            e.preventDefault();
+            overlay.classList.add('animate__fadeOut');
+            overlay.remove();
+            console.log('close test');
+        });
+    };
+    popupJS.prototype.show = function () {
+        var overlay = this.elementOverlay;
+        var popup = document.createElement('div');
+        popup.classList.add('popup');
+        popup.innerHTML = "\n    <div class=\"popup__wrapper\">\n      <div class=\"popup__header\">\n      <div id=\"popup__cerrar\" class=\"popup__close\"></div>\n      <picture>\n        <source srcset=\"".concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 600px)\">\n        <img srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(options.title, "\">\n      </picture>\n    </div>\n    <div class=\"popup__body\">\n      <div class=\"popup__title\">").concat(options.title, "</div>\n      <div class=\"popup__content\">").concat(options.content, "</div>\n      <a id=\"popup__entendido\" class=\"popup__btn\" href=\"").concat(options.link.url, "\" target=\"").concat(options.link.target, "\" title=\"").concat(options.link.text, "\">").concat(options.link.text, "</a>\n").concat("<p class='testing'>Conoce qué créditos son elegibles para el pago <a id=\"popup__link\" class='testing' href='https://interbank.pe/pequena-empresa/pagos/pago-creditos?rfid=interbank:referral:2022-08_app_pago-creditos-bpe_conversion:abierto:popup:1' target='_blank'>aquí</a></p>  </div>\n    </div>");
+        var close = popup.querySelector('.popup__btn');
+    var close2 = popup.querySelector('.popup__close');
+        this.events(close);
+    this.events(close2);
+        overlay.appendChild(popup);
+        document.body.appendChild(overlay);
+    };
+    popupJS.prototype.overlay = function () {
+        var overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        return overlay;
+    };
+    return popupJS;
+}());
+var options = {
+    title: 'Pequeño empresario, ¡ahora puedes pagar tus créditos desde tu computadora!',
+    content: 'Ingresa a tu Banca por Internet Empresas por la web y paga tus cuotas en minutos',
+  text2:'Tengo',
+    link: {
+        url: '#',
+        text: 'Entendido',
+        target: '_blank',
+    },
+    imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/eb/ebc42fa0-7d14-4ba5-8c15-fc2abc7e0986/img_modal_imagen-modal-pago-de-creditos-app-ibk-empresas_desktop_1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/b2/b2c69089-9a60-4008-a342-ca61a3176794/img_modal_imagen-modal-pago-de-creditos-app-ibk-empresas_desktop_2x.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/ec/ec8911f0-d997-4193-9d59-bdac99d2591b/img_modal_imagen-modal-pago-de-creditos-app-ibk-empresas_mobile_1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/b8/b8096c6d-7061-492d-986b-23ebed7a60b7/img_modal_imagen-modal-pago-de-creditos-app-ibk-empresas_mobile_2x.png',
+};
+var popup = new popupJS(options);
+popup.show();
+            </script>
+        
+        <script>
+            document.getElementById("popup__cerrar").onclick = function() {popUpClose()};
+                function popUpClose() {
+
+                  _satellite.track('trackAction', { eventProperties:{ action:{
+                    action: "click",
+                    category: "pagos creditosBPE",
+                    label: "cerrar"
+                  }}});
+
+
+                }
+                //Boton Entendido
+              document.getElementById("popup__entendido").onclick = function() {popUpBtn()};  
+                function popUpBtn() {
+                  _satellite.track('trackAction', { eventProperties:{ action:{
+                    action: "click",
+                    category: "pagos creditosBPE",
+                    label: "entendido"
+                  }}});
+                }
+                //Link Tengo problemas para migrar
+              document.getElementById("popup__link").onclick = function() {popUpLkn()};  
+                function popUpLkn() {
+                  _satellite.track('trackAction', { eventProperties:{ action:{
+                    action: "click",
+                    category: "pagos creditosBPE",
+                    label: "Conoce creditos elegibles"
+                  }}});
+                }
+        </script>
+        </div>
