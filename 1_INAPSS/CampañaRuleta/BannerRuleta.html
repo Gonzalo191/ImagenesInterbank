@@ -1,0 +1,455 @@
+<div id="action_insert_16553066210341850">
+    
+<style type="text/css">
+
+
+
+/*@font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}*/
+@font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
+        }
+
+
+* { 
+    box-sizing:  border-box;
+    font-family: Omnes;
+} 
+
+.banner-carousel__inner-item { 
+    opacity: 0; 
+    position: absolute; 
+    width: 100%;
+} 
+
+.banner-carousel__inner-item.active { 
+    opacity: 1; 
+    z-index: 1;
+} 
+
+.banner-carousel__inner { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%;
+} 
+
+.banner-carousel { 
+    position: relative; 
+    width: 100%; 
+    height: 100px; 
+    display: none; 
+    -ms-flex-align: center; 
+    align-items: center; 
+    -ms-flex-pack: justify; 
+    justify-content: space-between;
+} 
+
+.banner-carousel.show { 
+    display: -ms-flexbox; 
+    display: flex;
+} 
+
+.ibk-layout { 
+    display: -ms-flexbox; 
+    display: flex; 
+    -ms-flex-direction: column; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    height: 100%;
+} 
+
+.ibk-root { 
+    display: block; 
+    height: 100%;
+} 
+
+body { 
+    margin:  0; 
+    padding:  0;
+    font-family: Omnes; 
+    font-size: .875rem; 
+    font-weight: 400; 
+    line-height: 20px; 
+    color: #333; 
+    text-align: left; 
+    background-color: #f8f8f8; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    height: 100%;
+} 
+
+html { 
+    margin:  0; 
+    padding:  0;
+    font-family: sans-serif; 
+    line-height: 1.15; 
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+    -ms-overflow-style: scrollbar; 
+    -webkit-tap-highlight-color: rgba(51,51,51,0); 
+    height: 100%;
+} 
+
+.banner-credits-bpe { 
+    background-color: #05be50;
+    color: #fff;
+} 
+
+*,:after,:before { 
+    box-sizing: border-box;
+} 
+
+.d-flex { 
+    display: flex!important;
+} 
+
+.justify-content-between { 
+    justify-content: space-between!important;
+} 
+
+.align-items-center { 
+    align-items: center!important;
+} 
+
+.mx-auto { 
+    margin-right:  auto!important;
+    margin-left: auto!important;
+} 
+
+.banner-credits-bpe--content { 
+    max-width: -moz-max-content; 
+    max-width: max-content; 
+    height: 100px;
+} 
+
+img { 
+    vertical-align: middle; 
+    border-style: none; 
+    max-width: 100%; 
+    max-height: 100%;
+} 
+
+.banner-credits-bpe--content img  { 
+    width: 92px;
+} 
+
+@media (max-width: 1245px){ 
+  .banner-credits-bpe--content img  { 
+    width: 92px;
+  } 
+}     
+
+.c-white { 
+    color: #fff!important;
+} 
+
+.fweight-400 { 
+    font-weight: 400!important;
+} 
+
+.banner-credits-bpe--caption { 
+    width: 636px; 
+    margin: 0 24px; 
+    font-size: 19px; 
+    line-height: normal;
+    letter-spacing: 1px;
+    text-align: center;
+} 
+
+@media (max-width: 1400px){ 
+  .banner-credits-bpe--caption { 
+    text-align: center;
+    /*margin: 0 12px;*/
+  } 
+}     
+
+@media (max-width: 1245px){ 
+  .banner-credits-bpe--caption { 
+    width: 570px; 
+    margin: 0 4px; 
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+  } 
+}     
+
+.m-0 { 
+    margin: 0!important;
+} 
+
+.ibk-button { 
+    display: inline-block; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    margin: 24px 0;
+} 
+
+[type="button"]  { 
+    -webkit-appearance: button;
+} 
+
+.banner-credits-bpe--content .ibk-button  { 
+    appearance: none!important; 
+    -moz-appearance: none!important; 
+    -webkit-appearance: none!important;
+} 
+
+.fweight-600 { 
+    font-weight: 600!important;
+} 
+.fweight-800 { 
+    font-weight: 1000!important;
+} 
+
+button { 
+    border-radius:     0;
+    margin:    0; 
+    font-family:    inherit; 
+    font-size:    inherit; 
+    line-height:    inherit;
+    overflow:   visible;
+    text-transform:  none;
+    pointer-events: auto;
+} 
+
+.mat-button,.mat-raised-button { 
+    font-family: Roboto,"Helvetica Neue",sans-serif; 
+    font-size: 14px; 
+    font-weight: 500;
+} 
+
+.mat-button { 
+    color: inherit; 
+    background: 0 0;
+} 
+
+.mat-raised-button { 
+    color: rgba(0,0,0,.87); 
+    background-color: #fff;
+} 
+
+.mat-button { 
+    box-sizing: border-box; 
+    position: relative; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    cursor: pointer; 
+    outline: 0; 
+    border: none; 
+    -webkit-tap-highlight-color: transparent; 
+    display: inline-block; 
+    white-space: nowrap; 
+    text-decoration: none; 
+    vertical-align: baseline; 
+    text-align: center; 
+    margin: 0; 
+    min-width: 64px; 
+    line-height: 36px; 
+    padding: 0 16px; 
+    border-radius: 4px; 
+    overflow: visible;
+} 
+
+.mat-raised-button { 
+    box-sizing: border-box; 
+    position: relative; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    cursor: pointer; 
+    outline: 0; 
+    border: none; 
+    -webkit-tap-highlight-color: transparent; 
+    display: inline-block; 
+    white-space: nowrap; 
+    text-decoration: none; 
+    vertical-align: baseline; 
+    text-align: center; 
+    margin: 0; 
+    min-width: 64px; 
+    line-height: 36px; 
+    padding: 0 16px; 
+    border-radius: 4px; 
+    overflow: visible; 
+    transform: translate3d(0,0,0); 
+    transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+} 
+
+button,[type="button"]  { 
+    -webkit-appearance: button;
+} 
+
+.mat-raised-button:not([class*="mat-elevation-z"]) { 
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+} 
+
+.ibk-button .mat-button  { 
+    color: #fff; 
+    background: #00a94f; 
+    box-shadow: 0 1px 4px 0 rgba(0,169,79,.2); 
+    font-family: Omnes; 
+    /*padding: 0 35px;*/
+    font-size: 1rem; 
+    line-height: 2.3; 
+    border-radius: 24px; 
+    min-width: 88px; 
+    min-height: 40px;
+} 
+
+.ibk-button--large .mat-button  { 
+    /*padding: 0 40px; */
+    font-size: 0.9rem; 
+    line-height: 2.7; 
+    border-radius: 24px; 
+    min-width: 104px; 
+    min-height: 48px;
+} 
+
+.banner-credits-bpe--content .ibk-button button  { 
+    width: 193px; 
+    color: #3361b8; 
+    background-color: #fff; 
+    font-weight: 600;
+} 
+
+@media (max-width: 1245px){ 
+  .banner-credits-bpe--content .ibk-button button  { 
+    width: 156px;
+  } 
+}     
+
+.ibk-button button:hover  { 
+    background-color: #14c466;
+} 
+
+.banner-credits-bpe--content .ibk-button button:active ,.banner-credits-bpe--content .ibk-button button:hover  { 
+    background-color: #f8f8f8;
+} 
+
+.ibk-button button > *  { 
+    pointer-events: none;
+} 
+
+.mat-ripple { 
+    overflow: hidden; 
+    position: relative;
+} 
+
+.mat-button-ripple.mat-ripple { 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    position: absolute; 
+    pointer-events: none; 
+    border-radius: inherit;
+} 
+
+.mat-button-focus-overlay { 
+    background:   #000;
+    top:  0; 
+    left:  0; 
+    right:  0; 
+    bottom:  0; 
+    position:  absolute; 
+    pointer-events:  none; 
+    border-radius:  inherit;
+    opacity: 0; 
+    transition: opacity .2s cubic-bezier(.35,0,.25,1),background-color .2s cubic-bezier(.35,0,.25,1);
+} 
+
+.mat-button .mat-button-focus-overlay  { 
+    opacity: 0;
+} 
+
+.mat-button:hover .mat-button-focus-overlay  { 
+    opacity: .04;
+}
+
+#textoboton{
+  text-align: center;
+}
+
+#pagalo{
+  padding: 0;
+}
+
+#imgBanner{
+    height: 78px;
+    width: 120px;
+    margin-right: 10px;
+}
+
+</style>
+
+    <div class="banner-credits-bpe snipcss-CeVJs">
+      <div class="banner-credits-bpe--content d-flex align-items-center justify-content-between mx-auto">
+        <img id="imgBanner" alt="credits-bpe" src="https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/2f/2f9e63ef-8def-4491-8691-a270f0ed40a7/img_bpi_brief-concepto-ruleta-1.png">
+        <div class="banner-credits-bpe--caption fweight-400">
+    
+          <span class="fweight-600">
+            Ingresa a la Ruleta Negocio Digital
+            <!--span class="fweight-800">
+                sin evaluación previa!
+            </span-->
+          </span>
+            <br>Cada operacion es una opcion para ganar increibles premios
+        </div>
+        <ibk-button class="ibk-button ibk-button--large m-0" type="button" style="pointer-events: none;">
+          <a href="https://www.interbankruletanegocio.pe?mcid=web-empresas:target:2023-06_ruleta_ruletanegocios_brand-awareness:bbdd:banner:1" target="_blank">
+          <button mat-button="" mattooltipclass="tooltip" class="mat-button mat-raised-button" id="pagalo" type="button" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <span class="mat-button-wrapper" id="textoboton">
+              Quiero Jugar
+            </span>
+            <div class="mat-button-ripple mat-ripple" matripple="">
+            </div>
+            <div class="mat-button-focus-overlay">
+            </div>
+          </button>
+          </a>
+        </ibk-button>
+      </div>
+    </div>
+
+<script type="text/javascript">
+    
+  
+   //Boton Entendido
+      document.getElementById("pagalo").onclick = function () {
+        console.log('click boton')
+        popUpBtnEscolar();
+      };
+
+      function popUpBtnEscolar() {
+        _satellite.track("trackAction", {
+          eventProperties: {
+            action: {
+              action: "click",
+              category: "Ruleta-Banner",
+              label: "Cotiza aqui"
+            }
+          }
+        });
+      }
+
+    function popUpViewBanner() {
+        console.log("mostrar_modal");
+        _satellite.track("trackView", {
+            eventProperties: {
+            view: {
+                action: "popupView",
+                category: "Ruleta-Banner"
+            }
+            }
+        });
+    }
+    popUpViewBanner();
+
+</script>
+   
+  </div>

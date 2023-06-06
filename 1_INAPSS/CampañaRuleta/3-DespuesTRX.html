@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal COD SWIFT</title>
+    <title>[WEB] Modal Ruleta TRX</title>
 
 <style>
 
@@ -10,6 +10,11 @@
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
 
+@font-face {
+      font-family: 'Omnes';
+      src: url(../fonts/Omnes.ttf);
+        
+    } 
       .overlay_web {
         position: fixed;
         top: 0;
@@ -18,12 +23,6 @@
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
         z-index: 99;
-      }
-
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
       }
 
       .popup_web * {
@@ -35,19 +34,20 @@
         border-top-right-radius: 10px;
       }
 
-      .popup__wrapper_web1 {
+      .popup__wrapper_web {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 304px;
+        /*width: 400px;
+        height: 44%;*/
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
       }
 
       .popup__header_web {
-        margin-top:5px;
+        margin:0;
       }
 
       .popup__close_web {
@@ -83,22 +83,23 @@
 
       .popup__body_web {
         width: 100%;
-        padding: 20px 24px;
+        padding: 20px 20px 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        width: 100%;
-        color: #0f191e;
+        color: black;
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
         margin: 5px 0 15px 0;
-        font-size: 24px;
+        font-size: 32px;
         line-height: 25px;
+        width: 85%;
+        padding: 0px 0px 8px;
       }
 
       .popup__content_web {
@@ -108,11 +109,11 @@
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 90%;
+        width: 100%;
         align-content: center;
-        margin: 0 0 20px 0;
+        margin: 0 0 0px 0;
       }
-
+      
       .testing_web {
         color: #0f191e;
         font-size: 14px;
@@ -134,7 +135,8 @@
       }
 
       .popup__btn_web {
-        width: 50%;
+        padding-left: 7px;
+        padding-right: 7px;
         color: #ffffff;
         font-family: "Omnes";
         font-size: 18px;
@@ -143,32 +145,41 @@
         text-align: center;
         text-decoration: none;
         line-height: 45px;
-        border-radius: 4px;
+        border-radius: 45px;
         background-color: #05be50;
         display: block;
+        margin-top: 4%;
       }
 
        #pic_web{
-        display: flex;
-        justify-content: center;
+        height: 150px;
+        width: 300px;
+        margin: 20px 0px 20px 0px;
+        /*background-color: red;*/
       }
 
       @media (min-width: 768px) {
-       .popup__wrapper_web1 {
-        width: 416px;
-        height: auto;
+       .popup__wrapper_web {
+        width: 600px;
+        height: 44%;
       }
        .popup__body_web {
-        padding: 20px 32px 32px;
+        /*padding: 20px 40px 20px;*/
       }
        .popup__title_web {
-        font-size: 28px;
+        font-size: 32px;
         line-height: 28px;
+      }
+      #pic_web{
+        height: 160px;
+        width: 350px;
+        margin: 20px 0px 20px 0px;
+        /*background-color: red;*/
       }
 
       }
      </style>
-      </head>
+      
     <div>
   </div>
     <script>
@@ -194,16 +205,21 @@
           var popup_web = document.createElement("div");
           popup_web.classList.add("popup_web");
           popup_web.innerHTML = `
-<div class="popup__wrapper_web1">
+<div class="popup__wrapper_web">
   <div class="popup__header_web">
     <div id="popup__cerrar" class="popup__close_web"></div>
-    <picture id='pic_web'></picture>
-  </div>
+    </div>
   <div class="popup__body_web">
+      <picture id='pic_web'></picture>
   </div>
 </div>
 `;
           var popupBody = popup_web.querySelector(".popup__body_web");
+          /*var divImg = document.createElement("div");
+          divImg.classList.add("popup__img_web");
+          divImg.srcset = options.imgTest;
+          popupBody.appendChild(divImg);*/
+
           var divTitle = document.createElement("div");
           divTitle.classList.add("popup__title_web");
           divTitle.innerHTML = options.title;
@@ -243,15 +259,13 @@
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
 
-          var IDusuario = _satellite.getVar('userId');
-
           function popUpView() {
+            console.log("mostrar_modal");
             _satellite.track("trackView", {
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "TransferenciaExterior",
-                  userId: IDusuario,
+                  category: "Ruleta-M3-DepuesTRX"
                 }
               }
             });
@@ -267,17 +281,17 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>Conoce la diferencia entre Código SWIFT y ABA</strong>",
-        content: "<ul><li>ABA = Son numéricos (9) : bancos de EEUU y Puerto Rico</li><li>SWIFT= Alfa numéricos (8 u 11)</li></ul>",
+        title: "<strong>¡Ya cuentas con un giro para jugar!</strong>",
+        content: "Desde mañana podrás visualizar tus giros.<br>Recuerda que cada operación que realices es una opción más para ganar grandes premios en la Ruleta Negocio Digital.",
         link: {
           url:
-            "javascript:void(0)",
-          text: "Entendido",
+            "https://www.interbankruletanegocio.pe?mcid=web-empresas:target:2023-06_ruleta_ruletanegocios_brand-awareness:bbdd:popup:3",
+          text: "¡Quiero jugar!",
         },
-        imgDesktop1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/dektop1x-TRANSFEXT.png?raw=true',
-    imgDesktop2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/desktop2-TRANSFEXT.png?raw=true',
-    imgMobile1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/mobile1x-TRANSFEXT.png?raw=true',
-    imgMobile2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/mobile2x-TRANSFEXT.png?raw=true',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/b5/b5e2f558-f2f4-48da-a293-7737199b86cf/img_modal-2_brief-concepto-ruleta-1_desktop.png',
+    /*imgDesktop2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_2x.png',*/
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/14/142903e9-0ad7-4a2c-ba6c-b33cf2616c10/img_modal-2_brief-concepto-ruleta-1_mobile.png',
+    /*imgMobile2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_2x.png',*/
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -290,7 +304,7 @@
         });
         document.dispatchEvent(messageEvent);
       }*/
-      
+
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -301,30 +315,36 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "TransferenciaExterior",
+              category: "Ruleta-M3-DepuesTRX",
               label: "cerrar"
             }
           }
         });
       }
 
-      //Boton Entendido
-      document.getElementById("popup__entendido_web").onclick = function () {
+      var boton = document.getElementById("popup__entendido_web");
+      boton.addEventListener("click",function () {
+        window.open(boton.href);
         popUpBtn();
-        //ejecutEventAdbNexbiRoute('/pagos-transferencias/servicios/paso-1');
-      };
+      });
 
          function popUpBtn() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "TransferenciaExterior",
+              category: "Ruleta-M3-DepuesTRX",
               label: "entendido"
             }
           }
         });
       }
+
+      
+/*
+      document.body.onload = function() {
+        popUpView();
+      }*/
 
 /*
       //Boton Entendido

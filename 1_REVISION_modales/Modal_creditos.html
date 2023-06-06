@@ -69,7 +69,8 @@
       display: block;
       line-height: 32px;
       background-color: #ffffff00;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important;
+      color: black;
     }
 
     .mk-input--error {
@@ -1017,6 +1018,26 @@
         let stringClear = string.replaceAll(/<\/?[^>]+(>|$)/gi, "");
         return stringClear;
       }
+	  
+	  var IDusuario = _satellite.getVar('userId');
+
+          function popUpViewx() {
+            _satellite.track("trackView", {
+              eventProperties: {
+                view: {
+                  action: "popupView",
+                  category: "CampañaLeadsBPE - App",
+                  userId: IDusuario,
+                }
+              }
+            });
+          }
+          
+          popUpViewx();
+	  
+	  
+	  
+	  
       popupJS.prototype.events = function (close) {
         var body = document.querySelector('body') || document.body;
         body.classList.add('tg');
@@ -1040,7 +1061,7 @@
         var popup = document.createElement('div');
         popup.setAttribute('id', 'mkv10Popup');
         popup.classList.add('mkv10--popup');
-        popup.innerHTML = "\n    <div class=\"mkv10--popup__wrapper\" id=\"mkv10PopupWrapper1\">\n   <div class=\"mkv10--popup__grid\">\n   <div class=\"mkv10--popup__header\">\n      <div class=\"mkv10--popup__close\" id=\"mkv10--popup__cerrar\"></div>\n    <div class=\"mkv10--popup__title\">".concat(options.title, "</div>\n    </div>\n    <div class=\"mkv10--popup__section\">\n    <div class=\"mkv10--popup__img mkv10--popup__img_lg\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__body\">\n      <div class=\"mkv10--popup__content\">").concat(options.content, "</div>\n    <div class=\"mkv10--form__content\">    <form class=\"mkv10--form\" id=\"mkv10Form\">    <div class=\"mkv10--form__row\">    <label class=\"mk-sronly\" for=\"updatedEmail\">Ingresa tu número de teléfono</label>\n <input type=\"email\" class=\"mk-input--linebottom\" name=\"updatedEmail\" id=\"updatedEmail\" placeholder=\"Ingresa tu número de teléfono\" />    <p class=\"mk-input--error\" id=\"updatedEmailError\"></p>    </div>\n    <div class=\"mkv10--form__row mk-coloured\">\n    <p class=\"mk-input--error\" id=\"termsConditionsError\"></p>    </div>\n    <div class=\"mkv10--popup__img mkv10--popup__img_sm\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__btn_content\">\n    <button type=\"submit\" class=\"mkv10--popup__btn\" id=\"formSubmit\">").concat(options.link.text, "</button>\n    </div>\n     </form>\n     </div>\n    </div>\n    </div>\n     </div>\n    </div>");
+        popup.innerHTML = "\n    <div class=\"mkv10--popup__wrapper\" id=\"mkv10PopupWrapper1\">\n   <div class=\"mkv10--popup__grid\">\n   <div class=\"mkv10--popup__header\">\n      <div class=\"mkv10--popup__close\" id=\"mkv10--popup__cerrar\"></div>\n    <div class=\"mkv10--popup__title\">".concat(options.title, "</div>\n    </div>\n    <div class=\"mkv10--popup__section\">\n    <div class=\"mkv10--popup__img mkv10--popup__img_lg\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__body\">\n      <div class=\"mkv10--popup__content\">").concat(options.content, "</div>\n    <div class=\"mkv10--form__content\">    <form class=\"mkv10--form\" id=\"mkv10Form\">    <div class=\"mkv10--form__row\">    <label class=\"mk-sronly\" for=\"updatedEmail\">Ingresa tu número de teléfono</label>\n <input type=\"tel\" class=\"mk-input--linebottom\" name=\"updatedEmail\" id=\"updatedEmail\" placeholder=\"Ingresa tu número de teléfono\" />    <p class=\"mk-input--error\" id=\"updatedEmailError\"></p>    </div>\n    <div class=\"mkv10--form__row mk-coloured\">\n    <p class=\"mk-input--error\" id=\"termsConditionsError\"></p>    </div>\n    <div class=\"mkv10--popup__img mkv10--popup__img_sm\">\n   <picture class=\"mkv10--popup__picture\">\n        <source srcset=\"").concat(options.imgDesktop1x, ", ").concat(options.imgDesktop2x, " 2x\" media=\"(min-width: 480px)\">\n        <img class=\"mkv10--popup__image_background\" srcset=\"").concat(options.imgMobile1x, ", ").concat(options.imgMobile2x, " 2x\" alt=\"").concat(clearHTMLTags(options.title), "\">\n      </picture>\n    </div>\n    <div class=\"mkv10--popup__btn_content\">\n    <button type=\"submit\" class=\"mkv10--popup__btn\" id=\"formSubmit\">").concat(options.link.text, "</button>\n    </div>\n     </form>\n     </div>\n    </div>\n    </div>\n     </div>\n    </div>");
 
         var close = popup.querySelector('.mkv10--popup__close');
         var btnEnviar = popup.querySelector('#sendBtn');
@@ -1055,7 +1076,8 @@
       };
 
       const emailVálido = email => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        //return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+		return /^[9][0-9]{8}$/.test(email);
       }
 
       popupJS.prototype.validator = function name(formId) {
@@ -1068,13 +1090,13 @@
           const emailActualizado = document.getElementById('updatedEmail');
 
           if (emailActualizado.value === "") {
-            updatedEmailError.innerHTML = "Por favor, escribe tu correo electrónico";
+            updatedEmailError.innerHTML = "Por favor, escribe un numero celular";
             emailActualizado.focus();
             return false;
           }
 
           if (!emailVálido(emailActualizado.value)) {
-            updatedEmailError.innerHTML = "Por favor, escribe un correo electrónico válido";
+            updatedEmailError.innerHTML = "Por favor, escribe un numero celular válido";
             emailActualizado.focus();
             return false;
           }
@@ -1082,10 +1104,32 @@
           // return true;
           // document.getElementById("mkv10Form").submit();
           popup.showResult();
+		  
+		  //Envío data a Analytics
+		  function SentInputModal() {
+            _satellite.track("SentInputModal", {
+              eventProperties: {
+                action: {
+                  action: "click",
+                  category: "CampañaLeadsBPE - App",
+                  InputType: "Celular", //name
+                  InputValue: emailActualizado.value, //value
+				  label: "Ábrela aquí"
+                }
+              }
+            });
+          }
+          
+          SentInputModal();
+
+		  
+		  console.log('ok validado');
+		  
         }
 
-        btnEnviar.addEventListener('click', validate);
+        btnEnviar.addEventListener('click', validate);	
       }
+	  
 
       popupJS.prototype.overlay = function () {
         var overlay = document.createElement('div');
@@ -1125,29 +1169,19 @@
       cordova.InAppBrowser.open("https://interbank.pe/100-digital?mcid=app-empresas:referral:2022-12_app_digitalizacion_conversion:bbdd:popup:1", "_system", "location=yes");
     }
 
-    function popUpBtn() {
-      _satellite.track("trackAction", {
-        eventProperties: {
-          action: {
-            action: "click",
-            category: "campañaDigitalDiciembre - app - yaParticipa",
-            label: "Ábrela aquí"
-          }
-        }
-      });
-    }
+
 
     //Boton Cerrar
     document.getElementById("mkv10--popup__cerrar").onclick = function () {
-      popUpClose();
+      popUpClosex();//cambiar variable
     };
 
-    function popUpClose() {
+    function popUpClosex() {//cambiar variable
       _satellite.track("trackAction", {
         eventProperties: {
           action: {
             action: "click",
-            category: "campañaDigitalDiciembre - app - yaParticipa",
+            category: "CampañaLeadsBPE - App",
             label: "cerrar"
           }
         }

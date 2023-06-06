@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal COD SWIFT</title>
+    <title>[WEB] Modal Lanzamiento Ruleta</title>
 
 <style>
 
@@ -35,7 +35,7 @@
         border-top-right-radius: 10px;
       }
 
-      .popup__wrapper_web1 {
+      .popup__wrapper_web {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -47,7 +47,7 @@
       }
 
       .popup__header_web {
-        margin-top:5px;
+        margin-top:0px;
       }
 
       .popup__close_web {
@@ -149,14 +149,12 @@
       }
 
        #pic_web{
-        display: flex;
-        justify-content: center;
+        height: 84px;
       }
 
       @media (min-width: 768px) {
-       .popup__wrapper_web1 {
+       .popup__wrapper_web {
         width: 416px;
-        height: auto;
       }
        .popup__body_web {
         padding: 20px 32px 32px;
@@ -194,7 +192,7 @@
           var popup_web = document.createElement("div");
           popup_web.classList.add("popup_web");
           popup_web.innerHTML = `
-<div class="popup__wrapper_web1">
+<div class="popup__wrapper_web">
   <div class="popup__header_web">
     <div id="popup__cerrar" class="popup__close_web"></div>
     <picture id='pic_web'></picture>
@@ -250,7 +248,7 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "TransferenciaExterior",
+                  category: "Ruleta-M2-LanzamientoBPI",
                   userId: IDusuario,
                 }
               }
@@ -267,17 +265,17 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>Conoce la diferencia entre Código SWIFT y ABA</strong>",
-        content: "<ul><li>ABA = Son numéricos (9) : bancos de EEUU y Puerto Rico</li><li>SWIFT= Alfa numéricos (8 u 11)</li></ul>",
+        title: "<strong>¡Llegó la Ruleta Negocio Digital!</strong>",
+        content: "Durate todo junio acumularás opciones para ganar con cada operación que realices desde tu APP o Banca por Internet Empresas.",
         link: {
           url:
             "javascript:void(0)",
-          text: "Entendido",
+          text: "Participaré",
         },
-        imgDesktop1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/dektop1x-TRANSFEXT.png?raw=true',
-    imgDesktop2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/desktop2-TRANSFEXT.png?raw=true',
-    imgMobile1x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/mobile1x-TRANSFEXT.png?raw=true',
-    imgMobile2x: 'https://github.com/Gonzalo191/ImagenesInterbank/blob/main/imagenes/mobile2x-TRANSFEXT.png?raw=true',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/a2/a28b2475-3ea2-45ea-8f65-c04ee2bee933/img_modal-1_brief-concepto-ruleta-2_desktop_1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/c4/c444fbd1-e42b-4a37-8039-155d1f22ec0e/img_modal-1_brief-concepto-ruleta-2_desktop_2x.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/bb/bbbf46a5-2a4d-43d5-980f-c4283cf8b898/img_modal-1_brief-concepto-ruleta-2_mobile_1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/88/885b3d5a-94bd-4f7b-904f-ae27ca133f9b/img_modal-1_brief-concepto-ruleta-2_mobile_2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -301,7 +299,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "TransferenciaExterior",
+              category: "Ruleta-M2-LanzamientoBPI",
               label: "cerrar"
             }
           }
@@ -311,7 +309,7 @@
       //Boton Entendido
       document.getElementById("popup__entendido_web").onclick = function () {
         popUpBtn();
-        //ejecutEventAdbNexbiRoute('/pagos-transferencias/servicios/paso-1');
+        //ejecutEventAdbNexbiRoute('/pagos-transferencias/cambio-moneda/cotizar/paso-1');
       };
 
          function popUpBtn() {
@@ -319,7 +317,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "TransferenciaExterior",
+              category: "Ruleta-M2-LanzamientoBPI",
               label: "entendido"
             }
           }
