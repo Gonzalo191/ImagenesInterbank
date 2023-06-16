@@ -2,19 +2,14 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Giros Disponibles</title>
+    <title>[WEB] Modal Comex</title>
 
 <style>
 
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-
-@font-face {
-      font-family: 'Omnes';
-      src: url(../fonts/Omnes.ttf);
-        
-    } 
+      
       .overlay_web {
         position: fixed;
         top: 0;
@@ -25,6 +20,11 @@
         z-index: 99;
       }
 
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
+        }
       .popup_web * {
         box-sizing: border-box;
         margin: 0;
@@ -39,8 +39,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        /*width: 400px;
-        height: 44%;*/
+        width: 304px;
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
@@ -62,7 +61,7 @@
       .popup__close_web::after {
         content: "";
         display: block;
-        background: #000000;
+        background: #ffffff;
         margin-bottom: 4px;
         border-radius: 2px;
         width: 16px;
@@ -83,23 +82,22 @@
 
       .popup__body_web {
         width: 100%;
-        padding: 20px 20px 15px;
+        padding: 20px 24px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        color: black;
+        width: 100%;
+        color: #0f191e;
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
         margin: 5px 0 15px 0;
-        font-size: 32px;
+        font-size: 24px;
         line-height: 25px;
-        width: 85%;
-        padding: 0px 0px 8px;
       }
 
       .popup__content_web {
@@ -109,11 +107,23 @@
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 100%;
+        width: 90%;
         align-content: center;
-        margin: 0 0 0px 0;
+        margin: 0 0 20px 0;
       }
-      
+
+      .popup__botones{
+        width: 100%;
+        height: 47px;
+        font-family: "Omnes";
+        text-align: center;
+        text-decoration: none;
+        line-height: 45px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+
       .testing_web {
         color: #0f191e;
         font-size: 14px;
@@ -135,50 +145,95 @@
       }
 
       .popup__btn_web {
-        padding-left: 7px;
-        padding-right: 7px;
+        width: 45%;
         color: #ffffff;
         font-family: "Omnes";
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.09px;
         text-align: center;
         text-decoration: none;
         line-height: 45px;
-        border-radius: 45px;
+        border-radius: 4px;
         background-color: #05be50;
         display: block;
-        margin-top: 4%;
+      }
+      .popup__btn_web_2 {
+        width: 45%;
+        color: #000000;
+        border-color: #000000;
+        font-family: "Omnes";
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.09px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 45px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        display: block;
+        border: 0.5px solid rgb(182, 182, 182);
       }
 
        #pic_web{
-        height: 150px;
-        width: 300px;
-        margin: 20px 0px 20px 0px;
-        /*background-color: red;*/
+        height: 84px;
       }
 
       @media (min-width: 768px) {
        .popup__wrapper_web {
-        width: 600px;
+        width: 416px;
       }
        .popup__body_web {
-        /*padding: 20px 40px 20px;*/
+        padding: 20px 32px 36px;
       }
        .popup__title_web {
-        font-size: 32px;
+        font-size: 28px;
         line-height: 28px;
       }
-      #pic_web{
-        height: 160px;
-        width: 350px;
-        margin: 20px 0px 20px 0px;
-        /*background-color: red;*/
+       .popup__botones{
+        width: 90%;
+        font-family: "Omnes";
+        text-align: center;
+        text-decoration: none;
+        line-height: 45px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      .popup__btn_web {
+        width: 45%;
+        color: #ffffff;
+        font-family: "Omnes";
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.09px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 45px;
+        border-radius: 4px;
+        background-color: #05be50;
+        display: block;
+      }
+      .popup__btn_web_2 {
+        width: 45%;
+        color: #000000;
+        border-color: #000000;
+        font-family: "Omnes";
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.09px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 45px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        display: block;
+        border: 0.5px solid rgb(182, 182, 182);
       }
 
       }
      </style>
-      
+      </head>
     <div>
   </div>
     <script>
@@ -207,18 +262,13 @@
 <div class="popup__wrapper_web">
   <div class="popup__header_web">
     <div id="popup__cerrar" class="popup__close_web"></div>
-    </div>
+    <picture id='pic_web'></picture>
+  </div>
   <div class="popup__body_web">
-      <picture id='pic_web'></picture>
   </div>
 </div>
 `;
           var popupBody = popup_web.querySelector(".popup__body_web");
-          /*var divImg = document.createElement("div");
-          divImg.classList.add("popup__img_web");
-          divImg.srcset = options.imgTest;
-          popupBody.appendChild(divImg);*/
-
           var divTitle = document.createElement("div");
           divTitle.classList.add("popup__title_web");
           divTitle.innerHTML = options.title;
@@ -238,6 +288,10 @@
           divContent.innerHTML = options.content;
           popupBody.appendChild(divContent);
 
+          var botones = document.createElement("div");
+          botones.classList.add("popup__botones");
+          popupBody.appendChild(botones);
+
           var aLink = document.createElement("a");
           aLink.classList.add("popup__btn_web");
           aLink.id = "popup__entendido_web";
@@ -245,11 +299,25 @@
           if (options.link.target) aLink.target = options.link.target;
           aLink.title = options.link.text;
           aLink.innerHTML = options.link.text;
-          popupBody.appendChild(aLink);
+          botones.appendChild(aLink);
 
+          var aLink2 = document.createElement("a");
+          aLink2.classList.add("popup__btn_web_2");
+          aLink2.id = "popup__entendido_web_2";
+          aLink2.href = options.link.url2;
+          if (options.link.target) aLink2.target = options.link.target;
+          aLink2.title = options.link.text2;
+          aLink2.innerHTML = options.link.text2;
+          botones.appendChild(aLink2);
+
+          var close3 = popup_web.querySelector(".popup__btn_web_2");
           var close2 = popup_web.querySelector(".popup__close_web");
           var close = popup_web.querySelector(".popup__btn_web");
 
+          this.events(close3);
+          overlay_web.appendChild(popup_web);
+          document.body.appendChild(overlay_web);
+          
           this.events(close2);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
@@ -258,19 +326,20 @@
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
 
+          var IDusuario = _satellite.getVar('userId');
+
           function popUpView() {
-            console.log("mostrar_modal");
             _satellite.track("trackView", {
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "Ruleta-M4-GirosDisponibles"
+                  category: "CampañaRecaudacion-2",
+                  userId: IDusuario,
                 }
               }
             });
           }
           popUpView();
-
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -280,41 +349,51 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>¡Ya cuentas con giros disponibles!</strong>",
-        content: "Prueba tu suerte en la Ruleta Negocio Digital.<br>¡Ingresa ahora y juega!",
+        title: "<strong>¡Tus Transferencias al Exterior de forma fácil y segura!</strong>",
+        content: "Recuerda que puedes realizar tus operaciones a través del módulo de transferencias desde tu Banca por Internet Empresas o App Empresas.",
         link: {
           url:
-            "https://www.interbankruletanegocio.pe?mcid=web-empresas:target:2023-06_ruleta_ruletanegocios_brand-awareness:bbdd:popup:4",
-          text: "¡Quiero jugar!",
+            "",
+          text: "Estoy interesado",
+          text2: "Ahora no",
+          url2:"javascript:void(0)",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/44/448a203a-15b7-4f0e-9124-44198c690f55/img_modal-2_brief-concepto-ruleta-2_desktop.png',
-    /*imgDesktop2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_desktop_2x.png',*/
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/78/789e5fce-bc7c-4915-bcbb-7c8765c5bd7c/img_modal-2_brief-concepto-ruleta-2_mobile.png',
-    /*imgMobile2x: 'https://raw.githubusercontent.com/mitmur/ibkActualizacionAPP/main/Imagen_TD_CN/img_imagen-td-cn_mobile_2x.png',*/
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/37/377e8e11-08ab-45ea-abd0-06d5576aee1a/desktop1.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/42/4200e10a-3830-48c9-84ce-0111ba489d96/desktop2.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/3c/3ccc6495-9f5e-4d4c-803b-ba538c588ed6/mobile1.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/1a/1a3ab999-d73a-45c8-8d55-f4ec8642dbd4/mobile2.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
-      /*function ejecutEventAdbNexbiRoute(path) {
-        const messageEvent = new CustomEvent('adbNexbiRoute', {
-          detail: { path }
-        });
-        document.dispatchEvent(messageEvent);
-      }*/
-
-      document.getElementById("popup__cerrar").onclick = function () {
+      document.getElementById("popup__entendido_web_2").onclick = function () {
         popUpClose();
       };
-
 
       function popUpClose() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "Ruleta-M4-GirosDisponibles",
+              category: "Campaña",
+              label: "cerrar-ahorano"
+            }
+          }
+        });
+      }
+
+      document.getElementById("popup__cerrar").onclick = function () {
+        popUpClose();
+      };
+
+      function popUpClose() {
+        _satellite.track("trackAction", {
+          eventProperties: {
+            action: {
+              action: "click",
+              category: "CampañaRecaudacion-2",
               label: "cerrar"
             }
           }
@@ -329,22 +408,19 @@
       });
 
          function popUpBtn() {
-        _satellite.track("trackAction", {
-          eventProperties: {
-            action: {
-              action: "click",
-              category: "Ruleta-M4-GirosDisponibles",
-              label: "entendido"
+         console.log("test_boton") 
+          _satellite.track("trackAction", {
+            eventProperties: {
+              action: {
+                action: "click",
+                category: "CampañaRecaudacion-2",
+                label: "EstoyInteresado"
+              }
             }
-          }
-        });
+          });
       }
 
-      
-/*
-      document.body.onload = function() {
-        popUpView();
-      }*/
+
 
 /*
       //Boton Entendido
