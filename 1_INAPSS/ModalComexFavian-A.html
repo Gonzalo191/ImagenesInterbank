@@ -9,7 +9,11 @@
 /*
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
-      
+      @font-face {
+            font-family: 'Omnes';
+            src: url(../fonts/Omnes.ttf);
+        
+        } 
       .overlay_web {
         position: fixed;
         top: 0;
@@ -20,11 +24,6 @@
         z-index: 99;
       }
 
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
-        }
       .popup_web * {
         box-sizing: border-box;
         margin: 0;
@@ -61,7 +60,7 @@
       .popup__close_web::after {
         content: "";
         display: block;
-        background: #ffffff;
+        background: #000000;
         margin-bottom: 4px;
         border-radius: 2px;
         width: 16px;
@@ -102,26 +101,14 @@
 
       .popup__content_web {
         color: #0f191e;
-        font-size: 16px;
+        font-size: 15px;
         font-family: "Omnes";
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 90%;
+        width: 85%;
         align-content: center;
         margin: 0 0 20px 0;
-      }
-
-      .popup__botones{
-        width: 100%;
-        height: 47px;
-        font-family: "Omnes";
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
       }
 
       .testing_web {
@@ -145,10 +132,10 @@
       }
 
       .popup__btn_web {
-        width: 45%;
+        width: 50%;
         color: #ffffff;
         font-family: "Omnes";
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 500;
         letter-spacing: 0.09px;
         text-align: center;
@@ -157,22 +144,6 @@
         border-radius: 4px;
         background-color: #05be50;
         display: block;
-      }
-      .popup__btn_web_2 {
-        width: 45%;
-        color: #000000;
-        border-color: #000000;
-        font-family: "Omnes";
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.09px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        border-radius: 4px;
-        background-color: #ffffff;
-        display: block;
-        border: 0.5px solid rgb(182, 182, 182);
       }
 
        #pic_web{
@@ -189,46 +160,6 @@
        .popup__title_web {
         font-size: 28px;
         line-height: 28px;
-      }
-       .popup__botones{
-        width: 90%;
-        font-family: "Omnes";
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-      }
-      .popup__btn_web {
-        width: 45%;
-        color: #ffffff;
-        font-family: "Omnes";
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.09px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        border-radius: 4px;
-        background-color: #05be50;
-        display: block;
-      }
-      .popup__btn_web_2 {
-        width: 45%;
-        color: #000000;
-        border-color: #000000;
-        font-family: "Omnes";
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.09px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 45px;
-        border-radius: 4px;
-        background-color: #ffffff;
-        display: block;
-        border: 0.5px solid rgb(182, 182, 182);
       }
 
       }
@@ -288,10 +219,6 @@
           divContent.innerHTML = options.content;
           popupBody.appendChild(divContent);
 
-          var botones = document.createElement("div");
-          botones.classList.add("popup__botones");
-          popupBody.appendChild(botones);
-
           var aLink = document.createElement("a");
           aLink.classList.add("popup__btn_web");
           aLink.id = "popup__entendido_web";
@@ -299,25 +226,11 @@
           if (options.link.target) aLink.target = options.link.target;
           aLink.title = options.link.text;
           aLink.innerHTML = options.link.text;
-          botones.appendChild(aLink);
+          popupBody.appendChild(aLink);
 
-          var aLink2 = document.createElement("a");
-          aLink2.classList.add("popup__btn_web_2");
-          aLink2.id = "popup__entendido_web_2";
-          aLink2.href = options.link.url2;
-          if (options.link.target) aLink2.target = options.link.target;
-          aLink2.title = options.link.text2;
-          aLink2.innerHTML = options.link.text2;
-          botones.appendChild(aLink2);
-
-          var close3 = popup_web.querySelector(".popup__btn_web_2");
           var close2 = popup_web.querySelector(".popup__close_web");
           var close = popup_web.querySelector(".popup__btn_web");
 
-          this.events(close3);
-          overlay_web.appendChild(popup_web);
-          document.body.appendChild(overlay_web);
-          
           this.events(close2);
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
@@ -333,13 +246,15 @@
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "CampañaRecaudacion-2",
+                  category: "TransfExteriorComex-A",
                   userId: IDusuario,
                 }
               }
             });
           }
+          
           popUpView();
+
         };
         popupJS.prototype.overlay_web = function () {
           var overlay_web = document.createElement("div");
@@ -350,50 +265,33 @@
       })();
       var options = {
         title: "<strong>¡Tus Transferencias al Exterior de forma fácil y segura!</strong>",
-        content: "Recuerda que puedes realizar tus operaciones a través del módulo de transferencias desde tu Banca por Internet Empresas o App Empresas.",
+        content: "Recuerda que puedes realizar tus operaciones a través del módulo de transferencias desde tu <b>Banca por Internet Empresas o App Empresas.</b>",
         link: {
           url:
-            "",
-          text: "Estoy interesado",
-          text2: "Ahora no",
-          url2:"javascript:void(0)",
+            "https://www.youtube.com/watch?v=vr024pdG27Y?mcid=app-empresas:target:2023-06_comex_transexterior1_conversion:personalizada:popup:1",
+          text: "Conoce cómo",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/37/377e8e11-08ab-45ea-abd0-06d5576aee1a/desktop1.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/42/4200e10a-3830-48c9-84ce-0111ba489d96/desktop2.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/3c/3ccc6495-9f5e-4d4c-803b-ba538c588ed6/mobile1.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/1a/1a3ab999-d73a-45c8-8d55-f4ec8642dbd4/mobile2.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/c4/c420eb27-4ddb-415c-bf2a-e3df8a66e346/Desktop_1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/48/48f65376-3db0-4190-9545-411ec14ae97a/Desktop_2x.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/90/90f06c8d-9e23-4cad-977c-b845a2124322/Mobile_1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/c6/c6586597-c37b-4c5c-9ee2-7867016d43fa/Mobile_2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
     </script>
 
     <script>
-      document.getElementById("popup__entendido_web_2").onclick = function () {
-        popUpClose();
-      };
-
-      function popUpClose() {
-        _satellite.track("trackAction", {
-          eventProperties: {
-            action: {
-              action: "click",
-              category: "Campaña",
-              label: "cerrar-ahorano"
-            }
-          }
-        });
-      }
-
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
 
+
       function popUpClose() {
         _satellite.track("trackAction", {
           eventProperties: {
             action: {
               action: "click",
-              category: "CampañaRecaudacion-2",
+              category: "TransfExteriorComex-A",
               label: "cerrar"
             }
           }
@@ -407,20 +305,17 @@
         popUpBtn();
       });
 
-         function popUpBtn() {
-         console.log("test_boton") 
-          _satellite.track("trackAction", {
-            eventProperties: {
-              action: {
-                action: "click",
-                category: "CampañaRecaudacion-2",
-                label: "EstoyInteresado"
-              }
+      function popUpBtn() {
+        _satellite.track("trackAction", {
+          eventProperties: {
+            action: {
+              action: "click",
+              category: "TransfExteriorComex-A",
+              label: "afiliate"
             }
-          });
+          }
+        });
       }
-
-
 
 /*
       //Boton Entendido

@@ -2,7 +2,7 @@
 <html lang="es">
  <head>
     <meta charset="utf-8">
-    <title>[WEB] Modal Lanzamiento Ruleta</title>
+    <title>[WEB] Modal Giros Disponibles</title>
 
 <style>
 
@@ -10,6 +10,11 @@
 @font-face{font-family:Omnes;src:url(omnes-medium-webfont.woff2) format("woff2"),url(omnes-medium-webfont.woff) format("woff");font-weight:500;font-style:normal}@font-face{font-family:Omnes;src:url(omnes-mediumitalic-webfont.woff2) format("woff2"),url(omnes-mediumitalic-webfont.woff) format("woff");font-weight:500;font-style:italic}@font-face{font-family:Omnes;src:url(omnes-regular-webfont.woff2) format("woff2"),url(omnes-regular-webfont.woff) format("woff");font-weight:400;font-style:normal}
 */
 
+@font-face {
+      font-family: 'Omnes';
+      src: url(../fonts/Omnes.ttf);
+        
+    } 
       .overlay_web {
         position: fixed;
         top: 0;
@@ -18,12 +23,6 @@
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
         z-index: 99;
-      }
-
-      @font-face {
-            font-family: 'Omnes';
-            src: url(../fonts/Omnes.ttf);
-        
       }
 
       .popup_web * {
@@ -40,14 +39,15 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 304px;
+        /*width: 400px;
+        height: 44%;*/
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
       }
 
       .popup__header_web {
-        margin-top:0px;
+        margin:0;
       }
 
       .popup__close_web {
@@ -83,22 +83,23 @@
 
       .popup__body_web {
         width: 100%;
-        padding: 20px 24px;
+        padding: 20px 20px 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
 
       .popup__title_web {
-        width: 100%;
-        color: #0f191e;
+        color: black;
         font-family: "Omnes";
         font-weight: 500;
         letter-spacing: -1px;
         text-align: center;
         margin: 5px 0 15px 0;
-        font-size: 24px;
+        font-size: 32px;
         line-height: 25px;
+        width: 85%;
+        padding: 0px 0px 8px;
       }
 
       .popup__content_web {
@@ -108,11 +109,11 @@
         letter-spacing: -0.1px;
         line-height: 20px;
         text-align: center;
-        width: 90%;
+        width: 100%;
         align-content: center;
-        margin: 0 0 20px 0;
+        margin: 0 0 0px 0;
       }
-
+      
       .testing_web {
         color: #0f191e;
         font-size: 14px;
@@ -134,7 +135,8 @@
       }
 
       .popup__btn_web {
-        width: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
         color: #ffffff;
         font-family: "Omnes";
         font-size: 18px;
@@ -143,30 +145,37 @@
         text-align: center;
         text-decoration: none;
         line-height: 45px;
-        border-radius: 4px;
+        border-radius: 45px;
         background-color: #05be50;
         display: block;
+        margin-top: 4%;
       }
 
        #pic_web{
-        height: 84px;
+        margin: 0px 0px 0px 0px;
+        /*background-color: red;*/
       }
 
       @media (min-width: 768px) {
        .popup__wrapper_web {
-        width: 416px;
+        width: 600px;
       }
        .popup__body_web {
-        padding: 20px 32px 32px;
+        padding: 20px 40px 25px;
       }
        .popup__title_web {
-        font-size: 28px;
+        font-size: 32px;
         line-height: 28px;
+      }
+      #pic_web{
+        
+        margin: 10px 0px 10px 0px;
+        /*background-color: red;*/
       }
 
       }
      </style>
-      </head>
+      
     <div>
   </div>
     <script>
@@ -195,13 +204,18 @@
 <div class="popup__wrapper_web">
   <div class="popup__header_web">
     <div id="popup__cerrar" class="popup__close_web"></div>
-    <picture id='pic_web'></picture>
-  </div>
+    </div>
   <div class="popup__body_web">
+      <picture id='pic_web'></picture>
   </div>
 </div>
 `;
           var popupBody = popup_web.querySelector(".popup__body_web");
+          /*var divImg = document.createElement("div");
+          divImg.classList.add("popup__img_web");
+          divImg.srcset = options.imgTest;
+          popupBody.appendChild(divImg);*/
+
           var divTitle = document.createElement("div");
           divTitle.classList.add("popup__title_web");
           divTitle.innerHTML = options.title;
@@ -241,15 +255,13 @@
           overlay_web.appendChild(popup_web);
           document.body.appendChild(overlay_web);
 
-          var IDusuario = _satellite.getVar('userId');
-
           function popUpView() {
+            console.log("mostrar_modal");
             _satellite.track("trackView", {
               eventProperties: {
                 view: {
                   action: "popupView",
-                  category: "Ruleta-M2-LanzamientoBPI",
-                  userId: IDusuario,
+                  category: "Ruleta-M4-GirosDisponibles"
                 }
               }
             });
@@ -265,17 +277,17 @@
         return popupJS;
       })();
       var options = {
-        title: "<strong>¿Ya jugaste la Ruleta Negocio Digital?</strong>",
-        content: "!Solo hasta el 30 de junio tus operaciones te darán opciones para ganar premios!",
+        title: "<strong>¡Tienes un nuevo giro en la ruleta!</strong>",
+        content: "Recuerda revisar tus giros disponibles.<br>¡Te quedan pocos días para jugar!<br>Prueba tu suerte en la Ruleta Negocio Digital.",
         link: {
           url:
-            "https://www.interbankruletanegocio.pe?mcid=web-empresas:target:2023-06_ruleta_ruletanegocios_brand-awareness:bbdd:popup:2",
-          text: "Quiero jugar",
+            "https://www.interbankruletanegocio.pe?mcid=web-empresas:target:2023-06_ruleta_ruletanegocios_brand-awareness:bbdd:popup:4",
+          text: "¡Quiero jugar!",
         },
-        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/a2/a28b2475-3ea2-45ea-8f65-c04ee2bee933/img_modal-1_brief-concepto-ruleta-2_desktop_1x.png',
-    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/c4/c444fbd1-e42b-4a37-8039-155d1f22ec0e/img_modal-1_brief-concepto-ruleta-2_desktop_2x.png',
-    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/bb/bbbf46a5-2a4d-43d5-980f-c4283cf8b898/img_modal-1_brief-concepto-ruleta-2_mobile_1x.png',
-    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/88/885b3d5a-94bd-4f7b-904f-ae27ca133f9b/img_modal-1_brief-concepto-ruleta-2_mobile_2x.png',
+        imgDesktop1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/54/54af3409-437b-4522-8556-c2856dd827cf/img_modal-1_brief-concepto-ruleta_desktop_1x.png',
+    imgDesktop2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/ef/efaf7346-2b2a-4ed9-b800-264c224bd98a/img_modal-1_brief-concepto-ruleta_desktop_2x.png',
+    imgMobile1x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/4d/4dbebf28-1cd7-4163-ae29-7778c71c93f6/img_modal-1_brief-concepto-ruleta_mobile_1x.png',
+    imgMobile2x: 'https://content-us-2.content-cms.com/9b3f67ef-5a9f-4acc-8ce8-bcc27fa681c7/dxdam/b2/b21a874a-2acd-4a4a-b719-2ecd5df35c03/img_modal-1_brief-concepto-ruleta_mobile_2x.png',
       };
       var popup_web = new popupJS(options);
       popup_web.show();
@@ -288,7 +300,7 @@
         });
         document.dispatchEvent(messageEvent);
       }*/
-      
+
       document.getElementById("popup__cerrar").onclick = function () {
         popUpClose();
       };
@@ -299,7 +311,7 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "Ruleta-M2-LanzamientoBPI",
+              category: "Ruleta-M4-GirosDisponibles",
               label: "cerrar"
             }
           }
@@ -318,12 +330,18 @@
           eventProperties: {
             action: {
               action: "click",
-              category: "Ruleta-M2-LanzamientoBPI",
+              category: "Ruleta-M4-GirosDisponibles",
               label: "entendido"
             }
           }
         });
       }
+
+      
+/*
+      document.body.onload = function() {
+        popUpView();
+      }*/
 
 /*
       //Boton Entendido
